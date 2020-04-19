@@ -1,5 +1,6 @@
 #header-logo{
-	width: 15%;
+	width: 250px;
+	max-width: 35%;
 	margin: 30px;
 }
 #num-people{

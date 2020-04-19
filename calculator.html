@@ -60,11 +60,27 @@
 
 <form>
   <div class="form-group">
-    <label for="formGroupExampleInput">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+    <label for="formGroupExampleInput">1 - What is the currency you would like to use?</label>
+    <select class="custom-select">
+      <option selected value="$">$ - USD</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
   </div>
+
   <div class="form-group">
-    <label for="formGroupExampleInput2">Another label</label>
+    <label for="formGroupExampleInput2">2 - Are you calculating zakah for just yourself or are you including a spouse?</label><br>
+    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary">Left</button>
+      <button type="button" class="btn btn-secondary">Middle</button>
+      <button type="button" class="btn btn-secondary">Right</button>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">3 - How much cash do you have?</label>
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
   </div>
   <div class="form-group">
