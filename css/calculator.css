@@ -1,0 +1,35 @@
+#header-logo{
+	width: 15%;
+	margin: 30px;
+}
+#num-people{
+	font-weight: bold;
+	color: #5ec49e;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid gray;
+}
+.separator::before {
+    margin-right: 1em;
+}
+.separator::after {
+    margin-left: 1em;
+}
+
+.navbar{
+	background-color: #eff9f5;
+	text-align: center;
+	padding: 20px 0px;
+	border-top: 1px solid #e2e2e2;
+	border-bottom: 3px solid #d4deda;
+	margin-bottom: 20px;	
+}
