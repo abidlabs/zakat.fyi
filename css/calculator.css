@@ -31,5 +31,10 @@
 	padding: 20px 0px;
 	border-top: 1px solid #e2e2e2;
 	border-bottom: 3px solid #d4deda;
-	margin-bottom: 20px;	
+	margin-bottom: 40px;	
+}
+
+#zakat-preview{
+	color: #2e67b2;
+	font-weight: bold;
 }
