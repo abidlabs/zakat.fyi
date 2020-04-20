@@ -1,132 +1,96 @@
-.masthead-card {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#header-logo{
+	height: 70px;
+	margin: 20px;
+}
+#num-people{
+	font-weight: bold;
+	color: #5ec49e;
 }
 
-.masthead-index {
-  height: 100vh;
-  min-height: 500px;
-  background-image: url('bg.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#hero {
+	text-align: center;
 }
-
-
-@media only screen and (min-width: 768px) {
-  #masthead-intro{
-    max-width: 800px;
-  }
+#desc {
+	padding: 35px 15px;
+	position: relative;
 }
-
-
-#card-count{
-  font-weight: bold;
-  color: #17a2b8;  
+#desc p {
+	margin-bottom: 0.5em;
 }
-.navbar-brand
-{
-  font-family: "Lobster", serif;
-  font-size: 24px;
+#desc img {
+	height: 80px;
+	z-index: -1;
+	bottom: 0;
+	position: absolute;
 }
-
-.lead {
-	padding-top: 20px;
-	padding-bottom: 20px;
-  font-size: 1.5rem !important;
+@media only screen and (max-width: 950px) {
+	#desc img {
+		display: none;
+	}
 }
-
-#selectors{
-  position:absolute;
-  top: 80px;
+#plant1 {
+	left: 0;
 }
-
-body{
-  background-image: url('bg.jpeg');
-}
-
-a[target="_blank"]::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin: 0 3px 0 5px;
-}
-
-#faq-container{
-  margin-top:100px;
+#plant2 {
+	right: 0;
 }
 
 
-
-#card-div{
-  margin-top:100px;
-  padding: 20px;
-  background-color: #17a2b8;
-  color: white;
-  font-weight: bold;
-  font-size: 3rem;
-  text-transform: uppercase;
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid gray;
+}
+.separator::before {
+    margin-right: 1em;
+}
+.separator::after {
+    margin-left: 1em;
 }
 
-#taboos-div{
-  margin:10px;
-  padding: 10px;
-  background-color: white;
-  color: #17a2b8;
-  font-weight: normal;
-  font-size: 3rem;
+.navbar{
+	background-color: #eff9f5;
+	text-align: center;
+	padding: 8px 0px;
+	border-top: 1px solid #e2e2e2;
+	border-bottom: 3px solid #d4deda;
+	margin-bottom: 40px;	
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  #card-div{
-    font-size: 2rem !important;
-  }
-  #taboos-div {
-    font-size: 2rem !important;
-  }
+.zakat-bar {
+	display: flex;
+	align-items: center;
+}
+#zakat-val {
+	margin-left: 32px;
+	font-size: 2em;
+}
+#zakat-preview {
+	margin-left: 10px;
+}
+#zakat-preview, #zakat-val {
+	color: #2e67b2;
 }
 
-
-#taboos-div p{
-  margin-top: 40px;
-  margin-bottom: 40px;  
+.btn-success {
+	background-color: #5ec49e !important;
 }
 
-.bottomPadding{
-  margin-bottom: 10px;
+h3 {
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
-#card-number{
-  font-size: 0.75rem;
+.explanation{
+	color: gray;
+	font-size: 0.9rem;
 }
-
-#page-content {
-  flex: 1 0 auto;
-}
-
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
-}
-
-#download-desktop-app{
-    color: white;
-}
-
-.btn{
-  font-weight: bold;
-}
-
-
-.lead{
-  color: black;  
-}
-
-#user-message{
-  font-size: 2rem !important;
+.form-group {
+	margin-bottom: 40px;
 }
