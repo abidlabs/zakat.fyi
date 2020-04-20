@@ -1,6 +1,5 @@
 #header-logo{
 	height: 70px;
-	max-width: 35%;
 	margin: 20px;
 }
 #num-people{
@@ -23,6 +22,11 @@
 	z-index: -1;
 	bottom: 0;
 	position: absolute;
+}
+@media only screen and (max-width: 950px) {
+	#desc img {
+		display: none;
+	}
 }
 #plant1 {
 	left: 0;
