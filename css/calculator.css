@@ -1,12 +1,36 @@
 #header-logo{
-	width: 250px;
+	height: 70px;
 	max-width: 35%;
-	margin: 30px;
+	margin: 20px;
 }
 #num-people{
 	font-weight: bold;
 	color: #5ec49e;
 }
+
+#hero {
+	text-align: center;
+}
+#desc {
+	padding: 35px 15px;
+	position: relative;
+}
+#desc p {
+	margin-bottom: 0.5em;
+}
+#desc img {
+	height: 80px;
+	z-index: -1;
+	bottom: 0;
+	position: absolute;
+}
+#plant1 {
+	left: 0;
+}
+#plant2 {
+	right: 0;
+}
+
 
 .separator {
     display: flex;
@@ -29,15 +53,25 @@
 .navbar{
 	background-color: #eff9f5;
 	text-align: center;
-	padding: 20px 0px;
+	padding: 8px 0px;
 	border-top: 1px solid #e2e2e2;
 	border-bottom: 3px solid #d4deda;
 	margin-bottom: 40px;	
 }
 
-#zakat-preview{
+.zakat-bar {
+	display: flex;
+	align-items: center;
+}
+#zakat-val {
+	margin-left: 32px;
+	font-size: 2em;
+}
+#zakat-preview {
+	margin-left: 10px;
+}
+#zakat-preview, #zakat-val {
 	color: #2e67b2;
-	font-weight: bold;
 }
 
 .btn-success {
@@ -52,4 +86,7 @@ h3 {
 .explanation{
 	color: gray;
 	font-size: 0.9rem;
+}
+.form-group {
+	margin-bottom: 40px;
 }
