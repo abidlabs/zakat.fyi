@@ -55,13 +55,20 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top text-center">
+  <div class="sticky-top"> 
+  <nav class="navbar navbar-expand-lg navbar-light  text-center">
     <div class="mx-auto zakat-bar">
       <span>My Zakat Due: <small>(in progress)</small></span>
-      <span id="zakat-val">$0</span>
+      <span id="zakat-val">$<span class="zakat-amount">0</span></span>
       <span id="zakat-preview"> - below the nisab</span>
     </div>
   </nav>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+  </div>
+
 
   <!-- Full Page Image Header with Vertically Centered Content -->
   <header class="masthead-index">
@@ -340,12 +347,33 @@
   </form>
   
   
-  
         </div>
       </div>
+
+    <h3>🎉 Congratulations, you've calculated your true zakat! </h3>  
+    
+    <center>    
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Zakat Due:</h6>
+        <p class="card-text">$<span class="zakat-amount">45</span></p>
+      </div>
+    </div>    
+  </center>
+    
     </div>
+
   
   </header>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 Zakat.fyi</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">About</a></li>
+        </ul>
+      </footer>
+
+
   
       <script>
         window.intercomSettings = {
