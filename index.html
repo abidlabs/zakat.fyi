@@ -90,22 +90,14 @@
 
   
     <h3> <i class="fa fa-money-bill-wave"></i> Zakatable Assets </h3>
-  
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">3 - How much cash do you have? <i class="fa fa-money-bill" style="color:green"></i> </label>
-      <p class="explanation">This includes all physical cash as well as money in bank accounts you can withdraw from without penalty, such as checking accounts.</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">4 - How many ounces of gold do you have? <i class="fa fa-coins" style="color:gold"></i> </label>
+    <p class="explanation"> Growth items are zakatable. We can break this down into six comprehensive categories. </p>
+
+    <h3> 💰 Gold, Silver, Money, and Accounts </h3>
+
+    <p class="explanation"> </p>
+    
+        <div class="form-group required">
+      <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
       <p class="explanation">We will use the value of gold at $1,703.55 per ounce.</p>
   
         <div class="input-group mb-3">
@@ -122,8 +114,8 @@
         </div>
       </div>  
   
-    <div class="form-group">
-      <label for="formGroupExampleInput2">5 - How many ounces of silver do you have? <i class="fa fa-coins" style="color:silver"></i> </label>
+    <div class="form-group required">
+      <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
       <p class="explanation">We will use the value of silver at X per ounce.</p>
   
         <div class="input-group mb-3">
@@ -139,210 +131,218 @@
           <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Computed value: ">
         </div>
   
-      </div>  
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">6 - What is the value of the jewelry you own? <i class="fal fa-rings-wedding" style="color:blue"></i> </label>
-      <p class="explanation">This is the appraised value of the jewelery you own? </p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">7 - What is the value of your retirement account? <i class="fa fa-chart-pie" style="color:teal"></i> </label>
-      <p class="explanation">401K, IRA, etc. Subtract fees and taxes.</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-      <div class="form-group">
-      <label for="formGroupExampleInput2">8 - What is the value of your brokerage account? <i class="fa fa-chart-line" style="color:orange"></i> </label>
-      <p class="explanation">Stocks, Mutual Funds, Bonds, etc.</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">9 - What is the value of your real estate investment properties? <i class="fa fa-home" style="color:purple"></i> </label>
-      <p class="explanation">This doesnt include the house youre living in. Subtract fees and taxes.</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">10 - What is the value of your business merchandise inventory? <i class="fa fa-home" style="color:purple"></i> </label>
+      </div> 
+
+    <div class="form-group money-text-field required">
+      <label for="formGroupExampleInput2">How much physical cash do you have?  </label>
       <p class="explanation"></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="cash-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">11 - What is the value of your ownership stake in any business, private companies, corporations, and partnerships? <i class="fa fa-home" style="color:purple"></i> </label>
-      <p class="explanation">Subtract fees and taxes.</p>
+
+    <div class="form-group money-text-field required">
+      <label>What is the total value of your savings account(s)?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="savings-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+    <div class="form-group money-text-field required">
+      <label>What is the total value of your checking account(s)?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="checking-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+    <div class="form-group money-text-field required">
+      <label>What is the total value of your 401k account(s)?</label>  
+      <p class="explanation">Only the vested assets</p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="retirement-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+    <div class="form-group money-text-field required">
+      <label>What is the total value of your IRA account(s)?</label>  
+      <p class="explanation">Only the vested assets</p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="IRA-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+        <div class="form-group money-text-field required">
+      <label>What is the total value of your stock portfolio?</label>  
+      <p class="explanation">Only the vested assets. Include Mutual Funds, RSUs, ESPP. Pay on the current value. </p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="stock-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+        <div class="form-group money-text-field required">
+      <label>Are you receiving a pension?</label>  
+      <p class="explanation"> You should pay zakat on this <em>only</em> when you begin receiving it. It will count as ordinary income. </p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="stock-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+
+    <h3>💍 Jewelry </h3>
+    <p class="explanation"> On jewelry, zakat is due on the following categories:  </p>
+    <p class="explanation"> (1) Business merchandise (You sell jewelry)</p>
+    <p class="explanation">(2) Jewelry stored for financial purposes (held as savings, held for appreciation)</p>
+    <p class="explanation"> (3) Any jewelry with the intention of profit </p>
+    <p class="explanation"> No Zakah is due on personal jewelry that is worn occasionally and not intended for profit. The jewelry must have been owned for the duration of the <em>hawl</em>. </p>
+
+    <div class="form-group jewelry-text-field required">
+      <label>22 - What is the total value of your zakatable jewelry?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="jewelry-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+
+    <h3>💼 Business Assets </h3>
+    <p class="explanation"> The following are Zakatable business assets. There is no Zakah due on fixed assets, rental items, machinery, fixtures, or account payables.</p>
+    <div class="form-group business-text-field required">
+      <label for="formGroupExampleInput2">What is the value of your business merchandise inventory?  </label>
+      <p class="explanation"></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="business-inventory-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
-  
-     <div class="form-group">
-      <label for="formGroupExampleInput2">12 - What is the value of your company's account receivable <i class="fas fa-envelope" style="color:orange"></i> </label>
+
+    <div class="form-group business-text-field required">
+      <label for="formGroupExampleInput2">What is the value of your company's account receivable?  </label>
       <p class="explanation">Money owed to your company</p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="business-receivables-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
-  
-     <div class="form-group">
-      <label for="formGroupExampleInput2">13 - What are the your profits from your investments? </label>
-      <p class="explanation">This is gain over the course of the year, as well as disbursements (redemptions and dividends)</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-     <div class="form-group">
-      <label for="formGroupExampleInput2">14 - What is the value of your Trust Earnings </label>
-      <p class="explanation">How much has the value of your Trust increased in the previous year</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </div>
-  
-     <div class="form-group">
-      <label for="formGroupExampleInput2">15 - What is the value of your severance package? </label>
+
+    <div class="form-group business-text-field required">
+      <label for="formGroupExampleInput2">What is the value of your company's raw materials for production? </label>
       <p class="explanation"></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="business-rawmaterials-field" placeholder="0" data-multiplier="0.025">
       </div>
-    </div>    
-  
-     <div class="form-group">
-      <label for="formGroupExampleInput2">16 - What is the value of all non gold/silver minerals you own</label>
-      <p class="explanation">This includes anything sourced from the ground</p>
+    </div>
+
+    <div class="form-group business-text-field required">
+      <label for="formGroupExampleInput2">What is the value of your company's cash and accounts?  </label>
+      <p class="explanation"> </p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="business-cash-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
-  
-    <div class="form-group">
-        <label for="formGroupExampleInput2">17 - What is the value of grains and fruits you own </label>
-        <p class="explanation">This includes vegetables, and honey from some Madhabs</p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-        </div>
-      </div>
-  
-    <div class="form-group">
-        <label for="formGroupExampleInput2">18 - What is the value of all livestock you own </label>
-        <p class="explanation"></p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-        </div>
-      </div>
-  
-  <h3> <i class="fa fa-money-bill-wave" style="color:red"></i> Zakatable Liabilities </h3>
-  
-    <div class="form-group">
-        <label for="formGroupExampleInput2">18 - How much have you paid in bank overdrafts  </label>
-        <p class="explanation">To fund stocks and trade debtors only</p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-        </div>
-      </div>
-  
-    <div class="form-group">
-        <label for="formGroupExampleInput2">19 - How much do you owe to trade creditors</label>
-        <p class="explanation">This includes anyone who has sent your business goods, or supplied it with services that you have yet to pay</p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-        </div>
-      </div>
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">20 - What is the value of your business loans? <i class="fas fa-envelope" style="color:orange"></i> </label>
-      <p class="explanation">This includes loans to finance business merchandise, services, and trade debtors</p>
-  
+
+
+    <h3>🏠 Real Estate </h3>
+    <p class="explanation"> When it comes to real estate, zakat is due on business related properties owned for the duration of the <em>hawl</em>, as well as rental income made over the <em>hawl</em>. You do not owe zakat on your personal propery or on any property you own without a business intention.</p>
+
+
+    <div class="form-group realestate-text-field required">
+      <label>What is the total value of your business related real esate?</label>
+         <p class="explanation"> Subtract fees and taxes</p>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="realestate-business-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
+
+
+    <div class="form-group realestate-text-field required">
+      <label>What is the total amount of rental income you have earned over the <em>hawl</em>?</label>  
+      <p class="explanation"> Subtract maintenance costs</p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="realestate-income-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+    <h3>🐄 Livestock </h3>
+    <p class="explanation"> Zakat on Livestock applies only to free grazing animals. There is no Zakah due on animals that work for you.</p>
+
+    <div class="form-group livestock-text-field required">
+      <label>What is the total amount of cows and buffalo you've owned for the duration of the  <em>hawl</em>?</label>  
+         <p class="explanation"> For every 30 cows or buffalo, you owe 1 year old animal in Zakah.</p>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="realestate-business-field" placeholder="0" data-multiplier="0.033333">
+      </div>
+    </div>
+
+
+    <div class="form-group livestock-text-field required">
+      <label>What is the total amount of sheeps and goats you've owned for the duration of the  <em>hawl</em>?</label>  
+      <p class="explanation"> For every 40 sheeps or goats, you owe 1 animal in Zakah.</p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="realestate-income-field" placeholder="0" data-multiplier="0.0333333">
+      </div>
+    </div>
+
+
+
+
+
   
     <h3>🌾 Agriculture </h3>
     <p class="explanation">For agricultural products, zakat is due when the goods exceed 600 kg. However, there is no <em>hawl</em>, or minimum time period for which you must possess the goods. Instead, you should pay the zakat upon harvest. If you have not yet paid it, use the fields below to calculate the amount of zakat due.</p>
 
 
     <div class="form-group required">
-      <label>21 - Do you have at least 600 kg of agricultural produce?</label><br>
+      <label>Do you have at least 600 kg of agricultural produce?</label><br>
       <p class="explanation">Combine all like grains together, such as wheat, barley, oats.</p>
 
 
@@ -358,7 +358,7 @@
 
 
     <div class="form-group agricultral-text-field required">
-      <label>22 - What is the value of your agricultural products grown on naturally irrigated land?</label>  
+      <label>What is the value of your agricultural products grown on naturally irrigated land?</label>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -368,12 +368,54 @@
     </div>
 
     <div class="form-group agricultral-text-field required">
-      <label>23 - What is the value of your agricultural products grown on land that requires irrigation?</label>  
+      <label>What is the value of your agricultural products grown on land that requires irrigation?</label>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
         <input type="text" class="form-control" id="agriculture-manual-irrigation-field" placeholder="0" data-multiplier="0.05">
+      </div>
+    </div>
+
+
+
+
+  
+  <h3> <i class="fa fa-money-bill-wave" style="color:red"></i> Zakatable Liabilities </h3>
+  
+    <div class="form-group required">
+        <label for="formGroupExampleInput2">18 - How much have you paid in bank overdrafts?</label>
+        <p class="explanation">To fund stocks and trade debtors only</p>
+  
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+          </div>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+      </div>
+  
+    <div class="form-group required">
+        <label for="formGroupExampleInput2">19 - How much do you owe to trade creditors?</label>
+        <p class="explanation">This includes anyone who has sent your business goods, or supplied it with services that you have yet to pay</p>
+  
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+          </div>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+      </div>
+  
+    <div class="form-group required">
+      <label for="formGroupExampleInput2">20 - What is the value of your business loans? </label>
+      <p class="explanation">This includes loans to finance business merchandise, services, and trade debtors</p>
+  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
       </div>
     </div>
 
