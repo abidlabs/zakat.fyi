@@ -54,10 +54,12 @@ function updateZakatAmount() {
 
 $('#agriculture-yes').click(function(){
 	$('.agricultral-text-field').addClass('required')
+	$('.agricultral-text-field').removeClass('hidden')	
 	$('#agriculture-natural-irrigation-field').attr('data-multiplier', '0.10')
 	$('#agriculture-manual-irrigation-field').attr('data-multiplier', '0.05')
 })
 $('#agriculture-no').click(function(){
+	$('.agricultral-text-field').addClass('hidden')
 	$('.agricultral-text-field').removeClass('required')	
 	$('#agriculture-natural-irrigation-field').attr('data-multiplier', '0.00')
 	$('#agriculture-manual-irrigation-field').attr('data-multiplier', '0.00')

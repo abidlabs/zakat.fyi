@@ -102,6 +102,19 @@
    color:red;
 }
 
+.form-group.hidden>label:after { 
+   content:" (skip) ";
+   font-style: italic; 
+}
+
+.form-group.hidden .input-group{ 
+   display: none;
+}
+
+.form-group.hidden>label { 
+   color: gray; 
+}
+
 
 .btn-success-muted {
 	background-color: #5ec49e !important;
