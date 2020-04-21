@@ -8,22 +8,31 @@ $("form :input").change(function() {
   updateProgressBar();
   updateZakatAmount();
 });
-
+$('.btn-group').click(function() {
+  updateProgressBar();
+  updateZakatAmount();
+})
 
 
 // When the user scrolls the page, execute myFunction
 function updateProgressBar() {
-   var num_elements = 0
+   var num_required_elements = 0
    var num_filled_elements = 0
 
 	$('form *').filter(':input').each(function(){
-		num_elements += 1;
-	    if($.trim(this.value).length){
-	    	num_filled_elements += 1
-	    }
+		gparent = $(this).parent().parent()
+		if (gparent.hasClass('required')){
+			num_required_elements += 1;
+		    if($.trim(this.value).length){
+		    	num_filled_elements += 1
+		    }			
+		}
 	});
 
-  var scrolled = num_filled_elements * 100.0 / num_elements;
+	console.log(num_required_elements)
+	console.log(num_filled_elements)
+
+  var scrolled = num_filled_elements * 100.0 / num_required_elements;
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 
@@ -33,11 +42,23 @@ function updateZakatAmount() {
 
 	$('form *').filter(':input').each(function(){
 		var val = $(this).val()
+		var multiplier = $(this).attr('data-multiplier') || 0
 		if ($.isNumeric(val)) {
-			zakatAmount += parseInt(val);
+			zakatAmount += parseInt(val) * parseFloat(multiplier);
 		}
 	});
-	zakatAmount *= 0.025;
 	zakatAmount = zakatAmount.toFixed(2)
 	$('.zakat-amount').html(zakatAmount) 
 }
+
+
+$('#agriculture-yes').click(function(){
+	$('.agricultral-text-field').addClass('required')
+	$('#agriculture-natural-irrigation-field').attr('data-multiplier', '0.10')
+	$('#agriculture-manual-irrigation-field').attr('data-multiplier', '0.05')
+})
+$('#agriculture-no').click(function(){
+	$('.agricultral-text-field').removeClass('required')	
+	$('#agriculture-natural-irrigation-field').attr('data-multiplier', '0.00')
+	$('#agriculture-manual-irrigation-field').attr('data-multiplier', '0.00')
+})

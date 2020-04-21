@@ -97,7 +97,13 @@
 	color: #2e67b2;
 }
 
-.btn-success {
+.form-group.required>label:before { 
+   content:"* ";
+   color:red;
+}
+
+
+.btn-success-muted {
 	background-color: #5ec49e !important;
 }
 

@@ -59,7 +59,7 @@
   <nav class="navbar navbar-expand-lg navbar-light  text-center">
     <div class="mx-auto zakat-bar">
       <span>My Zakat Due: <small>(in progress)</small></span>
-      <span id="zakat-val">$<span class="zakat-amount">0</span></span>
+      <span id="zakat-val">$<span class="zakat-amount">0.00</span></span>
       <span id="zakat-preview"> - below the nisab</span>
     </div>
   </nav>
@@ -87,14 +87,7 @@
         <option value="&#8377;">&#8377; - INR</option>
       </select>
     </div>
-  
-    <div class="form-group">
-      <label for="formGroupExampleInput2">2 - Are you calculating zakah for just yourself or are you including a spouse?</label><br>
-      <div>
-        <button type="button" class="btn btn-success"><i class="fa fa-user"></i> Myself</button>
-        <button type="button" class="btn btn-secondary"><i class="fa fa-user-friends"></i> Myself and Spouse </button>
-      </div>
-    </div>
+
   
     <h3> <i class="fa fa-money-bill-wave"></i> Zakatable Assets </h3>
   
@@ -344,6 +337,47 @@
       </div>
     </div>
   
+    <h3>🌾 Agriculture </h3>
+    <p class="explanation">For agricultural products, zakat is due when the goods exceed 600 kg. However, there is no <em>hawl</em>, or minimum time period for which you must possess the goods. Instead, you should pay the zakat upon harvest. If you have not yet paid it, use the fields below to calculate the amount of zakat due.</p>
+
+
+    <div class="form-group required">
+      <label>21 - Do you have at least 600 kg of agricultural produce?</label><br>
+      <p class="explanation">Combine all like grains together, such as wheat, barley, oats.</p>
+
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-success active">
+          <input type="radio" name="options" id="agriculture-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have at least 600 kg &nbsp; &nbsp;
+        </label>
+        <label class="btn btn-success">
+          <input type="radio" name="options" id="agriculture-no" autocomplete="off">  &nbsp; &nbsp; No, I have less than 600 kg &nbsp; &nbsp;
+        </label>
+      </div>
+    </div>
+
+
+    <div class="form-group agricultral-text-field required">
+      <label>22 - What is the value of your agricultural products grown on naturally irrigated land?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="agriculture-natural-irrigation-field" placeholder="0" data-multiplier="0.10">
+      </div>
+    </div>
+
+    <div class="form-group agricultral-text-field required">
+      <label>23 - What is the value of your agricultural products grown on land that requires irrigation?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control" id="agriculture-manual-irrigation-field" placeholder="0" data-multiplier="0.05">
+      </div>
+    </div>
+
+
   </form>
   
   
@@ -356,7 +390,7 @@
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h6 class="card-subtitle mb-2 text-muted">Zakat Due:</h6>
-        <p class="card-text">$<span class="zakat-amount">45</span></p>
+        <p class="card-text">$<span class="zakat-amount">0.00</span></p>
       </div>
     </div>    
   </center>
