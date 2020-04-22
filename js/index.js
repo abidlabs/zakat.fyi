@@ -41,20 +41,27 @@ function updateProgressBar() {
 // When the user scrolls the page, execute myFunction
 function updateZakatAmount() {
 	var zakatAmount = 0
+	var totalAssetsMinusLiabilities = 0
 
 	$('form *').filter(':input').each(function(){
 		var val = $(this).val()
 		var multiplier = $(this).attr('data-multiplier') || 0
 		if ($.isNumeric(val)) {
 			zakatAmount += parseInt(val) * parseFloat(multiplier);
+			if (parseFloat(multiplier) > 0){
+				totalAssetsMinusLiabilities += parseInt(val)
+			}
+			else {
+				totalAssetsMinusLiabilities -= parseInt(val)
+			}
 		}
 	});
-	if (zakatAmount < nisab){
+	if (totalAssetsMinusLiabilities < nisab){
 		zakatAmount = '0.00'
-		$('#zakat-preview').css('display', 'inline') 
+		$('.below-nisab').css('display', 'inline') 
 	} else {
 		zakatAmount = zakatAmount.toFixed(2)
-		$('#zakat-preview').css('display', 'none') 
+		$('.below-nisab').css('display', 'none') 
 	}
 	$('.zakat-amount').html(zakatAmount) 
 }
