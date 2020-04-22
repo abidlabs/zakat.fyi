@@ -60,7 +60,7 @@
     <div class="mx-auto zakat-bar">
       <span>My Zakat Due: <small>(in progress)</small></span>
       <span id="zakat-val">$<span class="zakat-amount">0.00</span></span>
-      <span id="zakat-preview"> - below the nisab</span>
+      <span id="zakat-preview" class="below-nisab"><small>(below nisab)</small></span>
     </div>
   </nav>
 
@@ -97,45 +97,46 @@
     <p class="explanation"> </p>
     
         <div class="form-group required">
-      <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
+      <label for="formGroupExampleInput2">How many ounces of gold do you have? Alternatively, you can provide the $ value. If you provide both, we will sum them for you.</label>
       <p class="explanation">We will use the value of gold at $1,703.55 per ounce. <strong>Zakat rate: 2.5%</strong></p>
   
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">oz</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ounces of gold" data-multiplier="42.58875">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Computed value: ">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Value" data-multiplier="0.025">
         </div>
+        <div>Total value: <span id="total-gold-value-amount"></span></div>
       </div>  
   
     <div class="form-group required">
-      <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
+      <label for="formGroupExampleInput2">How many ounces of silver do you have? Again, you can provide the $ value. If you provide both, we will sum them for you. </label>
       <p class="explanation">We will use the value of silver at $15.23 per ounce. <strong>Zakat rate: 2.5%</strong></p>
   
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">oz</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ounces of silver" data-multiplier="0.38075">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Computed value: ">
-        </div>
-  
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Value: " data-multiplier="0.025">
+        </div>  
+        <div>Total value: <span id="total-silver-value-amount"></span></div>
       </div> 
 
     <div class="form-group money-text-field required">
-      <label for="formGroupExampleInput2">How much physical cash do you have?  </label>
-      <p class="explanation"></p>
+      <label for="formGroupExampleInput2">How much physical cash do you have? </label>
+      <p class="explanation">Sitting under your mattress for example. <strong>Zakat rate: 2.5%</strong></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -147,6 +148,7 @@
 
     <div class="form-group money-text-field required">
       <label>What is the total value of your savings account(s)?</label>  
+      <p class="explanation">Treated like cash. <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -157,6 +159,7 @@
 
     <div class="form-group money-text-field required">
       <label>What is the total value of your checking account(s)?</label>  
+      <p class="explanation">Treated like cash. <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -167,7 +170,7 @@
 
     <div class="form-group money-text-field required">
       <label>What is the total value of your 401k account(s)?</label>  
-      <p class="explanation">Only the vested assets</p>
+      <p class="explanation">Only include assets that have vested, meaning that they belong to you. <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -178,7 +181,7 @@
 
     <div class="form-group money-text-field required">
       <label>What is the total value of your IRA account(s)?</label>  
-      <p class="explanation">Only the vested assets</p>
+      <p class="explanation">Only include assets that have vested <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -189,7 +192,7 @@
 
         <div class="form-group money-text-field required">
       <label>What is the total value of your stock portfolio?</label>  
-      <p class="explanation">Only the vested assets. Include Mutual Funds, RSUs, ESPP. Pay on the current value. </p>
+      <p class="explanation">Only the vested assets. Include Mutual Funds, RSUs, ESPP. Pay on the current value. <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -200,7 +203,7 @@
 
         <div class="form-group money-text-field required">
       <label>Are you receiving a pension?</label>  
-      <p class="explanation"> You should pay zakat on this <em>only</em> when you begin receiving it. It will count as ordinary income. </p>
+      <p class="explanation"> You should pay zakat on this <em>only</em> when you begin receiving it. It will count as ordinary income. <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -211,14 +214,15 @@
 
 
     <h3>💍 B. Jewelry </h3>
-    <p class="explanation"> On jewelry, zakat is due on the following categories:  </p>
-    <p class="explanation"> (1) Business merchandise (You sell jewelry)</p>
-    <p class="explanation">(2) Jewelry stored for financial purposes (held as savings, held for appreciation)</p>
-    <p class="explanation"> (3) Any jewelry with the intention of profit </p>
+    <p class="explanation"> On jewelry, zakat is due on the following categories:</p> 
+    <p class="explanation">(1) Business merchandise (You sell jewelry)
+    <br>(2) Jewelry stored for financial purposes (held as savings, held for appreciation)
+    <br>(3) Any jewelry with the intention of profit</p>
     <p class="explanation"> No Zakah is due on personal jewelry that is worn occasionally and not intended for profit. The jewelry must have been owned for the duration of the <em>hawl</em>. </p>
 
     <div class="form-group jewelry-text-field required">
       <label>22 - What is the total value of your zakatable jewelry?</label>  
+      <p class="explanation"> Reminder: not personal jewelry. <strong>Zakat rate: 2.5%</strong></p>      
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -232,7 +236,7 @@
     <p class="explanation"> The following are Zakatable business assets. There is no Zakah due on fixed assets, rental items, machinery, fixtures, or account payables.</p>
     <div class="form-group business-text-field required">
       <label for="formGroupExampleInput2">What is the value of your business merchandise inventory?  </label>
-      <p class="explanation"></p>
+      <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -244,7 +248,7 @@
 
     <div class="form-group business-text-field required">
       <label for="formGroupExampleInput2">What is the value of your company's account receivable?  </label>
-      <p class="explanation">Money owed to your company</p>
+      <p class="explanation">This is money owed to your company, but not yet paid for by customers. <strong>Zakat rate: 2.5%</strong></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -256,7 +260,7 @@
 
     <div class="form-group business-text-field required">
       <label for="formGroupExampleInput2">What is the value of your company's raw materials for production? </label>
-      <p class="explanation"></p>
+      <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -268,7 +272,7 @@
 
     <div class="form-group business-text-field required">
       <label for="formGroupExampleInput2">What is the value of your company's cash and accounts?  </label>
-      <p class="explanation"> </p>
+      <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -285,7 +289,7 @@
 
     <div class="form-group realestate-text-field required">
       <label>What is the total value of your business related real esate?</label>
-         <p class="explanation"> Subtract fees and taxes</p>  
+         <p class="explanation"> Subtract fees and taxes. <strong>Zakat rate: 2.5%</strong></p>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -297,7 +301,7 @@
 
     <div class="form-group realestate-text-field required">
       <label>What is the total amount of rental income you have earned over the <em>hawl</em>?</label>  
-      <p class="explanation"> Subtract maintenance costs</p>
+      <p class="explanation"> Subtract maintenance costs. <strong>Zakat rate: 2.5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -316,7 +320,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="realestate-business-field" placeholder="0" data-multiplier="0.033333">
+        <input type="text" class="form-control" id="realestate-business-field" placeholder="0">
       </div>
     </div>
 
@@ -328,7 +332,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="realestate-income-field" placeholder="0" data-multiplier="0.0333333">
+        <input type="text" class="form-control" id="realestate-income-field" placeholder="0">
       </div>
     </div>
 
@@ -359,6 +363,7 @@
 
     <div class="form-group agricultral-text-field required">
       <label>What is the value of your agricultural products grown on naturally irrigated land?</label>  
+      <p class="explanation"><strong>Zakat rate: 10%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -369,6 +374,7 @@
 
     <div class="form-group agricultral-text-field required">
       <label>What is the value of your agricultural products grown on land that requires irrigation?</label>  
+      <p class="explanation"><strong>Zakat rate: 5%</strong></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -392,7 +398,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0" data-multiplier="-0.025">
         </div>
       </div>
   
@@ -404,7 +410,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0" data-multiplier="-0.025">
         </div>
       </div>
   
@@ -416,7 +422,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0" data-multiplier="-0.025">
       </div>
     </div>
 

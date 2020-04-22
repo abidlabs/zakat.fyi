@@ -1,3 +1,5 @@
+const nisab = 4560.33
+
 function calculateZakah(){
 	// load options that determine which opinion is being followed
 	// call submethod for relevant sub-opinion	
@@ -47,7 +49,13 @@ function updateZakatAmount() {
 			zakatAmount += parseInt(val) * parseFloat(multiplier);
 		}
 	});
-	zakatAmount = zakatAmount.toFixed(2)
+	if (zakatAmount < nisab){
+		zakatAmount = '0.00'
+		$('#zakat-preview').css('display', 'inline') 
+	} else {
+		zakatAmount = zakatAmount.toFixed(2)
+		$('#zakat-preview').css('display', 'none') 
+	}
 	$('.zakat-amount').html(zakatAmount) 
 }
 
