@@ -91,6 +91,15 @@
 	font-size: 2em;
 	color: #2e67b2;
 }
+#calculate-zakat-button{
+	color:white;
+	margin-bottom:15px;
+}
+
+#learn-more a{
+	color:black;
+	font-size:0.85rem;
+}
 
 .form-group.required>label:before { 
    content:"* ";

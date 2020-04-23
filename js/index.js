@@ -5,6 +5,13 @@ function calculateZakah(){
 	// call submethod for relevant sub-opinion	
 }
 
+$("#calculate-zakat-button").click(function() {
+    $('html, body').animate({
+        scrollTop: $("nav").offset().top
+    }, 1000);
+});
+
+
 // When any element of the form changes
 $("form :input").change(function() {
   updateProgressBar();

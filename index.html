@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-  <link rel="stylesheet" href="css/index.css?v=3">
+  <link rel="stylesheet" href="css/index.css?v=4">
   <link rel="icon" href="taboo-logo2.png" type="image/png">
   <title>Zakat.fyi</title>
 
@@ -50,11 +50,19 @@
   <div class="container" id="hero">
     <img src="assets/logo.png" id="header-logo" class="img-fluid" alt="Responsive image">
     <p class="separator">understand your zakat</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
     <div id="desc">
       <img id="plant1" src="assets/plants1.svg">
       <img id="plant2" src="assets/plants2.svg">
-      <p><span id="num-people">558 people</span> have calculated their true zakat using zakat.fyi </p>
+      <p><span id="num-people">558 people</span> have calculated their true zakat using Zakat.fyi </p>
       <p><strong>Let's get started on yours by calculating your zakat step by step</strong></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Calculate your zakat</strong></button>
+      <p id="learn-more"><a href="about.html">Learn more about our methodology</a></p>
     </div>
   </div>
 
@@ -92,20 +100,25 @@
     </div>
 
     <p>1b. Let's Calculate our Niṣāb </p>
-    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakah. This amount was set by our Prophet Muhammad (PBUH) at 595 grams of Silver. Today, the price of Silver per gram is S. Therefore, the niṣāb is N.  </p>
+    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (PBUH) at 595 grams of Silver. Today, the price of Silver per gram is S. Therefore, the niṣāb is N.  </p>
 
     <p>1c. Let's Set our <em>Hawl</em> </p>
-    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but dealing with your Zakat. This is the lunar year, 11 days shorter than the regular year. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakah last year. </p>
+    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your zakat. This is the lunar year, 11 days shorter than the regular year. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakat last year. </p>
 
-    <p class="explanation"> If you're worried your total liable wealth dropped below N sometime during the <em>hawl</em>, double check using a  snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakah!</p>
+    <p class="explanation"> If you're worried your total liable wealth dropped below N sometime during the <em>hawl</em>, double check using a  snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakat!</p>
+
+    <p>1d. You vs. You + Spouse </p>
+    <p class="explanation"> The zakat is due by the person who owns the wealth, whether that be man or woman. If you choose, you can pay zakat on behalf of your spouse, in which case, make sure to the sum the total for both spouses for each of these questions.</p>
+
+
 
 <h3>💰 Zakatable Assets </h3>
     <p class="explanation"> </p>
 
     <p>2a. Cash 💸 </p> 
        <div class="form-group money-text-field required">
-      <label for="formGroupExampleInput2">What is the total value of your cash on hand?</label>
-      <p class="explanation"></p>
+      <label for="formGroupExampleInput2">What is the total value of your physical cash on hand?</label>
+      <p class="explanation">Cash you've withdrawn to give out at Eid for example</p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -139,7 +152,7 @@
     </div>
 
 
-    <p class="explanation"> The only precious metals that Zakah is due on are silver and gold. Zakah is not due on any of the precious jewels in your gold or silver jewelry. You want to get the weight of the pure weight of silver/gold, and not any other metal that may be mixed in. Don't forget about utensils and other gold items you may own. </p>
+    <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. Zakat is not due on any of the precious jewels in your gold or silver jewelry. You want to get the weight of the pure silver/gold, and not any other metal that may be mixed in. Don't forget about utensils and other gold items you may own. </p>
 
     <p>2d. Silver 🥄 </p>
          
@@ -183,8 +196,8 @@
  
       <p>2f. Active Investments 📈 </p>
         <div class="form-group money-text-field required">
-      <label>What is the aggregate value of your actively traded shares?</label>  
-      <p class="explanation">You will treat these shares the same way you would if you had them as cash in your pocket.</p>
+      <label>What is the aggregate value of your <strong>actively</strong> traded shares? </label>  
+      <p class="explanation">A good rule of thumb for active investments is: are you planning on holding these stocks for less than 366 days? You will treat these shares the same way you would if you had them as cash in your pocket.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -308,7 +321,7 @@
 
 
     <p> 2j. Post-tax 401(k) distributions 👴
-         <p class="explanation"> Joe Bradford's recommended Zakah calculation is to calculate Zakah only on what has your full control, or what you have withdrawn. This is treating your 401k like passive investment. If you reach retirement age and cash out, you will pay zakat only one year on the entire amount, and then every year after because you will have unfettered access to the full amount. If you withdraw early, then you will pay zakat on the net amount you withdraw after taxes and penalties </p>
+         <p class="explanation"> Joe Bradford's recommended Zakat calculation is to calculate Zakat only on what has your full control, or what you have withdrawn. This is treating your 401k like passive investment. If you reach retirement age and cash out, you will pay zakat only one year on the entire amount, and then every year after because you will have unfettered access to the full amount. If you withdraw early, then you will pay zakat on the net amount you withdraw after taxes and penalties </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax 401(k) distribution?</label>  
       <p class="explanation"> </p>
@@ -360,7 +373,7 @@
     </div>
 
     <p> 2n. HSA Accounts 💉
-         <p class="explanation"> You do not pay Zakah on your FSA, because you do not have full access to that amount. But HSA funds are accessible, so they will be treated as cash. </p>
+         <p class="explanation"> You do not pay Zakat on your FSA, because you do not have full access to that amount. But HSA funds are accessible, so they will be treated as cash. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your HSA account?</label>  
       <p class="explanation"> </p>
@@ -399,7 +412,7 @@
     </div>
 
     <p> 2q. Vacant Property 🏚️
-         <p class="explanation"> If you own a property, but do not have plans for it, then treat it like your passive investments and pay Zakah <em>once</em> on the value received from sale of the inactive property. </p>
+         <p class="explanation"> If you own a property, but do not have plans for it, then treat it like your passive investments and pay Zakat <em>once</em> on the value received from sale of the inactive property. </p>
         <div class="form-group money-text-field required">
       <label>What is the value received from sale of the inactive property?</label>  
       <p class="explanation"> </p>
@@ -412,7 +425,7 @@
     </div>
 
     <p> 2r. Rental Income 🏘️
-         <p class="explanation"> If you rent a property, you do not need to pay Zakah on the value of the property itself. The property will count as the tool of your trade, rather than the result. </p>
+         <p class="explanation"> If you rent a property, you do not need to pay Zakat on the value of the property itself. The property will count as the tool of your trade, rather than the result. </p>
         <div class="form-group money-text-field required">
       <label>What is the aggregate value of rental income?</label>  
       <p class="explanation">If you added your rental income to your general checking or savings accounts, do not double count the earnings here. However, if you have a separate account for rental income, add that value in here. </p>
@@ -451,7 +464,7 @@
     </div>
 
     <p> 2u. Livestock 🐄
-         <p class="explanation"> Zakat on Livestock applies only to free grazing animals. If you own animals for personal use, you do not have to pay Zakah on them. If you keep any animals for sale, you'll treat them as business inventory </p>
+         <p class="explanation"> Zakat on Livestock applies only to free grazing animals. If you own animals for personal use, you do not have to pay Zakat on them. If you keep any animals for sale, you'll treat them as business inventory </p>
         <div class="form-group money-text-field required">
       <label>What is the value of livestock you have for sale?</label>  
       <p class="explanation"> </p>
@@ -692,7 +705,7 @@
     <p class="explanation">(1) Business merchandise (You sell jewelry)
     <br>(2) Jewelry stored for financial purposes (held as savings, held for appreciation)
     <br>(3) Any jewelry with the intention of profit</p>
-    <p class="explanation"> No Zakah is due on personal jewelry that is worn occasionally and not intended for profit. The jewelry must have been owned for the duration of the <em>hawl</em>. </p>
+    <p class="explanation"> No Zakat is due on personal jewelry that is worn occasionally and not intended for profit. The jewelry must have been owned for the duration of the <em>hawl</em>. </p>
 
     <div class="form-group jewelry-text-field required">
       <label>What is the total value of your zakatable jewelry?</label>  
@@ -708,7 +721,7 @@
 
 
     <h3>💼 C. Business Assets </h3>
-    <p class="explanation"> The following are Zakatable business assets. There is no Zakah due on fixed assets, rental items, machinery, fixtures, or account payables.</p>
+    <p class="explanation"> The following are Zakatable business assets. There is no Zakat due on fixed assets, rental items, machinery, fixtures, or account payables.</p>
     <div class="form-group business-text-field required">
       <label for="formGroupExampleInput2">What is the value of your business merchandise inventory?  </label>
       <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
@@ -786,11 +799,11 @@
     </div>
 
     <h3>🐄 E. Livestock </h3>
-    <p class="explanation"> Zakat on Livestock applies only to free grazing animals. There is no Zakah due on animals that work for you.</p>
+    <p class="explanation"> Zakat on Livestock applies only to free grazing animals. There is no Zakat due on animals that work for you.</p>
 
     <div class="form-group livestock-text-field required">
       <label>What is the total amount of cows and buffalo you've owned for the duration of the  <em>hawl</em>?</label>  
-         <p class="explanation"> For every 30 cows or buffalo, you owe 1 year old animal in Zakah.</p>  
+         <p class="explanation"> For every 30 cows or buffalo, you owe 1 year old animal in Zakat.</p>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -802,7 +815,7 @@
 
     <div class="form-group livestock-text-field required">
       <label>What is the total amount of sheeps and goats you've owned for the duration of the  <em>hawl</em>?</label>  
-      <p class="explanation"> For every 40 sheeps or goats, you owe 1 animal in Zakah.</p>
+      <p class="explanation"> For every 40 sheeps or goats, you owe 1 animal in Zakat.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -932,7 +945,7 @@
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2020 Zakat.fyi</p>
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">About</a></li>
+          <li class="list-inline-item"><a href="about.html">About</a></li>
         </ul>
       </footer>
 
