@@ -70,7 +70,7 @@
   <nav class="navbar navbar-expand-lg navbar-light  text-center">
     <div class="mx-auto zakat-bar">
       <span>My Zakat Due: <small>(in progress)</small></span>
-      <span id="zakat-val">$<span class="zakat-amount">0.00</span></span>
+      <span id="zakat-val"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></span>
       <span class="below-nisab" style="margin-left:10px"><small> (below nisab)</small></span>
     </div>
   </nav>
@@ -90,12 +90,10 @@
   <form>
     <div class="form-group">
       <label for="formGroupExampleInput">1a. What is the currency you would like to use?</label>
-      <select class="custom-select">
-        <option selected value="$">$ - USD</option>
-        <option value="&euro;">&euro; - Euro</option>
-        <option value="&#8360;">&#8360; - PKR</option>
-        <option value="$">$ - CAD</option>
-        <option value="&#8377;">&#8377; - INR</option>
+      <select class="custom-select" id="currency-select" disabled>
+        <option selected value="USD">$ - USD</option>
+        <option value="EUR">&euro; - Euro</option>
+        <option value="CAD">$ - CAD</option>
       </select>
     </div>
 
@@ -931,7 +929,7 @@
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h6 class="card-subtitle mb-2 text-muted">Zakat Due:</h6>
-        <p class="card-text">$<span class="zakat-amount">0.00</span></p>
+        <p class="card-text"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></p>
         <p class="below-nisab">(below nisab)</p>
       </div>
     </div>    

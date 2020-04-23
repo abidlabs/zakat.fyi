@@ -1,4 +1,37 @@
-const nisab = 4560.33
+var nisab = 4560.33 // TODO(Iqra): calculate this dynamically based on value of silver
+
+var currencySymbols = {
+  "USD": "$",
+  "EUR": "&euro;",
+  "CAD": "$", 
+};
+
+
+
+var currencyConversions = {
+  "USD": 1.00,
+  "EUR": 1.00,
+  "CAD": 1.00, 
+}; // These are updated through JSON requests
+
+var numCurrenciesLoaded = 0
+for (var curr in currencyConversions){
+	$.getJSON("https://api.exchangeratesapi.io/latest?base=USD&symbols=" + curr, function(json){
+	    currencyConversions[curr] = json["rates"][curr]
+	    numCurrenciesLoaded += 1
+	    if (numCurrenciesLoaded == Object.keys(currencyConversions).length) { // Hackish way to confirm that all of the conversions have loaded
+	    	$('#currency-select').removeAttr('disabled')
+	    }
+	});	
+}
+
+
+$('#currency-select').change(function(){
+	var symbol = currencySymbols[$(this).val()]
+	$('.currency-prepend').html(symbol)
+	nisab *=  currencyConversions[symbol]
+})
+
 
 function calculateZakah(){
 	// load options that determine which opinion is being followed
@@ -38,8 +71,6 @@ function updateProgressBar() {
 		}
 	});
 
-	console.log(num_required_elements)
-	console.log(num_filled_elements)
 
   var scrolled = num_filled_elements * 100.0 / num_required_elements;
   document.getElementById("myBar").style.width = scrolled + "%";
