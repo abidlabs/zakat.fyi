@@ -30,8 +30,7 @@
     content="Understand and calculate your true Zakat obligations through our simple and comprehensive form.">
   <meta name="twitter:image" content="https://i.imgur.com/gWmxYlg.png">
 
-  <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
-  <SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
+  <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52040224-4"></script>
@@ -156,40 +155,42 @@
          
     <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
-      <p class="explanation">We will use silver's spot price at $0.49 per gram. Source: https://www.apmex.com/silver-price </p>
+      <p class="explanation">We will use silver's spot price at $0.49 per gram. Source: https://www.apmex.com/silver-price. Alternatively, you can provide the <span class="currency-prepend">$</span> value. If you provide both, we will sum them for you.  </p>
 
          <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">oz</span>
+            <span class="input-group-text" id="basic-addon1">grams</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
           </div>
-          <input type="text" class="form-control" id="silver-field" placeholder="Computed value: ">
+          <input type="text" class="form-control" id="silver-field" placeholder="0">
         </div>
-  
+      
+      Total value: <span id="silver-total-value" class="heavy"><span class="currency-prepend">$</span>0.00</span>
       </div> 
 
       <p>2e. Gold 🏆 </p>
         <div class="form-group required">
       <label for="formGroupExampleInput2">How many grams of gold do you have? </label>
-      <p class="explanation">We will use gold's spot price at $55.57 per gram. Source: https://www.apmex.com/gold-price </p>
+      <p class="explanation">We will use gold's spot price at $55.57 per gram. Source: https://www.apmex.com/gold-price. Alternatively, you can provide the <span class="currency-prepend">$</span> value. If you provide both, we will sum them for you. </p>
   
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">oz</span>
+            <span class="input-group-text" id="basic-addon1">grams</span>
           </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
           </div>
-          <input type="text" class="form-control" id="gold-field" placeholder="Computed value: ">
+          <input type="text" class="form-control" id="gold-field" placeholder="0">
         </div>
+      Total value: <span id="gold-total-value" class="heavy"><span class="currency-prepend">$</span>0.00</span>
       </div>  
  
       <p>2f. Active Investments 📈 </p>
