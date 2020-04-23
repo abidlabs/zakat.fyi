@@ -923,17 +923,26 @@
         </div>
       </div>
 
-    <h3>🎉 Congratulations, you've calculated your true zakat! </h3>  
+  <!-- Hide initially, once zakat is calculated, just called $('.congrats-message-container').show() -->
+  <div class="congrats-message-container" style="/*display: none;*/">
+    <h3 class="text-center">🎉 Congratulations, you've calculated your true zakat! </h3>  
     
     <center>    
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted">Zakat Due:</h6>
-        <p class="card-text"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></p>
-        <p class="below-nisab">(below nisab)</p>
-      </div>
-    </div>    
-  </center>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Zakat Due:</h6>
+          <p class="card-text"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></p>
+          <p class="below-nisab">(below nisab)</p>
+        </div>
+      </div>    
+      <ul class="share-buttons" style="margin-top: 25px; list-style: none; padding: 0; ">
+          <li style="display: inline;"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzakat.fyi&amp;quote=Calculate%20your%20Zakat%20in%205%20minutes" title="Share on Facebook" target="_blank"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #3C5A99;"><i class="fab fa-facebook"></i></span></a></li>
+          <li style="display: inline;"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fzakat.fyi&amp;text=Calculate%20your%20Zakat%20in%205%20minutes%20http%3A%2F%2Fzakat.fyi" target="_blank" title="Tweet"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #1DA1F2;"><i class="fab fa-twitter"></i></span></a></li>
+          <li style="display: inline;"><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fzakat.fyi&amp;title=Calculate%20your%20Zakat%20in%205%20minutes" target="_blank" title="Submit to Reddit"><span style="font-size: 45px; margin-left:10px; margin-right: 10px; color: #FF4500;"><i class="fab fa-reddit"></i></span></a></li>
+          <li style="display: inline;"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fzakat.fyi&amp;title=Calculate%20your%20Zakat%20in%205%20minutes&amp;summary=Check%20out%20this%20salary%20transparency%20tool%20for%20software%20engineering%20companies&amp;source=http%3A%2F%2Fzakat.fyi" target="_blank" title="Share on LinkedIn"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #0077B5;"><i class="fab fa-linkedin"></i></span></a></li>
+        </ul>
+    </center>
+  </div>
     
     </div>
 
