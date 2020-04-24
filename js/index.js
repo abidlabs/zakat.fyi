@@ -15,7 +15,7 @@ $.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
     nisab = nisab_usd
     gold_price_per_oz = gold_price_per_oz_usd
     silver_price_per_oz = silver_price_per_oz_usd
-    
+
 	$('.nisab-price-value').html(nisab.toFixed(2))
 	$('.gold-price-value').html(gold_price_per_oz.toFixed(2))
 	$('.silver-price-value').html(silver_price_per_oz.toFixed(2))    
@@ -61,8 +61,16 @@ $('#currency-select').change(function(){
 	$('.nisab-price-value').html(nisab.toFixed(2))
 	$('.gold-price-value').html(gold_price_per_oz.toFixed(2))
 	$('.silver-price-value').html(silver_price_per_oz.toFixed(2))
+
+	updateMetalTotals()
 })
 
+function updateMetalTotals(){
+	var goldTotal = Number($('#gold-oz').val()) * gold_price_per_oz + Number($('#gold-value').val())  
+	var silverTotal = Number($('#silver-oz').val()) * silver_price_per_oz + Number($('#silver-value').val())  
+	$('#gold-total').html(goldTotal.toFixed(2))
+	$('#silver-total').html(silverTotal.toFixed(2))	
+}
 
 $("#calculate-zakat-button").click(function() {
     $('html, body').animate({
@@ -73,10 +81,12 @@ $("#calculate-zakat-button").click(function() {
 $("form :input").change(function() {
   updateProgressBar();
   updateZakatAmount();
+  updateMetalTotals()
 });
 $('.btn-group').click(function() {
   updateProgressBar();
   updateZakatAmount();
+  updateMetalTotals()
 })
 
 
