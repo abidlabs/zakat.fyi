@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-  <link rel="stylesheet" href="css/index.css?v=5">
+  <link rel="stylesheet" href="css/index.css?v=6">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <title>Zakat.fyi</title>
 
@@ -195,6 +195,24 @@
       Total value: <span id="gold-total-value" class="heavy"><span class="currency-prepend">$</span><span id="gold-total">0.00</span></span>
       </div>  
  
+
+    <div class="form-group required">
+      <label>2f-2i. Do you have financial investments?</label><br>
+      <p class="explanation">Such as stocks and bonds.</p>
+
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-success active">
+          <input type="radio" name="options" id="investments-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have financial investments &nbsp; &nbsp;
+        </label>
+        <label class="btn btn-success">
+          <input type="radio" name="options" id="investments-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+        </label>
+      </div>
+    </div>
+
+    <div class="investments-related">
+
       <p>2f. Active Investments 📈 </p>
         <div class="form-group money-text-field required">
       <label>What is the aggregate value of your <strong>actively</strong> traded shares? </label>  
@@ -318,6 +336,7 @@
         <input type="text" class="form-control" id="selling-longterm-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
+    </div>
 
 
 
@@ -399,6 +418,22 @@
       </div>
     </div>
 
+    <div class="form-group required">
+      <label>2p-2r. Do you own any real estate for business/investment purposes?</label><br>
+      <p class="explanation">Not including your own residential property.</p>
+
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-success active">
+          <input type="radio" name="options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
+        </label>
+        <label class="btn btn-success">
+          <input type="radio" name="options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+        </label>
+      </div>
+    </div>
+
+    <div class="real-estate-related">
     <p> 2p. Property for sale 🏡
          <p class="explanation"> Pay Zakat on the amount you would earn if you sold it right now. </p>
         <div class="form-group money-text-field required">
@@ -437,6 +472,23 @@
         <input type="text" class="form-control" id="rentalincome-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
+  </p>
+  </div>
+
+  <div class="form-group required">
+    <label>2s-2t. Do you own any businesses?</label><br>
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-success active">
+        <input type="radio" name="options" id="business-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own (a) business(es) &nbsp; &nbsp;
+      </label>
+      <label class="btn btn-success">
+        <input type="radio" name="options" id="business-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+      </label>
+    </div>
+  </div>
+
+  <div class="business-related">
 
     <p> 2s. Aggregate Cash Value of Inventory 📦
          <p class="explanation"> Count your inventory not under contract. </p>
@@ -463,6 +515,8 @@
         <input type="text" class="form-control" id="ar-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
+
+  </div>
 
     <p> 2u. Livestock 🐄
          <p class="explanation"> Zakat on Livestock applies only to free grazing animals. If you own animals for personal use, you do not have to pay Zakat on them. If you keep any animals for sale, you'll treat them as business inventory </p>
@@ -496,7 +550,7 @@
 
   <h3>Expenses and Liabilites</h3>
     
-    <p> 4a. Monthly Living Expenses 🍔
+    <p> 3a. Monthly Living Expenses 🍔
          <p class="explanation"> This can include: rent/mortgage payments, medical expenses, utilities, groceries, transport, upkeep, and any other miscellaneous expenses. </p>
         <div class="form-group money-text-field required">
       <label>What is your monthly living expense?</label>  
@@ -509,7 +563,7 @@
       </div>
     </div>
 
-    <p> 4b. Periodic Insurance Expenses 🚗
+    <p> 3b. Periodic Insurance Expenses 🚗
          <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance.</p>
         <div class="form-group money-text-field required">
       <label>What is the total of your insurance payments?</label>  
@@ -522,7 +576,7 @@
       </div>
     </div>
     
-    <p> 4c. Property Tax Payments 📋
+    <p> 3c. Property Tax Payments 📋
          <p class="explanation"> </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your property tax payments?</label>  
@@ -535,7 +589,7 @@
       </div>
     </div>
 
-    <p> 4d. Delinquent Tax Payment 📅 
+    <p> 3d. Delinquent Tax Payment 📅 
          <p class="explanation"> </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your delinquent tax payments?</label>  
@@ -548,7 +602,7 @@
       </div>
     </div>
 
-    <p> 4e. Miscellaneous Fines 🧾
+    <p> 3e. Miscellaneous Fines 🧾
          <p class="explanation"> </p>
         <div class="form-group money-text-field required">
       <label>What is the total of any other miscellaneous fines?</label>  
@@ -561,7 +615,7 @@
       </div>
     </div>
 
-    <p> 4e. Debts 💳
+    <p> 3f. Debts 💳
          <p class="explanation"> </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your debts owed to others?</label>  

@@ -15,6 +15,23 @@
   margin-bottom: 40px;	
 }
 
+.investments-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
+.real-estate-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
+
+.business-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
+
 .card-text{
 	font-size:3rem;
 	color: #5ec49e;

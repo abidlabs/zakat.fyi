@@ -50,6 +50,27 @@ $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
 
 // Event handlers
 
+$('#investments-yes').click(function(){
+	$('.investments-related').css('display', 'block')
+})
+$('#investments-no').click(function(){
+	$('.investments-related').css('display', 'none')
+})
+
+$('#real-estate-yes').click(function(){
+	$('.real-estate-related').css('display', 'block')
+})
+$('#real-estate-no').click(function(){
+	$('.real-estate-related').css('display', 'none')
+})
+
+$('#business-yes').click(function(){
+	$('.business-related').css('display', 'block')
+})
+$('#business-no').click(function(){
+	$('.business-related').css('display', 'none')
+})
+
 $('#currency-select').change(function(){
 	var symbol = currencySymbols[$(this).val()]
 	var conversionRate = currencyConversions[$(this).val()]
