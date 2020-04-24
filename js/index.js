@@ -1,12 +1,29 @@
-var nisab = 4560.33 // TODO(Iqra): calculate this dynamically based on value of silver
+// Calculate the price of gold, silver, and nisab dynamically
+
+var gold_price_per_oz_usd = 1723.82
+var gold_price_per_oz = 1723.82
+var silver_price_per_oz_usd =  15.154
+var silver_price_per_oz =  15.154
+var nisab_usd = 318.23
+var nisab = nisab_usd
+
+$.getJSON("https://fcsapi.com/api-v2/forex/latest?id=1984&access_key=JgLJmYW6dLtMgVDJ5xZ88MPyTBjqTznjjJFTBrnQte9FC3zqc1", function(json){
+    gold_price_per_oz_usd = json["response"][0]["price"]
+});	
+
+$.getJSON("https://fcsapi.com/api-v2/forex/latest?id=1975&access_key=JgLJmYW6dLtMgVDJ5xZ88MPyTBjqTznjjJFTBrnQte9FC3zqc1", function(json){
+    silver_price_per_oz_usd = json["response"][0]["price"]
+    nisab_usd = silver_price_per_oz_usd*21
+});	
+
+
+// Handle currency conversions (should happen after dynamic loading of prices)
 
 var currencySymbols = {
   "USD": "$",
   "EUR": "&euro;",
   "CAD": "$", 
 };
-
-
 
 var currencyConversions = {
   "USD": 1.00,
@@ -26,17 +43,17 @@ for (var curr in currencyConversions){
 }
 
 
+// Event handlers
+
 $('#currency-select').change(function(){
 	var symbol = currencySymbols[$(this).val()]
+	var conversionRate = currencyConversions[$(this).val()]
 	$('.currency-prepend').html(symbol)
-	nisab *=  currencyConversions[symbol]
+	nisab = nisab_usd * conversionRate
+	gold_price_per_oz = gold_price_per_oz_usd * conversionRate
+	silver_price_per_oz = silver_price_per_oz_usd * conversionRate
 })
 
-
-function calculateZakah(){
-	// load options that determine which opinion is being followed
-	// call submethod for relevant sub-opinion	
-}
 
 $("#calculate-zakat-button").click(function() {
     $('html, body').animate({
@@ -44,8 +61,6 @@ $("#calculate-zakat-button").click(function() {
     }, 1000);
 });
 
-
-// When any element of the form changes
 $("form :input").change(function() {
   updateProgressBar();
   updateZakatAmount();
@@ -56,7 +71,6 @@ $('.btn-group').click(function() {
 })
 
 
-// When the user scrolls the page, execute myFunction
 function updateProgressBar() {
    var num_required_elements = 0
    var num_filled_elements = 0
@@ -76,7 +90,6 @@ function updateProgressBar() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 
-// When the user scrolls the page, execute myFunction
 function updateZakatAmount() {
 	var zakatAmount = 0
 	var totalAssetsMinusLiabilities = 0
@@ -104,16 +117,3 @@ function updateZakatAmount() {
 	$('.zakat-amount').html(zakatAmount) 
 }
 
-
-$('#agriculture-yes').click(function(){
-	$('.agricultral-text-field').addClass('required')
-	$('.agricultral-text-field').removeClass('hidden')	
-	$('#agriculture-natural-irrigation-field').attr('data-multiplier', '0.10')
-	$('#agriculture-manual-irrigation-field').attr('data-multiplier', '0.05')
-})
-$('#agriculture-no').click(function(){
-	$('.agricultral-text-field').addClass('hidden')
-	$('.agricultral-text-field').removeClass('required')	
-	$('#agriculture-natural-irrigation-field').attr('data-multiplier', '0.00')
-	$('#agriculture-manual-irrigation-field').attr('data-multiplier', '0.00')
-})
