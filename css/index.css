@@ -2,7 +2,7 @@
 	height: 70px;
 	margin: 20px;
 }
-#num-people{
+#num-people,.heavy{
 	font-weight: bold;
 	color: #5ec49e;
 }
@@ -13,6 +13,23 @@
   height: 8px;
   background: #d4deda;
   margin-bottom: 40px;	
+}
+
+.investments-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
+.real-estate-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
+
+.business-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
 }
 
 .card-text{
@@ -90,6 +107,15 @@
 	margin-left: 32px;
 	font-size: 2em;
 	color: #2e67b2;
+}
+#calculate-zakat-button{
+	color:white;
+	margin-bottom:15px;
+}
+
+#learn-more a{
+	color:black;
+	font-size:0.85rem;
 }
 
 .form-group.required>label:before { 
