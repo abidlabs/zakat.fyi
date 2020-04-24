@@ -7,13 +7,18 @@ var silver_price_per_oz =  15.154
 var nisab_usd = 318.23
 var nisab = nisab_usd
 
-$.getJSON("https://fcsapi.com/api-v2/forex/latest?id=1984&access_key=JgLJmYW6dLtMgVDJ5xZ88MPyTBjqTznjjJFTBrnQte9FC3zqc1", function(json){
-    gold_price_per_oz_usd = json["response"][0]["price"]
-});	
-
-$.getJSON("https://fcsapi.com/api-v2/forex/latest?id=1975&access_key=JgLJmYW6dLtMgVDJ5xZ88MPyTBjqTznjjJFTBrnQte9FC3zqc1", function(json){
-    silver_price_per_oz_usd = json["response"][0]["price"]
+$.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
+    gold_price_per_oz_usd = json["items"][0]["xauPrice"]
+    silver_price_per_oz_usd = json["items"][0]["xagPrice"]
     nisab_usd = silver_price_per_oz_usd*21
+
+    nisab = nisab_usd
+    gold_price_per_oz = gold_price_per_oz_usd
+    silver_price_per_oz = silver_price_per_oz_usd
+    
+	$('.nisab-price-value').html(nisab.toFixed(2))
+	$('.gold-price-value').html(gold_price_per_oz.toFixed(2))
+	$('.silver-price-value').html(silver_price_per_oz.toFixed(2))    
 });	
 
 
@@ -23,24 +28,24 @@ var currencySymbols = {
   "USD": "$",
   "EUR": "&euro;",
   "CAD": "$", 
+  "GBP": "£",
+  "TRY": "₺"
 };
 
 var currencyConversions = {
   "USD": 1.00,
   "EUR": 1.00,
   "CAD": 1.00, 
+  "GBP": 1.00,
+  "TRY": 1.00
 }; // These are updated through JSON requests
 
-var numCurrenciesLoaded = 0
-for (var curr in currencyConversions){
-	$.getJSON("https://api.exchangeratesapi.io/latest?base=USD&symbols=" + curr, function(json){
+$.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
+	for (var curr in currencyConversions){
 	    currencyConversions[curr] = json["rates"][curr]
-	    numCurrenciesLoaded += 1
-	    if (numCurrenciesLoaded == Object.keys(currencyConversions).length) { // Hackish way to confirm that all of the conversions have loaded
-	    	$('#currency-select').removeAttr('disabled')
-	    }
-	});	
-}
+	};	
+	$('#currency-select').removeAttr('disabled')
+});
 
 
 // Event handlers
@@ -52,6 +57,10 @@ $('#currency-select').change(function(){
 	nisab = nisab_usd * conversionRate
 	gold_price_per_oz = gold_price_per_oz_usd * conversionRate
 	silver_price_per_oz = silver_price_per_oz_usd * conversionRate
+	
+	$('.nisab-price-value').html(nisab.toFixed(2))
+	$('.gold-price-value').html(gold_price_per_oz.toFixed(2))
+	$('.silver-price-value').html(silver_price_per_oz.toFixed(2))
 })
 
 
