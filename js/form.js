@@ -44,7 +44,7 @@ const getSelectValues = options => [].reduce.call(options, (values, option) => {
 * @param  {HTMLFormControlsCollection} elements  the form elements
 * @return {Object}                               form data as an object literal
 */
-const formToJSON = elements => [].reduce.call(elements, (data, element) => {
+export const formToJSON = elements => [].reduce.call(elements, (data, element) => {
   // Make sure the element has the required properties and should be added.
   if (isValidElement(element) && isValidValue(element)) {
     /*

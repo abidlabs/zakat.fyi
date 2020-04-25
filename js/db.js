@@ -19,10 +19,11 @@ function getBrowserData() {
 
 var db = firebase.firestore();
 
-function sendToDB() {
-  var uid = getCookie("uid");
+export function sendToDB() {
   var finishedForm = document.getElementById("form"); 
   var form_json = form.formToJSON(finishedForm.elements);
+  console.log(form_json);
+  var uid = cookies.getCookie("uid");
   db.collection("web_data").add({
     "uid": uid,
     "browser_info": info,

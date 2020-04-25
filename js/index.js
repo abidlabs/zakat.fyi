@@ -39,8 +39,8 @@ $(function() {
       }, 1000);
   });
 
-  //$(".finished").change(db.sendToDB);
-  $("form :input").change(db.updatePage);
+  $("#debts-field").change(db.sendToDB);
+  $("form :input").change(functions.updatePage);
   $('.btn-group').click(functions.updatePage);
 
 	$('.congrats-message-container').on("show", function() {
