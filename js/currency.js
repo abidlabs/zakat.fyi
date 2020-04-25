@@ -20,4 +20,3 @@ $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
 	};	
 	$('#currency-select').removeAttr('disabled')
 });
-
