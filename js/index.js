@@ -106,7 +106,7 @@ $("form :input").change(function() {
   updateProgressBar();
   updateZakatAmount();
 });
-$('.btn-group').click(function() {
+$('.btn-toolbar').click(function() {
   updateMetalTotals()
   updateProgressBar();
   updateZakatAmount();
