@@ -90,7 +90,9 @@ function updateMetalTotals(){
 	var goldTotal = Number($('#gold-oz').val()) * gold_price_per_oz + Number($('#gold-value').val())  
 	var silverTotal = Number($('#silver-oz').val()) * silver_price_per_oz + Number($('#silver-value').val())  
 	$('#gold-total').html(goldTotal.toFixed(2))
-	$('#silver-total').html(silverTotal.toFixed(2))	
+	$('#gold-total-hidden').val(goldTotal)	
+	$('#silver-total').html(silverTotal.toFixed(2))
+	$('#silver-total-hidden').val(silverTotal)	
 }
 
 $("#calculate-zakat-button").click(function() {
@@ -100,14 +102,14 @@ $("#calculate-zakat-button").click(function() {
 });
 
 $("form :input").change(function() {
+  updateMetalTotals()
   updateProgressBar();
   updateZakatAmount();
-  updateMetalTotals()
 });
 $('.btn-group').click(function() {
+  updateMetalTotals()
   updateProgressBar();
   updateZakatAmount();
-  updateMetalTotals()
 })
 
 
@@ -147,6 +149,9 @@ function updateZakatAmount() {
 			}
 		}
 	});
+	console.log('Total Assets Minus Liabilities:', totalAssetsMinusLiabilities)
+	console.log('Total Zakat:', zakatAmount)
+	
 	if (totalAssetsMinusLiabilities < nisab){
 		zakatAmount = '0.00'
 		$('.below-nisab').css('display', 'inline') 
