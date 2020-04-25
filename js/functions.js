@@ -1,5 +1,18 @@
 import * as prices from "./prices.js";
 
+// this manages an onshow event
+// makes it easy to add stuff to the db
+// source: https://www.viralpatel.net/jquery-trigger-custom-event-show-hide-element/
+(function ($) {
+	$.each(['show', 'hide'], function (i, ev) {
+		var el = $.fn[ev];
+		$.fn[ev] = function () {
+			this.trigger(ev);
+			return el.apply(this, arguments);
+		};
+	});
+})(jQuery);
+
 export function updatePage() {
   updateProgressBar();
   updateZakatAmount();

@@ -1,6 +1,7 @@
 import * as functions from "./functions.js";
 import * as prices from "./prices.js";
 import * as currency from "./currency.js";
+import * as db from "./db.js";
 
 // honestly, everything is going to touch nisab, so let's leave it to be global.
 window.nisab = currency.nisab_usd
@@ -33,16 +34,16 @@ $(function() {
   })
 
   $('#currency-select').change(function(){
-    var symbol = currencySymbols[$(this).val()]
-    var conversionRate = currencyConversions[$(this).val()]
-    $('.currency-prepend').html(symbol)
-    window.nisab = nisab_usd * conversionRate
-    currency.gold_price_per_oz = prices.gold_price_per_oz_usd * conversionRate
-    currency.silver_price_per_oz = prices.silver_price_per_oz_usd * conversionRate
+    var symbol = currency.currencySymbols[$(this).val()];
+    var conversionRate = currency.currencyConversions[$(this).val()];
+    $('.currency-prepend').html(symbol);
+    window.nisab = nisab_usd * conversionRate;
+    currency.gold_price_per_oz = prices.gold_price_per_oz_usd * conversionRate;
+    currency.silver_price_per_oz = prices.silver_price_per_oz_usd * conversionRate;
     
-    $('.nisab-price-value').html(nisab.toFixed(2))
-    $('.gold-price-value').html(gold_price_per_oz.toFixed(2))
-    $('.silver-price-value').html(silver_price_per_oz.toFixed(2))
+    $('.nisab-price-value').html(nisab.toFixed(2));
+    $('.gold-price-value').html(gold_price_per_oz.toFixed(2));
+    $('.silver-price-value').html(silver_price_per_oz.toFixed(2));
 
     functions.updateMetalTotals();
   })
@@ -53,6 +54,12 @@ $(function() {
       }, 1000);
   });
 
-  $("form :input").change(functions.updatePage);
+  //$(".finished").change(db.sendToDB);
+  $("form :input").change(db.updatePage);
   $('.btn-group').click(functions.updatePage);
+
+	$('.congrats-message-container').on("show", function() {
+	  var form = document.getElementById("form");
+    db.sendToDB(form);
+	});
 });
