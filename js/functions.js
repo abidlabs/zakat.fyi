@@ -10,7 +10,10 @@ export function updateMetalTotals() {
 	var goldTotal = Number($('#gold-oz').val()) * prices.gold_price_per_oz + Number($('#gold-value').val())  
 	var silverTotal = Number($('#silver-oz').val()) * prices.silver_price_per_oz + Number($('#silver-value').val())  
 	$('#gold-total').html(goldTotal.toFixed(2))
+	$('#gold-total-hidden').val(goldTotal)
 	$('#silver-total').html(silverTotal.toFixed(2))	
+	$('#silver-total-hidden').val(silverTotal)
+	updateZakatAmount();
 }
 
 export function updateProgressBar() {
@@ -44,12 +47,13 @@ export function updateZakatAmount() {
 	$('form *').filter(':input').each(function(){
 		var val = $(this).val()
 		var multiplier = $(this).attr('data-multiplier') || 0
+		console.log(val, multiplier)
 		if ($.isNumeric(val)) {
 			zakatAmount += parseInt(val) * parseFloat(multiplier);
-			if (parseFloat(multiplier) > 0){
+			if ($(this).hasClass('asset')){
 				totalAssetsMinusLiabilities += parseInt(val)
 			}
-			else {
+			else if ($(this).hasClass('liability')) {
 				totalAssetsMinusLiabilities -= parseInt(val)
 			}
 		}
@@ -61,5 +65,6 @@ export function updateZakatAmount() {
 		zakatAmount = zakatAmount.toFixed(2)
 		$('.below-nisab').css('display', 'none') 
 	}
+	$('.zakat-liable-amount').html(totalAssetsMinusLiabilities.toFixed(2))
 	$('.zakat-amount').html(zakatAmount) 
 }
