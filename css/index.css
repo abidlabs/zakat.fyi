@@ -31,7 +31,10 @@
 	background-color: #f6fff6;
 	padding: 20px;
 }
-
+.card{
+	width:100%;
+	max-width: 600px;
+}
 .card-text{
 	font-size:3rem;
 	color: #5ec49e;
