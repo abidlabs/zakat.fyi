@@ -40,4 +40,8 @@ $(function() {
 
   $("form :input").change(functions.updatePage);
   $('.btn-toolbar').click(functions.updatePage);
+
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = functions.updateProgressBar
+
 });
