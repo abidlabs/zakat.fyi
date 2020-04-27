@@ -86,7 +86,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
   
-  <form>
+  <form id="form">
     <div class="form-group">
       <label for="formGroupExampleInput">1a. What is the currency you would like to use?</label>
       <select class="custom-select" id="currency-select" disabled>
@@ -720,7 +720,32 @@
   
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+      <!-- Intializing Firebase -->
+ 			<!-- The core Firebase JS SDK is always required and must be listed first -->
+			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+			<!-- TODO: Add SDKs for Firebase products that you want to use
+					 https://firebase.google.com/docs/web/setup#available-libraries -->
+			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+			<script>
+				// Your web app's Firebase configuration
+				var firebaseConfig = {
+					apiKey: "AIzaSyBKcpUup2AgggJ1TUl9cE2_K6o3XCnNXXo",
+					authDomain: "zakatfyi.firebaseapp.com",
+					databaseURL: "https://zakatfyi.firebaseio.com",
+					projectId: "zakatfyi",
+					storageBucket: "zakatfyi.appspot.com",
+					messagingSenderId: "276889567756",
+					appId: "1:276889567756:web:a5e9a74fba43a33cb3e429",
+					measurementId: "G-65LY6WE4BV"
+				};
+				// Initialize Firebase
+				firebase.initializeApp(firebaseConfig);
+				firebase.analytics();
+			</script> 
+ 			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
       <script type="module" src="js/index.js"></script>
-  
     </body>
   </html>  
