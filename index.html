@@ -47,7 +47,7 @@
 <body>
 
   <div class="container" id="hero">
-    <img src="assets/logo.png" id="header-logo" class="img-fluid" alt="Responsive image">
+    <a href="index.html"><img src="assets/logo.png" id="header-logo" class="img-fluid" alt="Responsive image"></a>
     <p class="separator">understand your zakat</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
@@ -60,7 +60,7 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-      <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Calculate your zakat</strong></button>
+      <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Calculate your Zakat</strong></button>
       <p id="learn-more"><a href="about.html">Learn more about the methodology</a></p>
     </div>
   </div>
@@ -68,8 +68,8 @@
   <div class="sticky-top"> 
   <nav class="navbar navbar-expand-lg navbar-light  text-center">
     <div class="mx-auto zakat-bar">
-      <span>My Zakat Due: <small>(in progress)</small></span>
-      <span id="zakat-val"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></span>
+      <span><strong>Your net assets:</strong></span>
+      <span id="zakat-val"><span class="currency-prepend">$</span><span class="zakat-liable-amount">0.00</span></span>
       <span class="below-nisab" style="margin-left:10px"><small> (below nisab)</small></span>
     </div>
   </nav>
@@ -98,16 +98,28 @@
       </select>
     </div>
 
-    <p>1b. Let's Calculate our Niṣāb </p>
-    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (PBUH) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span></strong>.  </p>
+    <p>1b. Know the Niṣāb </p>
+    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (PBUH) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount.</p>
 
-    <p>1c. Let's Set our <em>Hawl</em> </p>
+    <p>1c. Understand the <em>Hawl</em> </p>
     <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your zakat. This is the lunar year, 11 days shorter than the regular year. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakat last year. </p>
 
     <p class="explanation"> If you're worried your total liable wealth dropped below <span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span> sometime during the <em>hawl</em>, double check using a  snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakat!</p>
 
-    <p>1d. You vs. You + Spouse </p>
+    <p>1d. You vs. You + Your Spouse </p>
     <p class="explanation"> The zakat is due by the person who owns the wealth, whether that be man or woman. If you choose, you can pay zakat on behalf of your spouse, in which case, make sure to the sum the total for both spouses for each of these questions.</p>
+
+    <p>1e. What's your email address? </p>
+    <p class="explanation"> We'll send you a receipt of your calculation after this session, so you can save this year's Zakat calculation date and all of your information for next year! </p>
+
+      <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Email</span>
+        </div>
+        <input type="text" class="form-control" id="email-field" placeholder="">
+      </div>
+      </div>
 
 
 
@@ -117,13 +129,13 @@
     <p>2a. Cash 💸 </p> 
        <div class="form-group money-text-field required">
       <label for="formGroupExampleInput2">What is the total value of your physical cash on hand?</label>
-      <p class="explanation">Cash you've withdrawn to give out at Eid for example</p>
+      <p class="explanation">For example, cash you've withdrawn to give out at Eid.</p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="cash-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="cash-field" placeholder="0" data-multiplier="0.025">
       </div>
       </div>
 
@@ -134,8 +146,8 @@
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="checking-field" placeholder="0" data-multiplier="0.025">
+        </div>  
+        <input type="text" class="form-control asset" id="checking-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
@@ -146,7 +158,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="savings-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="savings-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
@@ -159,7 +171,7 @@
          
     <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
-      <p class="explanation">We will use the current price of silver at <span class="currency-prepend">$</span><span class="silver-price-value"></span> per oz (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your silver in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
+      <p class="explanation">We will use the price of silver at <span class="currency-prepend">$</span><span class="silver-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your silver in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
 
          <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -174,13 +186,13 @@
           <input type="text" class="form-control silver-related" id="silver-value" placeholder="0">
         </div>
       
-      Total value: <span id="silver-total-value" class="heavy"><span class="currency-prepend">$</span><span id="silver-total">0.00</span></span>
-      </div> 
+      Total value of silver: <span id="silver-total-value" class="heavy"><span class="currency-prepend">$</span><span id="silver-total">0.00</span></span>
+      </div>  <input type="hidden" id="silver-total-hidden" class="asset" data-multiplier="0.025">
 
       <p>2e. Gold 🏆 </p>
         <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
-      <p class="explanation">>We will use the current price of silver at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
+      <p class="explanation">>We will use the price of silver at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
   
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -194,19 +206,18 @@
           </div>
           <input type="text" class="form-control gold-related" id="gold-value" placeholder="0">
         </div>
-      Total value: <span id="gold-total-value" class="heavy"><span class="currency-prepend">$</span><span id="gold-total">0.00</span></span>
-      </div>  
+      Total value of gold: <span id="gold-total-value" class="heavy"><span class="currency-prepend">$</span><span id="gold-total">0.00</span></span> 
+      </div>   <input type="hidden" id="gold-total-hidden" class="asset" data-multiplier="0.025">
  
 
     <div class="form-group required">
-      <label>2f-2i. Do you have financial investments?</label><br>
-      <p class="explanation">Such as stocks and bonds.</p>
+      <label>2f-2i. Do you have financial investments, such as stocks and bonds?</label>
 
 
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
           <input type="radio" name="options" id="investments-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have financial investments &nbsp; &nbsp;
-        </label>
+        </label> &nbsp; 
         <label class="btn btn-success">
           <input type="radio" name="options" id="investments-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
         </label>
@@ -223,7 +234,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="stock-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="stock-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
@@ -253,7 +264,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="c-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="c-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -264,7 +275,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="r-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="r-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -275,7 +286,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="i-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="i-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -286,7 +297,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="sharesOwned-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="sharesOwned-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -297,7 +308,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="outstandingShares-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="outstandingShares-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -318,7 +329,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="DividendPerShare-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="DividendPerShare-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -329,7 +340,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="SharesOwned-field" placeholder="0" data-multiplier="0.0">
+        <input type="text" class="form-control asset" id="SharesOwned-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
 
@@ -341,7 +352,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="selling-longterm-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="selling-longterm-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
     </div>
@@ -349,54 +360,54 @@
 
 
     <p> 2j. Post-tax 401(k) distributions 👴
-         <p class="explanation"> Joe Bradford's recommended Zakah calculation is to pay Zakah only on what has your full control, or what you have withdrawn. This is treating your 401k like a passive investment. If you reach retirement age and cash out, you will pay zakat only ONE year on the entire amount, and then EVERY year after because you will have unfettered access to the full amount. If you withdraw early, then you will pay zakat on the NET amount you withdraw after taxes and penalties </p>
+         <p class="explanation"> Joe Bradford's recommended Zakah calculation is to pay Zakah only on what has your full control, or what you have withdrawn. This is treating your 401k like a passive investment. If you reach retirement age and cash out, you will pay zakat only ONE year on the entire amount, and then EVERY year after because you will have unfettered access to the full amount. If you withdraw early, then you will pay zakat on the NET amount you withdraw after taxes and penalties.  </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax 401(k) distributions?</label>  
-      <p class="explanation"> </p>
+      <p class="explanation">If these distributions are already in your checking account or another account previously listed, be sure not to double count them.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="401k-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="401k-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
       <p> 2k. Post-tax IRA distributions 👵
-         <p class="explanation"> For the same reasons as 2j, we will treate IRA distributions as passive investments.</p>
+         <p class="explanation"> For the same reasons as 2j, we will treate IRA distributions as passive investments. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax IRA distributions?</label>  
-      <p class="explanation"> </p>
+      <p class="explanation">If these distributions are already in your checking account or another account previously listed, be sure not to double count them. </p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="ira-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="ira-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
     <p> 2l. Post-tax ESA withdrawals 🎒
-         <p class="explanation"> For the same reasons as 2j, if you've contributed to a Coverdell ESA, you will pay only on what you've withdrawn this hawl.</p>
+         <p class="explanation"> For the same reasons as 2j, if you've contributed to a Coverdell ESA, you will pay only on what you've withdrawn this hawl. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax ESA withdrawals?</label>  
-      <p class="explanation"> </p>
+      <p class="explanation"> If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them. </p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="esa-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="esa-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>      
 
     <p> 2m. Post-tax 529 withdrawals 📚
-         <p class="explanation"> For the same reasons as 2j, if you've contributed to a 529 College Savings Account, you will pay only on what you've withdrawn this hawl.</p>
+         <p class="explanation"> For the same reasons as 2j, if you've contributed to a 529 College Savings Account, you will pay only on what you've withdrawn this hawl. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax 529 withdrawals?</label>  
-      <p class="explanation"> </p>
+      <p class="explanation">If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="529-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="529-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
@@ -409,32 +420,30 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="hsa-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="hsa-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
     <p> 2o. Other Illiquid Investments 🖼️
-         <p class="explanation"> If you have a piece of property or real estate that is highly illiquid and the price is not readily determinable because of how unique or rare it is, treat it the same as a passive investment. When you sell, pay zakat. Otherwise, move on to the next question. </p>
+         <p class="explanation"> If you have a piece of property or real estate that is highly illiquid and the price is not readily determinable because of how unique or rare it is, treat it the same as a passive investment. When you sell, pay zakat on that amount. Otherwise, move on to the next question. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your illiquid investments that you've sold this hawl?</label>  
-      <p class="explanation"> </p>
+      <p class="explanation">If the sale price is already in your checking account or another account previously listed, be sure not to double count it here.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="illiquid-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="illiquid-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
     <div class="form-group required">
       <label>2p-2r. Do you own any real estate for business/investment purposes?</label><br>
-      <p class="explanation">Not including your own residential property.</p>
 
-
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
           <input type="radio" name="options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
-        </label>
+        </label> &nbsp; 
         <label class="btn btn-success">
           <input type="radio" name="options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
         </label>
@@ -451,7 +460,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="propertyforsale-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="propertyforsale-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
@@ -459,12 +468,12 @@
          <p class="explanation"> If you own a property, but do not have plans for it, then treat it like your passive investments and pay Zakat <em>once</em> on the value received from sale of the inactive property. </p>
         <div class="form-group money-text-field required">
       <label>What is the value received from sale of an inactive property this hawl?</label>  
-      <p class="explanation"> </p>
+      <p class="explanation"> If the sale price is already in your checking account or another account previously listed, be sure not to double count it here.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="vacant-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="vacant-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
@@ -477,7 +486,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="rentalincome-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="rentalincome-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
   </p>
@@ -486,10 +495,10 @@
   <div class="form-group required">
     <label>2s-2t. Do you own any businesses?</label><br>
 
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
       <label class="btn btn-success active">
         <input type="radio" name="options" id="business-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own (a) business(es) &nbsp; &nbsp;
-      </label>
+      </label> &nbsp;
       <label class="btn btn-success">
         <input type="radio" name="options" id="business-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
       </label>
@@ -498,8 +507,10 @@
 
   <div class="business-related">
 
+<!--     <p class="explanation">When you have a business, all of your inventory, including raw ingredients and final products, is liable for zakat. You also pay zakat on cash you expect For example, </p>
+ -->
     <p> 2s. Aggregate Cash Value of Inventory 📦
-         <p class="explanation"> Count your inventory not under contract. Disregard any partnerships.</p>
+         <p class="explanation"> First, you pay zakat on all of the items in your inventory, including raw ingredients and final products that you have not yet sold. Of course, you must have owned the items for the <em>hawl</em>. In the case of a partnership, value your share of the inventory. </p>
         <div class="form-group money-text-field required">
       <label>What is the aggregate cash value of your inventory?</label>  
       <p class="explanation"> Wholesalers should use the wholesale price in their calculation, and retailers should use the retail price.</p>
@@ -507,23 +518,22 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="inventory-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="inventory-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
     <p> 2t. Accounts Receivables 📥
          <p class="explanation">  </p>
         <div class="form-group money-text-field required">
-      <label>What is the value of your Accounts Receivable?</label>  
-      <p class="explanation"> Money owed to your business for goods and serviced that have been delivered or used. Disregard any partnerships. </p>
+         <p class="explanation"> Next, include the amount of money in your accounts receivable: money owed to your business for goods and serviced that have been delivered or used. In the case of a partnership, value your share of the accounts receivable. </p>         
+      <label>What is the value of your accounts receivable?</label>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="ar-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="ar-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
-
   </div>
 
     <p> 2u. Livestock 🐄
@@ -535,11 +545,11 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="livestock-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="livestock-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
-    <p> 2v. Good Debt 💱
+    <p> 2v. Good Debt (Owed to You) 💱
          <p class="explanation">Good Debt is debt that you are owed and expect to collect. If something prevents you from doing so, like the inability of a person to pay or their refusal to pay, it becomes Bad Debt. You are liable to pay zakat on a Bad Debt when you actually receive it.</p>
         <div class="form-group money-text-field required">
       <label>What is the value of your good debt?</label>  
@@ -548,82 +558,19 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="gooddebt-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="gooddebt-field" placeholder="0" data-multiplier="0.025">
       </div>
     </div>
 
 <!-- ADD 2v FIXED INCOME QUESTION HERE --> 
 
-<!-- ADD HARAM EARNINGS WORKSHEET 2 QUESTIONS HERE --> 
 
   <h3>Expenses and Liabilites</h3>
+
+  <p class="explanation">When calculating your zakat liable amount, you should remove the amount of money that you owe to others. In addition to debts, you can also deduct bills that are "immediately due." For example, if you pay your rent monthly, you can deduct one month of your rent. If you pay your insurance every 6 months, and your insurance payment is up <em>immediately</em>, you can deduct the 6 month insurance bill.</p>
     
-    <p> 4a. Monthly Living Expenses 🍔
-         <p class="explanation"> This can include: rent/mortgage payments, medical expenses (other than your insurance premium), utilities, groceries, transport, upkeep, and any other miscellaneous expenses. Because your bills and expenses are considered debts owed to others, you have to pay those first. You should only deduct those expenses which are immediately due. </p>
-        <div class="form-group money-text-field required">
-      <label>What is your monthly living expense?</label>  
-      <p class="explanation"></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="monthlyexpenses-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
 
-    <p> 4b. Periodic Insurance Expenses 🚗
-         <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance. If you immediately owe a mortgage payment, deduct that. If you owe homeowner's insurance (even if you pay it yearly), deduct that yearly amount. If you pay quarterly, deduct the quarterly payment.</p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of your insurance payments?</label>  
-      <p class="explanation"></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="insurance-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-    
-    <p> 3c. Property Tax Payments 📋
-         <p class="explanation"> </p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of your property tax payments?</label>  
-      <p class="explanation">Whether individually or as a business, debts should be paid first before paying Zakat.</p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="propertytax-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <p> 3d. Delinquent Tax Payment 📅 
-         <p class="explanation"> </p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of your delinquent tax payments?</label>  
-      <p class="explanation"></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="delinquent-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <p> 3e. Miscellaneous Fines 🧾
-         <p class="explanation"> </p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of any other miscellaneous fines?</label>  
-      <p class="explanation"></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="fines-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <p> 4e. Debts 💳
+    <p> 3a. Debts 💳
          <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your debts owed to others?</label>  
@@ -632,353 +579,73 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="debts-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control liability" id="debts-field" placeholder="0" data-multiplier="-0.025">
       </div>
     </div>
 
+    <p> 3b. Delinquent Tax Payment 📅 
+      <p class="explanation">This is money that you owe the government.</p>
+        <div class="form-group money-text-field required">
+      <label>What is the total of your delinquent tax payments?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control liability" id="delinquent-field" placeholder="0" data-multiplier="-0.025">
+      </div>
+    </div>
 
-<!--
-  
-    <h3> <i class="fa fa-money-bill-wave"></i> Zakatable Assets </h3>
-    <p class="explanation"> Growth items are zakatable. We break this down into six comprehensive categories. (Don't worry, the first one is the longest ones, the others are quite short.) </p>
+    <p> 3c. One Month's Living Expenses 🍔
+         <p class="explanation"> This can include: rent/mortgage payments, medical expenses (other than your insurance premium, which is covered below), utilities, groceries, transport, upkeep, and any other miscellaneous expenses. Because your bills and expenses are considered debts owed to others, you have to pay those first. You should only deduct those expenses which are immediately due. </p>
+        <div class="form-group money-text-field required">
+      <label>What is your monthly living expense?</label>  
+      <p class="explanation"></p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control liability" id="monthlyexpenses-field" placeholder="0" data-multiplier="-0.025">
+      </div>
+    </div>
 
-    <h3> 💰 A. Gold, Silver, Money, and Accounts </h3>
-
-    <p class="explanation"> </p>
+    <p> 3d. Periodic Insurance Expenses 🚗
+         <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.)</p>
+        <div class="form-group money-text-field required">
+      <label>What is the total of your insurance payments?</label>  
+      <p class="explanation"></p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control liability" id="insurance-field" placeholder="0" data-multiplier="-0.025">
+      </div>
+    </div>
     
-        <div class="form-group required">
-      <label for="formGroupExampleInput2">How many ounces of gold do you have? Alternatively, you can provide the $ value. If you provide both, we will sum them for you.</label>
-      <p class="explanation">We will use the value of gold at $1,703.55 per ounce. <strong>Zakat rate: 2.5%</strong></p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">oz</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ounces of gold" data-multiplier="42.58875">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Value" data-multiplier="0.025">
-        </div>
-        <div>Total value: <span id="total-gold-value-amount"></span></div>
-      </div>  
-  
-    <div class="form-group required">
-      <label for="formGroupExampleInput2">How many ounces of silver do you have? Again, you can provide the $ value. If you provide both, we will sum them for you. </label>
-      <p class="explanation">We will use the value of silver at $15.23 per ounce. <strong>Zakat rate: 2.5%</strong></p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">oz</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ounces of silver" data-multiplier="0.38075">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Value: " data-multiplier="0.025">
-        </div>  
-        <div>Total value: <span id="total-silver-value-amount"></span></div>
-      </div> 
-
-    <div class="form-group money-text-field required">
-      <label for="formGroupExampleInput2">How much physical cash do you have? </label>
-      <p class="explanation">Sitting under your mattress for example. <strong>Zakat rate: 2.5%</strong></p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="cash-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group money-text-field required">
-      <label>What is the total value of your savings account(s)?</label>  
-      <p class="explanation">Treated like cash. <strong>Zakat rate: 2.5%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="savings-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group money-text-field required">
-      <label>What is the total value of your checking account(s)?</label>  
-      <p class="explanation">Treated like cash. <strong>Zakat rate: 2.5%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="checking-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group money-text-field required">
-      <label>What is the total value of your 401k account(s)?</label>  
-      <p class="explanation">Only include assets that have vested, meaning that they belong to you. <strong>Zakat rate: 2.5%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="retirement-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group money-text-field required">
-      <label>What is the total value of your IRA account(s)?</label>  
-      <p class="explanation">Only include assets that have vested <strong>Zakat rate: 2.5%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="IRA-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
+    <p> 3e. Property Tax Payments 📋
+         <p class="explanation"> You can deduct this if you are about to pay the property tax immediately. </p>
         <div class="form-group money-text-field required">
-      <label>What is the total value of your stock portfolio?</label>  
-      <p class="explanation">Only the vested assets. Include Mutual Funds, RSUs, ESPP. Pay on the current value. <strong>Zakat rate: 2.5%</strong></p>
+      <label>What is the total of your property tax payments?</label>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="stock-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control liability" id="propertytax-field" placeholder="0" data-multiplier="-0.025">
       </div>
     </div>
 
+
+    <p> 3f. Miscellaneous Fines 🧾
+         <p class="explanation"> For example, this might be parking tickets. </p>
         <div class="form-group money-text-field required">
-      <label>Are you receiving a pension?</label>  
-      <p class="explanation"> You should pay zakat on this <em>only</em> when you begin receiving it. It will count as ordinary income. <strong>Zakat rate: 2.5%</strong></p>
+      <label>What is the total of any other miscellaneous fines that you still need to pay off?</label>  
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>
-        <input type="text" class="form-control" id="stock-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control liability" id="fines-field" placeholder="0" data-multiplier="-0.025">
       </div>
     </div>
-
-
-    <h3>💍 B. Jewelry </h3>
-    <p class="explanation"> On jewelry, zakat is due on the following categories:</p> 
-    <p class="explanation">(1) Business merchandise (You sell jewelry)
-    <br>(2) Jewelry stored for financial purposes (held as savings, held for appreciation)
-    <br>(3) Any jewelry with the intention of profit</p>
-    <p class="explanation"> No Zakat is due on personal jewelry that is worn occasionally and not intended for profit. The jewelry must have been owned for the duration of the <em>hawl</em>. </p>
-
-    <div class="form-group jewelry-text-field required">
-      <label>What is the total value of your zakatable jewelry?</label>  
-     
-      <p class="explanation"> Reminder: not personal jewelry. <strong>Zakat rate: 2.5%</strong></p>      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="jewelry-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-
-    <h3>💼 C. Business Assets </h3>
-    <p class="explanation"> The following are Zakatable business assets. There is no Zakat due on fixed assets, rental items, machinery, fixtures, or account payables.</p>
-    <div class="form-group business-text-field required">
-      <label for="formGroupExampleInput2">What is the value of your business merchandise inventory?  </label>
-      <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="business-inventory-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group business-text-field required">
-      <label for="formGroupExampleInput2">What is the value of your company's account receivable?  </label>
-      <p class="explanation">This is money owed to your company, but not yet paid for by customers. <strong>Zakat rate: 2.5%</strong></p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="business-receivables-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group business-text-field required">
-      <label for="formGroupExampleInput2">What is the value of your company's raw materials for production? </label>
-      <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="business-rawmaterials-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <div class="form-group business-text-field required">
-      <label for="formGroupExampleInput2">What is the value of your company's cash and accounts?  </label>
-      <p class="explanation"><strong>Zakat rate: 2.5%</strong></p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="business-cash-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-
-    <h3>🏠 D. Real Estate </h3>
-    <p class="explanation"> When it comes to real estate, zakat is due on business related properties owned for the duration of the <em>hawl</em>, as well as rental income made over the <em>hawl</em>. You do not owe zakat on your personal propery or on any property you own without a business intention.</p>
-
-
-    <div class="form-group realestate-text-field required">
-      <label>What is the total value of your business related real esate?</label>
-         <p class="explanation"> Subtract fees and taxes. <strong>Zakat rate: 2.5%</strong></p>  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="realestate-business-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-
-    <div class="form-group realestate-text-field required">
-      <label>What is the total amount of rental income you have earned over the <em>hawl</em>?</label>  
-      <p class="explanation"> Subtract maintenance costs. <strong>Zakat rate: 2.5%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="realestate-income-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-    <h3>🐄 E. Livestock </h3>
-    <p class="explanation"> Zakat on Livestock applies only to free grazing animals. There is no Zakat due on animals that work for you.</p>
-
-    <div class="form-group livestock-text-field required">
-      <label>What is the total amount of cows and buffalo you've owned for the duration of the  <em>hawl</em>?</label>  
-         <p class="explanation"> For every 30 cows or buffalo, you owe 1 year old animal in Zakat.</p>  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="realestate-business-field" placeholder="0">
-      </div>
-    </div>
-
-
-    <div class="form-group livestock-text-field required">
-      <label>What is the total amount of sheeps and goats you've owned for the duration of the  <em>hawl</em>?</label>  
-      <p class="explanation"> For every 40 sheeps or goats, you owe 1 animal in Zakat.</p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="realestate-income-field" placeholder="0">
-      </div>
-    </div>
-
-
-
-
-
-  
-    <h3>🌾 F. Agriculture </h3>
-    <p class="explanation">For agricultural products, zakat is due when the goods exceed 600 kg. However, there is no <em>hawl</em>, or minimum time period for which you must possess the goods. Instead, you should pay the zakat upon harvest. If you have not yet paid it, use the fields below to calculate the amount of zakat due.</p>
-
-
-    <div class="form-group required">
-      <label>Do you have at least 600 kg of agricultural produce?</label><br>
-      <p class="explanation">Combine all like grains together, such as wheat, barley, oats.</p>
-
-
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-success active">
-          <input type="radio" name="options" id="agriculture-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have at least 600 kg &nbsp; &nbsp;
-        </label>
-        <label class="btn btn-success">
-          <input type="radio" name="options" id="agriculture-no" autocomplete="off">  &nbsp; &nbsp; No, I have less than 600 kg &nbsp; &nbsp;
-        </label>
-      </div>
-    </div>
-
-
-    <div class="form-group agricultral-text-field required">
-      <label>What is the value of your agricultural products grown on naturally irrigated land?</label>  
-      <p class="explanation"><strong>Zakat rate: 10%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="agriculture-natural-irrigation-field" placeholder="0" data-multiplier="0.10">
-      </div>
-    </div>
-
-    <div class="form-group agricultral-text-field required">
-      <label>What is the value of your agricultural products grown on land that requires irrigation?</label>  
-      <p class="explanation"><strong>Zakat rate: 5%</strong></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="agriculture-manual-irrigation-field" placeholder="0" data-multiplier="0.05">
-      </div>
-    </div>
-
-
-
-
-  
-  <h3> <i class="fa fa-money-bill-wave" style="color:red"></i> Zakatable Liabilities </h3>
-  <p class="explanation"> In God's mercy, the zakat amount can be reduced if you have debts or liabilities. Here, we include the 3 kinds of liabilities. </p>
-  
-    <div class="form-group required">
-        <label for="formGroupExampleInput2">How much have you paid in bank overdrafts?</label>
-        <p class="explanation">To fund stocks and trade debtors only</p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0" data-multiplier="-0.025">
-        </div>
-      </div>
-  
-    <div class="form-group required">
-        <label for="formGroupExampleInput2">How much do you owe to trade creditors?</label>
-        <p class="explanation">This includes anyone who has sent your business goods, or supplied it with services that you have yet to pay</p>
-  
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0" data-multiplier="-0.025">
-        </div>
-      </div>
-  
-    <div class="form-group required">
-      <label for="formGroupExampleInput2">What is the value of your business loans? </label>
-      <p class="explanation">This includes loans to finance business merchandise, services, and trade debtors</p>
-  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="0" data-multiplier="-0.025">
-      </div>
-    </div>
-
- -->
-
 
 
 
@@ -993,13 +660,15 @@
     <h3 class="text-center">🎉 Congratulations, you've calculated your true zakat! </h3>  
     
     <center>    
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <div class="card-body">
           <h6 class="card-subtitle mb-2 text-muted">Zakat Due:</h6>
           <p class="card-text"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></p>
-          <p class="below-nisab">(below nisab)</p>
+          <p class="explanation">On net assets: <span class="currency-prepend">$</span><span class="zakat-liable-amount">0.00</span> <span class="below-nisab">(below nisab)</span></p>
         </div>
       </div>    
+      <p></p>
+      <p>Help your friends and family calculate their zakat:</p>
       <ul class="share-buttons" style="margin-top: 25px; list-style: none; padding: 0; ">
           <li style="display: inline;"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fzakat.fyi&amp;quote=Calculate%20your%20Zakat%20in%205%20minutes" title="Share on Facebook" target="_blank"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #3C5A99;"><i class="fab fa-facebook"></i></span></a></li>
           <li style="display: inline;"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fzakat.fyi&amp;text=Calculate%20your%20Zakat%20in%205%20minutes%20http%3A%2F%2Fzakat.fyi" target="_blank" title="Tweet"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #1DA1F2;"><i class="fab fa-twitter"></i></span></a></li>

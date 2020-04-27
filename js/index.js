@@ -47,4 +47,9 @@ $(function() {
 	  var form = document.getElementById("form");
     db.sendToDB(form);
 	});
+  $('.btn-toolbar').click(functions.updatePage);
+
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = functions.updateProgressBar
+
 });

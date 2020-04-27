@@ -21,6 +21,7 @@ $.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
 	$('.nisab-price-value').html(nisab.toFixed(2))
 	$('.gold-price-value').html(gold_price_per_oz.toFixed(2))
 	$('.silver-price-value').html(silver_price_per_oz.toFixed(2))    
+  $('.price-last-updated').html("today") // last updated = today
 });	
 
 $('#currency-select').change(function(){
