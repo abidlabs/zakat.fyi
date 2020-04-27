@@ -56,6 +56,11 @@ $(function() {
       }, 1000);
   });
 
+  $("#calculate-zakat-button-end").click(function(){
+  	$('#calculate-zakat-button-end').css('display', 'none')
+  	$('#ending-messages').css('display', 'block')
+  })
+
   $("#form :input").change(db.sendToDB);
   $("form :input").change(functions.updatePage);
   $('.btn-group').click(functions.updatePage);

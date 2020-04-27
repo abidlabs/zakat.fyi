@@ -121,6 +121,10 @@ label.error{
 	margin-bottom:15px;
 }
 
+#ending-messages{
+	display:none;
+}
+
 #learn-more a{
 	color:black;
 	font-size:0.85rem;

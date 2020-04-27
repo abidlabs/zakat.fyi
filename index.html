@@ -60,7 +60,7 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-      <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Calculate your Zakat</strong></button>
+      <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Get Started</strong></button>
       <p id="learn-more"><a href="about.html">Learn more about the methodology</a></p>
     </div>
   </div>
@@ -68,7 +68,7 @@
   <div class="sticky-top"> 
   <nav class="navbar navbar-expand-lg navbar-light  text-center">
     <div class="mx-auto zakat-bar">
-      <span><strong>Your net assets:</strong></span>
+      <span><strong>Your Zakatable assets:</strong></span>
       <span id="zakat-val"><span class="currency-prepend">$</span><span class="zakat-liable-amount">0.00</span></span>
       <span class="below-nisab" style="margin-left:10px"><small> </small></span>
     </div>
@@ -510,10 +510,10 @@
 <!--     <p class="explanation">When you have a business, all of your inventory, including raw ingredients and final products, is liable for zakat. You also pay zakat on cash you expect For example, </p>
  -->
     <p> 2s. Aggregate Cash Value of Inventory 📦
-         <p class="explanation"> First, you pay zakat on all of the items in your inventory, including raw ingredients and final products that you have not yet sold. Of course, you must have owned the items for the <em>hawl</em>. In the case of a partnership, value your share of the inventory. </p>
+         <p class="explanation"> First, you pay zakat on all of the items in your inventory, including raw ingredients and final products that you have not yet sold. Of course, you must have owned the items for the <em>hawl</em>. Wholesalers should use the wholesale price in their calculation, and retailers should use the retail price. In the case of a partnership, value your share of the inventory. </p>
         <div class="form-group money-text-field required">
       <label>What is the aggregate cash value of your inventory?</label>  
-      <p class="explanation"> Wholesalers should use the wholesale price in their calculation, and retailers should use the retail price.</p>
+      <p class="explanation"> </p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -522,7 +522,20 @@
       </div>
     </div>
 
-    <p> 2t. Accounts Receivables 📥
+    <p>2t. Business accounts 💵 </p>
+         <p class="explanation"> Assuming you have not already included these in questions 2(a) and 2(b). In the case of a partnership, value your share of the inventory. </p>
+          <div class="form-group money-text-field required">
+      <label>What is the total value of all of your business (checking/savings) account(s)? </label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>  
+        <input type="text" class="form-control asset" id="business-checking-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+
+    <p> 2u. Accounts Receivables 📥
          <p class="explanation">  </p>
         <div class="form-group money-text-field required">
          <p class="explanation"> Next, include the amount of money in your accounts receivable: money owed to your business for goods and serviced that have been delivered or used. In the case of a partnership, value your share of the accounts receivable. </p>         
@@ -536,7 +549,7 @@
     </div>
   </div>
 
-    <p> 2u. Livestock 🐄
+    <p> 2v. Livestock 🐄
          <p class="explanation"> Zakat on Livestock applies only to free grazing animals. If you own animals for personal use, you do not have to pay Zakat on them. If you keep any animals for sale, you'll treat them as business inventory </p>
         <div class="form-group money-text-field required">
       <label>What is the value of livestock you have for sale?</label>  
@@ -549,7 +562,7 @@
       </div>
     </div>
 
-    <p> 2v. Good Debt (Owed to You) 💱
+    <p> 2w. Good Debt (Owed to You) 💱
          <p class="explanation">Good Debt is debt that you are owed and expect to collect. If something prevents you from doing so, like the inability of a person to pay or their refusal to pay, it becomes Bad Debt. You are liable to pay zakat on a Bad Debt when you actually receive it.</p>
         <div class="form-group money-text-field required">
       <label>What is the value of your good debt?</label>  
@@ -571,7 +584,7 @@
     
 
     <p> 3a. Debts 💳
-         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. </p>
+         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in instalments, such as a mortgage or large credit card debt, then do not include that here, but instead look at 3(c). </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your debts owed to others?</label>  
       <p class="explanation"></p>
@@ -656,8 +669,14 @@
 
   <!-- Hide initially, once zakat is calculated, just called $('.congrats-message-container').show() -->
   <div class="congrats-message-container" style="/*display: none;*/">
-    <h3 class="text-center">🎉 Congratulations, you've calculated your true zakat! </h3>  
-    
+  <center>
+    <button class="btn btn-success btn-lg" id="calculate-zakat-button-end"><strong>Calculate Your Zakat!</strong></button>
+  </center>
+
+  <div id="ending-messages">
+
+
+    <h3 class="text-center">🎉 Congratulations, you've calculated your true zakat! </h3>    
     <center>    
       <div class="card">
         <div class="card-body">
@@ -702,6 +721,7 @@
           </div>
         </div>
     </center>
+  </div>
   </div>
     
     </div>
