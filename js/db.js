@@ -53,9 +53,21 @@ export function getNumUsers() {
   var docRef = db.collection("web_stats").doc("statistics");
   docRef.get().then(function(doc) {
     user_count = doc.data().user_count;
-		// for later fudging
 		//user_count = Math.max(559, user_count);
-		$("#num-people").html(user_count + " people");
+		$(".num-people-count").html(user_count);
+
+      $('.num-people-count').each(function () {
+        var $this = $(this);
+        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+          duration: 1000,
+          easing: 'swing',
+          step: function () {
+            $this.text(Math.ceil(this.Counter));
+          }
+        });
+      });
+
+
   }).catch(function(error) {
         console.error("Error adding document: ", error);
   });
