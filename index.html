@@ -72,10 +72,11 @@
     </div>
   </nav>
 
-  <div class="progress-container">
-    <div class="progress-bar" id="myBar"></div>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
   </div>
-  </div>
+
 
 
   <!-- Full Page Image Header with Vertically Centered Content -->
@@ -84,7 +85,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
   
-  <form>
+  <form id="form">
     <div class="form-group">
       <label for="formGroupExampleInput">1a. What is the currency you would like to use?</label>
       <select class="custom-select" id="currency-select" disabled>
@@ -101,8 +102,8 @@
 
     <p>1c. Understand the <em>Hawl</em> </p>
     <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. This is the lunar year, 11 days shorter than the regular year. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakat last year. </p>
-
     <p class="explanation"> If you're worried your total liable wealth dropped below <span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span> sometime during the <em>hawl</em>, double check using a  snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakat!</p>
+
 
     <p>1d. You vs. You + Your Spouse </p>
     <p class="explanation"> The Zakat is due by the person who owns the wealth, whether that be man or woman. If you choose, you can pay Zakat on behalf of your spouse, in which case, make sure to the sum the total for both spouses for each of these questions.</p>
@@ -110,15 +111,47 @@
     <p>1e. What's your email address? </p>
     <p class="explanation"> We'll send you a receipt of your calculation after this session, so you can save this year's Zakat calculation date and all of your information for next year! </p>
 
+      <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Email</span>
+        </div>
+        <input type="email" name="email" class="form-control" id="email-field" placeholder="">
+      </div>
+      </div>
+
 
 
 <h3>💰 Zakatable Assets </h3>
     <p class="explanation"> </p>
 
-    <p>2a. Cash 💸 </p> 
+
+    <p>2a. Checking Accounts 💵 </p>
+          <div class="form-group money-text-field required">
+      <label>What is the total value of all of your checking account(s)?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>  
+        <input type="text" class="form-control asset" id="checking-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+     <p> 2b. Savings Accounts 👛 </p>
+        <div class="form-group money-text-field required">
+      <label>What is the total value of all of your savings account(s)?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control asset" id="savings-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+    <p>2c. Cash 💸 </p> 
        <div class="form-group money-text-field required">
       <label for="formGroupExampleInput2">What is the total value of your physical cash on hand?</label>
-      <p class="explanation">For example, cash you've withdrawn to give out at Eid.</p>
+      <p class="explanation">This is cash in your wallet, for example.</p>
   
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -128,28 +161,6 @@
       </div>
       </div>
 
-
-    <p>2b. Checking Accounts 💵 </p>
-          <div class="form-group money-text-field required">
-      <label>What is the total value of your checking account(s)?</label>  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>  
-        <input type="text" class="form-control asset" id="checking-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-
-     <p> 2c. Savings Accounts 👛 </p>
-        <div class="form-group money-text-field required">
-      <label>What is the total value of your savings account(s)?</label>  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control asset" id="savings-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
 
 
 
@@ -181,7 +192,7 @@
       <p>2e. Gold 🏆 </p>
         <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
-      <p class="explanation">>We will use the price of silver at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
+      <p class="explanation">We will use the price of silver at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
   
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -205,10 +216,10 @@
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
-          <input type="radio" name="options" id="investments-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have financial investments &nbsp; &nbsp;
+          <input type="radio" name="investments-options" id="investments-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have financial investments &nbsp; &nbsp;
         </label> &nbsp; 
         <label class="btn btn-success">
-          <input type="radio" name="options" id="investments-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+          <input type="radio" name="investments-options" id="investments-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
         </label>
       </div>
     </div>
@@ -444,10 +455,10 @@
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
-          <input type="radio" name="options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
+          <input type="radio" name="real-estate-options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
         </label> &nbsp; 
         <label class="btn btn-success">
-          <input type="radio" name="options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+          <input type="radio" name="real-estate-options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
         </label>
       </div>
     </div>
@@ -499,10 +510,10 @@
 
     <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
       <label class="btn btn-success active">
-        <input type="radio" name="options" id="business-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own (a) business(es) &nbsp; &nbsp;
+        <input type="radio" name="business-options" id="business-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own (a) business(es) &nbsp; &nbsp;
       </label> &nbsp;
       <label class="btn btn-success">
-        <input type="radio" name="options" id="business-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+        <input type="radio" name="business-options" id="business-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
       </label>
     </div>
   </div>
@@ -513,9 +524,10 @@
  -->
     <p> 2s. Aggregate Cash Value of Inventory 📦
          <p class="explanation"> First, you pay Zakat on all of the items in your inventory, including raw ingredients and final products that you have not yet sold. Of course, you must have owned the items for the <em>hawl</em>. In the case of a partnership, value your share of the inventory. </p>
+
         <div class="form-group money-text-field required">
       <label>What is the aggregate cash value of your inventory?</label>  
-      <p class="explanation"> Wholesalers should use the wholesale price in their calculation, and retailers should use the retail price.</p>
+      <p class="explanation"> </p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -524,7 +536,20 @@
       </div>
     </div>
 
-    <p> 2t. Accounts Receivables 📥
+    <p>2t. Business accounts 💵 </p>
+         <p class="explanation"> Assuming you have not already included these in questions 2(a) and 2(b). In the case of a partnership, value your share of the inventory. </p>
+          <div class="form-group money-text-field required">
+      <label>What is the total value of all of your business (checking/savings) account(s)? </label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>  
+        <input type="text" class="form-control asset" id="business-checking-field" placeholder="0" data-multiplier="0.025">
+      </div>
+    </div>
+
+
+    <p> 2u. Accounts Receivables 📥
          <p class="explanation">  </p>
         <div class="form-group money-text-field required">
          <p class="explanation"> Next, include the amount of money in your accounts receivable: money owed to your business for goods and serviced that have been delivered or used. In the case of a partnership, value your share of the accounts receivable. </p>         
@@ -538,7 +563,7 @@
     </div>
   </div>
 
-    <p> 2u. Livestock 🐄
+    <p> 2v. Livestock 🐄
          <p class="explanation"> Zakat on Livestock applies only to free grazing animals. If you own animals for personal use, you do not have to pay Zakat on them. If you keep any animals for sale, you'll treat them as business inventory </p>
         <div class="form-group money-text-field required">
       <label>What is the value of livestock you have for sale?</label>  
@@ -553,6 +578,7 @@
 
     <p> 2v. Good Debt (Owed to You) 💱
          <p class="explanation">Good Debt is debt that you are owed and expect to collect. If something prevents you from doing so, like the inability of a person to pay or their refusal to pay, it becomes Bad Debt. You are liable to pay Zakat on a Bad Debt when you actually receive it.</p>
+
         <div class="form-group money-text-field required">
       <label>What is the value of your good debt?</label>  
       <p class="explanation"></p>
@@ -573,7 +599,7 @@
     
 
     <p> 3a. Debts 💳
-         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. </p>
+         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in instalments, such as a mortgage or large credit card debt, then do not include that here, but instead look at 3(c). </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your debts owed to others?</label>  
       <p class="explanation"></p>
@@ -651,7 +677,6 @@
 
     <p>Important Note: There are TWO categories of assets which we did not cover in this calculator. If you have any farming assets that you harvest for sale, you will need to calculate that Zakat separately. If you have any haram earnings (Fixed-Income Investments such as bonds; Equity Investments tainted with things like: interest, haram substances like alcohol or drugs, gambling/betting, adult entertainment, conventional financial services, weapons manufacturing), you will need to calculate the Zakat you owe to purify that wealth. Consult a specialist in Islamic Finance. We recommend scheduling a consultation with Sh. Joe Bradford, as this calculation method is his. </p>
 
-
   </form>
   
   
@@ -660,8 +685,13 @@
 
   <!-- Hide initially, once Zakat is calculated, just called $('.congrats-message-container').show() -->
   <div class="congrats-message-container" style="/*display: none;*/">
-    <h3 class="text-center">🎉 Congratulations, you've calculated your true Zakat! </h3>  
-    
+
+  <center>
+    <button class="btn btn-success btn-lg" id="calculate-zakat-button-end"><strong>Calculate Your Zakat!</strong></button>
+  </center>
+
+  <div id="ending-messages">
+    <h3 class="text-center">🎉 Congratulations, you've calculated your true Zakat! </h3>    
     <center>    
       <div class="card">
         <div class="card-body">
@@ -678,7 +708,35 @@
           <li style="display: inline;"><a href="https://api.whatsapp.com/send?text=Calculate%20your%20Zakat%20in%205%20minutes%20with%20http%3A%2F%2Fzakat.fyi" target="_blank" title="Submit to WhatsApp"><span style="font-size: 48px; margin-left:10px; margin-right: 10px; color: #4FCE5D;"><i class="fab fa-whatsapp"></i></span></a></li>
           <li style="display: inline;"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fzakat.fyi&amp;title=Calculate%20your%20Zakat%20in%205%20minutes&amp;summary=Check%20out%20this%20salary%20transparency%20tool%20for%20software%20engineering%20companies&amp;source=http%3A%2F%2Fzakat.fyi" target="_blank" title="Share on LinkedIn"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #0077B5;"><i class="fab fa-linkedin"></i></span></a></li>
         </ul>
+
+        <div id="donation">
+          <p>If you found this app useful, help by sharing it and support us with a cup of coffee!</p>
+          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+          <div class="w3-container">
+            <input onclick="document.getElementById('donate').style.display='block'" id="coffee" type="image" style="border-radius:12px; height:80px; width:150px;" alt="support-us" src="assets/coffee_logo.png"/>
+            <div id="donate" class="w3-modal">
+              <div class="w3-modal-content">
+                <div class="w3-container" style="margin-top:1%;">
+                  <span onclick="document.getElementById('donate').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                  <p style="padding-top:20px; font-size:20px;">This website is run by independent Muslim developers.<br> 
+                        We appreciate your support in helping us cover our running costs.
+                        Donating the equivalent of one cup of coffee goes a long way in helping us continue this effort.<br>
+                        We will be adding new features soon; stay tuned!
+                  </p><br><br>
+                  <button style="padding-top:7px; padding-bottom:7px; width:75%; background-color:#5EC49E; border-radius:8px; color:white; font-size:20px;">Credit/Debit Card
+                  </button><br><br>
+                  <button style="padding-top:7px; padding-bottom:7px; width: 75%; background-color:#5EC49E; border-radius:8px; color: white; font-size:20px;">PayPal
+                  </button><br><br>
+                  <br><br>
+                  <p style="font-size:20px">Jazakum Allahu Khair 🙏🙏🙏 </p>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </center>
+  </div>
   </div>
     
     </div>
@@ -690,6 +748,7 @@
         <p class="mb-1">&copy; 2020 Zakat.fyi</p>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="about.html">About</a></li>
+          <li class="list-inline-item"><a href="support.html">Support Us</a></li>
         </ul>
       </footer>
 
@@ -723,7 +782,33 @@
   
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+      <!-- Intializing Firebase -->
+ 			<!-- The core Firebase JS SDK is always required and must be listed first -->
+			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+			<!-- TODO: Add SDKs for Firebase products that you want to use
+					 https://firebase.google.com/docs/web/setup#available-libraries -->
+			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+			<script>
+				// Your web app's Firebase configuration
+				var firebaseConfig = {
+					apiKey: "AIzaSyBKcpUup2AgggJ1TUl9cE2_K6o3XCnNXXo",
+					authDomain: "zakatfyi.firebaseapp.com",
+					databaseURL: "https://zakatfyi.firebaseio.com",
+					projectId: "zakatfyi",
+					storageBucket: "zakatfyi.appspot.com",
+					messagingSenderId: "276889567756",
+					appId: "1:276889567756:web:a5e9a74fba43a33cb3e429",
+					measurementId: "G-65LY6WE4BV"
+				};
+				// Initialize Firebase
+				firebase.initializeApp(firebaseConfig);
+				firebase.analytics();
+        $('#form').validate()
+			</script> 
+ 			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
       <script type="module" src="js/index.js"></script>
-  
     </body>
   </html>  
