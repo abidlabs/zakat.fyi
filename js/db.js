@@ -24,14 +24,13 @@ export function sendToDB() {
   var form_json = form.formToJSON(finishedForm.elements);
   console.log(form_json);
   var uid = cookies.getCookie("uid");
-  db.collection("web_data").add({
+  console.log("UID: " + uid);
+  db.collection("web_data").doc(uid).set({
     "uid": uid,
     "browser_info": info,
     "form": form_json
-  }).then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
+  }).catch(function(error) {
         console.error("Error adding document: ", error);
   });
+	localStorage.setItem("data", JSON.stringify(form_json));
 }

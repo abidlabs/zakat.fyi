@@ -60,7 +60,6 @@ export function updateZakatAmount() {
 	$('form *').filter(':input').each(function(){
 		var val = $(this).val()
 		var multiplier = $(this).attr('data-multiplier') || 0
-		console.log(val, multiplier)
 		if ($.isNumeric(val)) {
 			zakatAmount += parseInt(val) * parseFloat(multiplier);
 			if ($(this).hasClass('asset')){

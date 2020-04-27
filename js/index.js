@@ -2,12 +2,28 @@ import * as functions from "./functions.js";
 import * as prices from "./prices.js";
 import * as currency from "./currency.js";
 import * as db from "./db.js";
+import * as cookies from "./cookies.js";
+import * as form from "./form.js";
 
 // honestly, everything is going to touch nisab, so let's leave it to be global.
 window.nisab = prices.nisab_usd
 
 // wait for document ready
 $(function() {
+  /* *******************************************
+  ******** SECTION: Cookie Management **********
+  ******************************************** */
+  var uid = cookies.getCookie("uid");
+  if (uid==null) {
+    // initialize a UID
+    cookies.initializeIdentity();
+  } else {
+    // restore a previous session 
+		var data = JSON.parse(localStorage.getItem("data"));	
+	  form.restoreForm(data);	
+    functions.updatePage();
+  }
+
   /* *******************************************
   *********** SECTION: Event Handlers **********
   ******************************************** */
@@ -39,7 +55,7 @@ $(function() {
       }, 1000);
   });
 
-  $("#debts-field").change(db.sendToDB);
+  $("#form :input").change(db.sendToDB);
   $("form :input").change(functions.updatePage);
   $('.btn-group').click(functions.updatePage);
 

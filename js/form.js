@@ -1,10 +1,31 @@
+// reset form values from json object
+export function restoreForm(data) {
+	$.each(data, function(id, val){
+		var $el = $('[id="'+id+'"]'),
+				type = $el.attr('type');
+
+		switch(type){
+			case 'checkbox':
+					$el.prop('checked', true);
+					break;
+			case 'radio':
+					$el.prop('checked', true);
+          var $el_block = $('[class="' + id.replace("yes", "related") + '"]'); 
+          $el_block.css('display', 'block');
+					break;
+			default:
+					$el.val(val);
+		}
+	});
+}
+
 /**
  * Checks that an element has a non-empty `name` and `value` property.
  * @param  {Element} element  the element to check
  * @return {Bool}             true if the element is an input, false if not
  */
 const isValidElement = element => {
-  return element.name && element.value;
+  return element.id && element.value;
 };
 
 /**
@@ -52,11 +73,11 @@ export const formToJSON = elements => [].reduce.call(elements, (data, element) =
 		* is one of those fields and, if so, store the values as an array.
 		*/
     if (isCheckbox(element)) {
-      data[element.name] = (data[element.name] || []).concat(element.value);
+      data[element.id] = (data[element.id] || []).concat(element.value);
     } else if (isMultiSelect(element)) {
-      data[element.name] = getSelectValues(element);
+      data[element.id] = getSelectValues(element);
     } else {
-      data[element.name] = element.value;
+      data[element.id] = element.value;
     }
   }
 

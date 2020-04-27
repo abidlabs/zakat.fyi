@@ -1,3 +1,5 @@
+import * as cookies from "./cookies.js";
+
 export function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -21,4 +23,16 @@ export function getCookie(name) {
 
 export function eraseCookie(name) {   
     document.cookie = name+'=; Max-Age=-99999999;';  
+}
+
+export function getRandomUUID() {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
+export function initializeIdentity() {
+  var uid = cookies.getRandomUUID();
+  cookies.setCookie("uid", uid, 1024);
+  localStorage.setItem("uid", uid);
+	localStorage.setItem("data", {});
+  return uid;
 }
