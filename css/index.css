@@ -3,9 +3,26 @@
 	margin: 20px;
 }
 #num-people,.heavy{
-	font-weight: bold;
+	font-weight: 700;
+	font-size: 1.4rem;
 	color: #5ec49e;
 }
+
+h1 { margin-top: 15px; margin-bottom: 30px; font-family: Helvetica Neue, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+h3 { margin-top: 15px; margin-bottom: 20px; font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px; } 
+p { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+blockquote { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+.explanation {
+	color: gray;
+	font-size: 0.9rem;
+	line-height: 18.5714px
+}
+
+.p1 {
+	font-weight: 500;
+}
+
 
 /* The progress container (grey background) */
 .progress-container {
@@ -35,6 +52,9 @@ label.error{
 	font-size: 0.8rem;
     margin: 7px;
     color: red;
+}
+label {
+	font-size: 17px
 }
 .card{
 	width:100%;
@@ -86,7 +106,9 @@ label.error{
     display: flex;
     align-items: center;
     text-align: center;
-    color: black;
+    color: solid gray;
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 1.3rem;
 }
 .separator::before, .separator::after {
     content: '';
@@ -110,15 +132,18 @@ label.error{
 .zakat-bar {
 	display: flex;
 	align-items: center;
+	font-family: Helvetica Neue, sans-serif;
 }
 #zakat-val {
 	margin-left: 32px;
 	font-size: 2em;
 	color: #2e67b2;
+	font-family: Helvetica Neue, sans-serif;
 }
 #calculate-zakat-button{
 	color:white;
 	margin-bottom:15px;
+	font-family: Helvetica Neue, sans-serif;
 }
 
 #ending-messages{
@@ -128,6 +153,8 @@ label.error{
 #learn-more a{
 	color:black;
 	font-size:0.85rem;
+	font-family: Helvetica Neue, sans-serif;
+	font-weight: 400;
 }
 
 .form-group.required>label:before { 
@@ -138,6 +165,7 @@ label.error{
 .form-group.hidden>label:after { 
    content:" (skip) ";
    font-style: italic; 
+   font-family: Helvetica Neue, sans-serif;
 }
 
 .form-group.hidden .input-group{ 
@@ -153,15 +181,6 @@ label.error{
 	background-color: #5ec49e !important;
 }
 
-h3 {
-	margin-top: 40px;
-	margin-bottom: 20px;
-}
-
-.explanation{
-	color: gray;
-	font-size: 0.9rem;
-}
 .form-group {
 	margin-bottom: 40px;
 }
