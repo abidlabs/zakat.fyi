@@ -74,10 +74,11 @@
     </div>
   </nav>
 
-  <div class="progress-container">
-    <div class="progress-bar" id="myBar"></div>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
   </div>
-  </div>
+
 
 
   <!-- Full Page Image Header with Vertically Centered Content -->
@@ -646,7 +647,6 @@
     </div>
 
 
-
   </form>
   
   
@@ -673,6 +673,33 @@
           <li style="display: inline;"><a href="https://api.whatsapp.com/send?text=Calculate%20your%20Zakat%20in%205%20minutes%20with%20http%3A%2F%2Fzakat.fyi" target="_blank" title="Submit to WhatsApp"><span style="font-size: 48px; margin-left:10px; margin-right: 10px; color: #4FCE5D;"><i class="fab fa-whatsapp"></i></span></a></li>
           <li style="display: inline;"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fzakat.fyi&amp;title=Calculate%20your%20Zakat%20in%205%20minutes&amp;summary=Check%20out%20this%20salary%20transparency%20tool%20for%20software%20engineering%20companies&amp;source=http%3A%2F%2Fzakat.fyi" target="_blank" title="Share on LinkedIn"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #0077B5;"><i class="fab fa-linkedin"></i></span></a></li>
         </ul>
+
+        <div id="donation">
+          <p>If you found this app useful, help by sharing it and support us with a cup of coffee!</p>
+          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+          <div class="w3-container">
+            <input onclick="document.getElementById('donate').style.display='block'" id="coffee" type="image" style="border-radius:12px; height:80px; width:150px;" alt="support-us" src="assets/coffee_logo.png"/>
+            <div id="donate" class="w3-modal">
+              <div class="w3-modal-content">
+                <div class="w3-container" style="margin-top:1%;">
+                  <span onclick="document.getElementById('donate').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                  <p style="padding-top:20px; font-size:20px;">This website is run by independent Muslim developers.<br> 
+                        We appreciate your support in helping us cover our running costs.
+                        Donating the equivalent of one cup of coffee goes a long way in helping us continue this effort.<br>
+                        We will be adding new features soon; stay tuned!
+                  </p><br><br>
+                  <button style="padding-top:7px; padding-bottom:7px; width:75%; background-color:#5EC49E; border-radius:8px; color:white; font-size:20px;">Credit/Debit Card
+                  </button><br><br>
+                  <button style="padding-top:7px; padding-bottom:7px; width: 75%; background-color:#5EC49E; border-radius:8px; color: white; font-size:20px;">PayPal
+                  </button><br><br>
+                  <br><br>
+                  <p style="font-size:20px">Jazakum Allahu Khair 🙏🙏🙏 </p>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </center>
   </div>
     
@@ -685,6 +712,7 @@
         <p class="mb-1">&copy; 2020 Zakat.fyi</p>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="about.html">About</a></li>
+          <li class="list-inline-item"><a href="support.html">Support Us</a></li>
         </ul>
       </footer>
 
