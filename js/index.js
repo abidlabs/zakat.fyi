@@ -61,7 +61,6 @@ $(function() {
   $('.btn-group').click(functions.updatePage);
 
 	$('.congrats-message-container').on("show", function() {
-	  var form = document.getElementById("form");
     db.sendToDB(form);
 	});
   $('.btn-toolbar').click(functions.updatePage);
