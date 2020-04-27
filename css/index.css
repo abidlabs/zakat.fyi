@@ -31,6 +31,11 @@
 	background-color: #f6fff6;
 	padding: 20px;
 }
+label.error{
+	font-size: 0.8rem;
+    margin: 7px;
+    color: red;
+}
 .card{
 	width:100%;
 	max-width: 600px;
@@ -122,8 +127,8 @@
 }
 
 .form-group.required>label:before { 
-   content:"* ";
-   color:red;
+   /*content:"* ";*/
+   /*color:red;*/
 }
 
 .form-group.hidden>label:after { 
