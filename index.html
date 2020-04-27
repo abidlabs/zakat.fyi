@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
+  <!-- -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-  <link rel="stylesheet" href="css/index.css?v=6">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="css/index.css?v=6"> 
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <title>Zakat.fyi</title>
 
@@ -44,19 +45,17 @@
 
 </head>
 
-<body>
+<body style = "font-family: Helvetica Neue, sans-serif;" >
 
   <div class="container" id="hero">
     <a href="index.html"><img src="assets/logo.png" id="header-logo" class="img-fluid" alt="Responsive image"></a>
-    <p class="separator">understand your true Zakat</p>
-    <p>&nbsp;</p>
+    <p class="separator">Understand your true Zakat</p>
     
     <div id="desc">
       <img id="plant1" src="assets/plants1.svg">
       <img id="plant2" src="assets/plants2.svg">
       <p><span id="num-people">558 people</span> have calculated their true Zakat using Zakat.fyi </p>
       <p><strong>Let's get started on yours by calculating your Zakat step by step</strong></p>
-      <p>&nbsp;</p>
       <p>&nbsp;</p>
       <button class="btn btn-success btn-lg" id="calculate-Zakat-button"><strong>Calculate your Zakat</strong></button>
       <p id="learn-more"><a href="about.html">Learn more about the methodology</a></p>
@@ -87,7 +86,8 @@
   
   <form id="form">
     <div class="form-group">
-      <label for="formGroupExampleInput">1a. What is the currency you would like to use?</label>
+      <p class="p1">1. Currency Selection </p>
+      <label for="formGroupExampleInput">What is the currency you would like to use?</label>
       <select class="custom-select" id="currency-select" disabled>
         <option selected value="USD">$ - USD</option>
         <option value="EUR">&euro; - Euro</option>
@@ -97,18 +97,18 @@
       </select>
     </div>
 
-    <p>1b. Know the Niṣāb </p>
+    <p class="p1">2. Know the Niṣāb </p>
     <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (PBUH) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount.</p>
 
-    <p>1c. Understand the <em>Hawl</em> </p>
-    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. This is the lunar year, 11 days shorter than the regular year. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakat last year. </p>
-    <p class="explanation"> If you're worried your total liable wealth dropped below <span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span> sometime during the <em>hawl</em>, double check using a  snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakat!</p>
+    <p class="p1">3. Understand the <em>Hawl</em> </p>
+    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakat last lunar year (i.e. the 14th of Ramadan). </p>
+    <p class="explanation"> If you're worried your total liable wealth dropped below <span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span> sometime during the <em>hawl</em>, double check using a snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakat!</p>
 
 
-    <p>1d. You vs. You + Your Spouse </p>
+    <p class="p1">4. You vs. You + Your Spouse </p>
     <p class="explanation"> The Zakat is due by the person who owns the wealth, whether that be man or woman. If you choose, you can pay Zakat on behalf of your spouse, in which case, make sure to the sum the total for both spouses for each of these questions.</p>
 
-    <p>1e. What's your email address? </p>
+    <p class="p1">5. What's your email address? </p>
     <p class="explanation"> We'll send you a receipt of your calculation after this session, so you can save this year's Zakat calculation date and all of your information for next year! </p>
 
       <div class="form-group">
@@ -124,9 +124,9 @@
 
 <h3>💰 Zakatable Assets </h3>
     <p class="explanation"> </p>
+    &nbsp;
 
-
-    <p>2a. Checking Accounts 💵 </p>
+    <p class="p1">6. Checking Accounts 💵 </p>
           <div class="form-group money-text-field required">
       <label>What is the total value of all of your checking account(s)?</label>  
       <div class="input-group mb-3">
@@ -137,7 +137,7 @@
       </div>
     </div>
 
-     <p> 2b. Savings Accounts 👛 </p>
+     <p class="p1">7. Savings Accounts 👛 </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of all of your savings account(s)?</label>  
       <div class="input-group mb-3">
@@ -148,7 +148,7 @@
       </div>
     </div>
 
-    <p>2c. Cash 💸 </p> 
+    <p class="p1">8. Cash 💸 </p> 
        <div class="form-group money-text-field required">
       <label for="formGroupExampleInput2">What is the total value of your physical cash on hand?</label>
       <p class="explanation">This is cash in your wallet, for example.</p>
@@ -162,12 +162,10 @@
       </div>
 
 
-
-
     <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. Zakat is not due on any of the precious jewels in your gold or silver jewelry. You want to get the weight of the pure weight of silver/gold, and not any other metal that may be mixed in. Since this isn't easy, you may want to have them measured by a jeweler. Don't forget about utensils and other gold items you may own. </p>
 
 
-    <p>2d. Silver 🥄 </p>
+    <p class="p1">9. Silver 🥄 </p>
          
     <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
@@ -189,7 +187,7 @@
       Total value of silver: <span id="silver-total-value" class="heavy"><span class="currency-prepend">$</span><span id="silver-total">0.00</span></span>
       </div>  <input type="hidden" id="silver-total-hidden" class="asset" data-multiplier="0.025">
 
-      <p>2e. Gold 🏆 </p>
+      <p class="p1">10. Gold 🏆 </p>
         <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
       <p class="explanation">We will use the price of silver at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
@@ -211,7 +209,7 @@
  
 
     <div class="form-group required">
-      <label>2f-2i. Do you have financial investments, such as stocks and bonds?</label>
+      <label class="p1">11-13. Do you have financial investments, such as stocks and bonds?</label>
 
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
@@ -226,7 +224,7 @@
 
     <div class="investments-related">
 
-      <p>2f. Active Investments 📈 </p>
+      <p class="p1">11. Active Investments 📈 </p>
         <div class="form-group money-text-field required">
       <label>What is the aggregate value of your <strong>actively</strong> traded shares? </label>  
       <p class="explanation">A good rule of thumb for active investments is: are you planning on holding these stocks for less than 366 days? You will treat these shares the same way you would if you had them as cash in your pocket.</p>
@@ -238,7 +236,7 @@
       </div>
     </div>
 
-    <p>2g. Passive Investments 📊 </p>
+    <p class="p1">12. Passive Investments 📊 </p>
      <p class="explanation"> If you are selling or have sold all your long term assets and have no stocks or funds that you are holding, skip to 2i. If you are holding a stock or fund long-term, ask yourself these questions:  </p>
      <p class="explanation"> 1 - Am I holding onto this for 366 days or longer? </p>
      <p class="explanation"> 2 - Am I receiving dividends? </p>
@@ -312,7 +310,7 @@
       </div>
     </div>
 
-  <p> 2h. Dividends 🔖 󠀥󠀥󠀥</p>
+  <p class="p1">13. Dividends 🔖 󠀥󠀥󠀥</p>
     <p class="explanation">  
       The equation we will use to calculate your Zakat Liable Amount on divdends is this: 
 
@@ -344,7 +342,7 @@
       </div>
     </div>
 
-     <p>2i. If you are selling a long term asset, you do not need to calculate 2g or 2h. You will pay on the aggregate cash out price of long-term shares.  </p>
+     <p> If you are selling a long term asset, you do not need to calculate 2g or 2h. You will pay on the aggregate cash out price of long-term shares.  </p>
         <div class="form-group money-text-field required">
       <label>What is the aggregate cash out price of your long term shares?</label>  
       <p class="explanation"> </p>
@@ -359,7 +357,7 @@
 
 
 
-      <p>Roth IRA  🎂
+      <p class="p1">14. Roth IRA  🎂 </p>
          <p class="explanation"> If you are below the age of 59 and a half, you will pay this ONLY on your Roth IRA contributions, since that money is accessible to you. If you are above that age, the earnings (greater than 5 years old) are also accessible for you.. Therefore, if you are above the age of 59 and a half, you should pay on your total Roth amount (and subtract any earnings less than 5 years old). </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Roth IRA contributions?</label>  
@@ -373,7 +371,7 @@
     </div>
 
 
-    <p> Post-tax 401(k) withdrawals 👴
+    <p class="p1">15. Post-tax 401(k) withdrawals 👴</p>
          <p class="explanation"> Joe Bradford's recommended Zakat calculation is to pay Zakat only on what has your full control, or what you have withdrawn. This is treating your 401k like a passive investment. If you reach retirement age or cash out, you will pay Zakat only ONE year on the entire amount, and then EVERY year after because you will have unfettered access to the full amount. If you withdraw early, then you will pay Zakat on the NET amount you withdraw after taxes and penalties.  </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax 401(k) withdrawals?</label>  
@@ -386,7 +384,7 @@
       </div>
     </div>
 
-      <p>Post-tax IRA withdrawals 👵
+      <p class="p1">16. Post-tax IRA withdrawals 👵</p>
          <p class="explanation"> For the same reasons as 2j, we will treate IRA distributions as passive investments. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax IRA withdrawals?</label>  
@@ -398,7 +396,7 @@
       </div>
     </div>
 
-    <p> 2l. Post-tax ESA withdrawals 🎒
+    <p class="p1">17. Post-tax ESA withdrawals 🎒</p>
          <p class="explanation"> For the same reasons as 2j, if you've contributed to a Coverdell ESA, you will pay only on what you've withdrawn this hawl. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax ESA withdrawals?</label>  
@@ -411,7 +409,7 @@
       </div>
     </div>      
 
-    <p> 2m. Post-tax 529 withdrawals 📚
+    <p class="p1">18. Post-tax 529 withdrawals 📚 </p>
          <p class="explanation"> For the same reasons as 2j, if you've contributed to a 529 College Savings Account, you will pay only on what you've withdrawn this hawl. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax 529 withdrawals?</label>  
@@ -424,7 +422,7 @@
       </div>
     </div>
 
-    <p> 2n. HSA Accounts 💉
+    <p class="p1">19. HSA Accounts 💉 </p>
          <p class="explanation"> You do not pay Zakat on your FSA, because you never have full access to that amount. But HSA funds are accessible for your medical expenses and can be rolled over into an IRA, so they will be treated as cash. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your HSA account?</label>  
@@ -437,7 +435,7 @@
       </div>
     </div>
 
-    <p> 2o. Other Illiquid Investments 🖼️
+    <p class="p1">20. Other Illiquid Investments 🖼️ </p>
          <p class="explanation"> If you have a piece of property or real estate that is highly illiquid and the price is not readily determinable because of how unique or rare it is, treat it the same as a passive investment and only pay Zakat on it when you sell it. Otherwise, move on to the next question. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your illiquid investments that you've sold this hawl?</label>  
@@ -451,7 +449,7 @@
     </div>
 
     <div class="form-group required">
-      <label>2p-2r. Do you own any real estate for business/investment purposes?</label><br>
+      <label>21-23. Do you own any real estate for business/investment purposes?</label><br>
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
@@ -464,7 +462,7 @@
     </div>
 
     <div class="real-estate-related">
-    <p> 2p. Property for sale 🏡
+    <p class="p1">21. Property for sale 🏡 </p>
          <p class="explanation"> If you have a properly listed for sale, pay Zakat on the amount you would earn if you sold it right now. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of real estate you have on the market?</label>  
@@ -477,7 +475,7 @@
       </div>
     </div>
 
-    <p> 2q. Vacant Property 🏚️
+    <p class="p1">23. Vacant Property 🏚️ </p>
          <p class="explanation"> If you own a property, but do not have plans for it, then treat it like your passive investments and pay Zakat <em>once</em> on the value received from sale of the inactive property. </p>
         <div class="form-group money-text-field required">
       <label>What is the value received from sale of an inactive property this hawl?</label>  
@@ -490,7 +488,7 @@
       </div>
     </div>
 
-    <p> 2r. Rental Income 🏘️
+    <p class="p1">24. Rental Income 🏘️ </p>
          <p class="explanation"> If you rent a property, you do not need to pay Zakat on the value of the property itself. The property will count as the tool of your trade, rather than the result. </p>
         <div class="form-group money-text-field required">
       <label>What is the net rental income you earned?</label>  
@@ -506,7 +504,7 @@
   </div>
 
   <div class="form-group required">
-    <label>2s-2t. Do you own any businesses?</label><br>
+    <label>25-27. Do you own any businesses?</label><br>
 
     <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
       <label class="btn btn-success active">
@@ -522,7 +520,7 @@
 
 <!--     <p class="explanation">When you have a business, all of your inventory, including raw ingredients and final products, is liable for Zakat. You also pay Zakat on cash you expect For example, </p>
  -->
-    <p> 2s. Aggregate Cash Value of Inventory 📦
+    <p class="p1">25. Aggregate Cash Value of Inventory 📦 </p>
          <p class="explanation"> First, you pay Zakat on all of the items in your inventory, including raw ingredients and final products that you have not yet sold. Of course, you must have owned the items for the <em>hawl</em>. In the case of a partnership, value your share of the inventory. </p>
 
         <div class="form-group money-text-field required">
@@ -536,7 +534,7 @@
       </div>
     </div>
 
-    <p>2t. Business accounts 💵 </p>
+    <p class="p1">26. Business accounts 💵 </p>
          <p class="explanation"> Assuming you have not already included these in questions 2(a) and 2(b). In the case of a partnership, value your share of the inventory. </p>
           <div class="form-group money-text-field required">
       <label>What is the total value of all of your business (checking/savings) account(s)? </label>  
@@ -549,7 +547,7 @@
     </div>
 
 
-    <p> 2u. Accounts Receivables 📥
+    <p class="p1">27. Accounts Receivables 📥 </p>
          <p class="explanation">  </p>
         <div class="form-group money-text-field required">
          <p class="explanation"> Next, include the amount of money in your accounts receivable: money owed to your business for goods and serviced that have been delivered or used. In the case of a partnership, value your share of the accounts receivable. </p>         
@@ -563,7 +561,7 @@
     </div>
   </div>
 
-    <p> 2v. Livestock 🐄
+    <p class="p1">28. Livestock 🐄 </p>
          <p class="explanation"> Zakat on Livestock applies only to free grazing animals. If you own animals for personal use, you do not have to pay Zakat on them. If you keep any animals for sale, you'll treat them as business inventory </p>
         <div class="form-group money-text-field required">
       <label>What is the value of livestock you have for sale?</label>  
@@ -576,7 +574,7 @@
       </div>
     </div>
 
-    <p> 2v. Good Debt (Owed to You) 💱
+    <p class="p1">29. Good Debt (Owed to You) 💱 </p>
          <p class="explanation">Good Debt is debt that you are owed and expect to collect. If something prevents you from doing so, like the inability of a person to pay or their refusal to pay, it becomes Bad Debt. You are liable to pay Zakat on a Bad Debt when you actually receive it.</p>
 
         <div class="form-group money-text-field required">
@@ -598,7 +596,7 @@
   <p class="explanation">When calculating your Zakat liable amount, you should remove the amount of money that you owe to others. In addition to debts, you can also deduct bills that are "immediately due." For example, if you pay your rent monthly, you can deduct one month of your rent. If you pay your insurance every 6 months, and your insurance payment is up <em>immediately</em>, you can deduct the 6 month insurance bill.</p>
     
 
-    <p> 3a. Debts 💳
+    <p class="p1">30. Debts 💳 </p>
          <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in instalments, such as a mortgage or large credit card debt, then do not include that here, but instead look at 3(c). </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your debts owed to others?</label>  
@@ -611,7 +609,7 @@
       </div>
     </div>
 
-    <p> 3b. Delinquent Tax Payment 📅 
+    <p class="p1">31. Delinquent Tax Payment 📅 </p>
       <p class="explanation">This is money that you owe the government.</p>
         <div class="form-group money-text-field required">
       <label>What is the total of your delinquent tax payments?</label>  
@@ -623,7 +621,7 @@
       </div>
     </div>
 
-    <p> 3c. One Month's Living Expenses 🍔
+    <p class="p1">32. One Month's Living Expenses 🍔</p>
          <p class="explanation"> This can include: rent/mortgage payments, medical expenses (other than your insurance premium, which is covered below), utilities, groceries, transport, upkeep, and any other miscellaneous expenses. Because your bills and expenses are considered debts owed to others, you have to pay those first. You should only deduct those expenses which are immediately due. </p>
         <div class="form-group money-text-field required">
       <label>What is your monthly living expense?</label>  
@@ -636,7 +634,7 @@
       </div>
     </div>
 
-    <p> 3d. Periodic Insurance Expenses 🚗
+    <p class="p1">33. Periodic Insurance Expenses 🚗</p>
          <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.)</p>
         <div class="form-group money-text-field required">
       <label>What is the total of your insurance payments?</label>  
@@ -649,7 +647,7 @@
       </div>
     </div>
     
-    <p> 3e. Property Tax Payments 📋
+    <p class="p1">34. Property Tax Payments 📋</p>
          <p class="explanation"> You can deduct this if you are about to pay the property tax immediately. </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your property tax payments?</label>  
@@ -662,7 +660,7 @@
     </div>
 
 
-    <p> 3f. Miscellaneous Fines 🧾
+    <p class="p1">35. Miscellaneous Fines 🧾</p>
          <p class="explanation"> For example, this might be parking tickets. </p>
         <div class="form-group money-text-field required">
       <label>What is the total of any other miscellaneous fines that you still need to pay off?</label>  
@@ -675,7 +673,9 @@
       </div>
     </div>
 
-    <p>Important Note: There are TWO categories of assets which we did not cover in this calculator. If you have any farming assets that you harvest for sale, you will need to calculate that Zakat separately. If you have any haram earnings (Fixed-Income Investments such as bonds; Equity Investments tainted with things like: interest, haram substances like alcohol or drugs, gambling/betting, adult entertainment, conventional financial services, weapons manufacturing), you will need to calculate the Zakat you owe to purify that wealth. Consult a specialist in Islamic Finance. We recommend scheduling a consultation with Sh. Joe Bradford, as this calculation method is his. </p>
+    <p class="explanation"> <b>Important Note:</b> There are <em>two</em> categories of assets which we did not cover in this calculator. If you have any farming assets that you harvest for sale, you will need to calculate that Zakat separately. If you have any haram earnings (Fixed-Income Investments such as bonds; Equity Investments tainted with things like: interest, haram substances like alcohol or drugs, gambling/betting, adult entertainment, conventional financial services, weapons manufacturing), you will need to calculate the Zakat you owe to purify that wealth. Consult a specialist in Islamic Finance. We recommend scheduling a consultation with Sh. Joe Bradford, as this calculation method is his. </p>
+    &nbsp;
+    &nbsp;
 
   </form>
   
