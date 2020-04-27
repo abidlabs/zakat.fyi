@@ -118,7 +118,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Email</span>
         </div>
-        <input type="text" class="form-control" id="email-field" placeholder="">
+        <input type="email" name="email" class="form-control" id="email-field" placeholder="">
       </div>
       </div>
 
@@ -217,10 +217,10 @@
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
-          <input type="radio" name="options" id="investments-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have financial investments &nbsp; &nbsp;
+          <input type="radio" name="investments-options" id="investments-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I have financial investments &nbsp; &nbsp;
         </label> &nbsp; 
         <label class="btn btn-success">
-          <input type="radio" name="options" id="investments-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+          <input type="radio" name="investments-options" id="investments-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
         </label>
       </div>
     </div>
@@ -443,10 +443,10 @@
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
         <label class="btn btn-success active">
-          <input type="radio" name="options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
+          <input type="radio" name="real-estate-options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
         </label> &nbsp; 
         <label class="btn btn-success">
-          <input type="radio" name="options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+          <input type="radio" name="real-estate-options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
         </label>
       </div>
     </div>
@@ -498,10 +498,10 @@
 
     <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
       <label class="btn btn-success active">
-        <input type="radio" name="options" id="business-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own (a) business(es) &nbsp; &nbsp;
+        <input type="radio" name="business-options" id="business-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own (a) business(es) &nbsp; &nbsp;
       </label> &nbsp;
       <label class="btn btn-success">
-        <input type="radio" name="options" id="business-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+        <input type="radio" name="business-options" id="business-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
       </label>
     </div>
   </div>
@@ -756,7 +756,7 @@
 			<!-- TODO: Add SDKs for Firebase products that you want to use
 					 https://firebase.google.com/docs/web/setup#available-libraries -->
 			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 			<script>
 				// Your web app's Firebase configuration
 				var firebaseConfig = {
@@ -772,6 +772,7 @@
 				// Initialize Firebase
 				firebase.initializeApp(firebaseConfig);
 				firebase.analytics();
+        $('#form').validate()
 			</script> 
  			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
       <script type="module" src="js/index.js"></script>
