@@ -58,15 +58,15 @@ export function updateZakatAmount() {
 	var totalAssetsMinusLiabilities = 0
 
 	$('form *').filter(':input').each(function(){
-		var val = $(this).val()
+		var val = $(this).val().replace(',', '')
 		var multiplier = $(this).attr('data-multiplier') || 0
 		if ($.isNumeric(val)) {
-			zakatAmount += parseInt(val) * parseFloat(multiplier);
+			zakatAmount += parseFloat(val) * parseFloat(multiplier);
 			if ($(this).hasClass('asset')){
-				totalAssetsMinusLiabilities += parseInt(val)
+				totalAssetsMinusLiabilities += parseFloat(val)
 			}
 			else if ($(this).hasClass('liability')) {
-				totalAssetsMinusLiabilities -= parseInt(val)
+				totalAssetsMinusLiabilities -= parseFloat(val)
 			}
 		}
 	});
