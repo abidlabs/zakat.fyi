@@ -1,4 +1,5 @@
 import * as cookies from "./cookies.js";
+import * as db from "./db.js";
 
 export function setCookie(name,value,days) {
     var expires = "";
@@ -33,6 +34,7 @@ export function initializeIdentity() {
   var uid = cookies.getRandomUUID();
   cookies.setCookie("uid", uid, 1024);
   localStorage.setItem("uid", uid);
-	localStorage.setItem("data", {});
+	localStorage.setItem("data", JSON.stringify({}));
+  db.incrementUsers();
   return uid;
 }

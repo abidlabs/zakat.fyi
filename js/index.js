@@ -11,8 +11,9 @@ window.nisab = prices.nisab_usd
 // wait for document ready
 $(function() {
   /* *******************************************
-  ******** SECTION: Cookie Management **********
+  ******** SECTION: Intialization **************
   ******************************************** */
+  var user_count = db.getNumUsers();
   var uid = cookies.getCookie("uid");
   if (uid==null) {
     // initialize a UID

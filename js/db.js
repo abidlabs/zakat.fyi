@@ -34,3 +34,31 @@ export function sendToDB() {
   });
 	localStorage.setItem("data", JSON.stringify(form_json));
 }
+
+export function incrementUsers() {
+  var docRef = db.collection("web_stats").doc("statistics");
+  var increment = firebase.firestore.FieldValue.increment(1);
+	docRef.update({
+			user_count: increment 
+	})
+	.then(function() {
+			console.log("Document successfully updated!");
+	})
+	.catch(function(error) {
+			// The document probably doesn't exist.
+			console.error("Error updating document: ", error);
+	});
+}
+
+export function getNumUsers() {
+  var user_count = 558;
+  var docRef = db.collection("web_stats").doc("statistics");
+  docRef.get().then(function(doc) {
+    user_count = doc.data().user_count;
+		// for later fudging
+		//user_count = Math.max(559, user_count);
+		$("#num-people").html(user_count + " people");
+  }).catch(function(error) {
+        console.error("Error adding document: ", error);
+  });
+}
