@@ -692,7 +692,7 @@
   <center>
     <button class="btn btn-success btn-lg" id="calculate-zakat-button-end"><strong>Calculate Your Zakat!</strong></button>
   </center>
-
+  
   <div class="modal" id="ending-messages" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -780,6 +780,40 @@
 
 
   
+
+  <!-- Modal -->
+  <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+                <h5 class="modal-title" id="emailModalLabel">Send Me My Calculation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div class="modal-body"> 
+          <p style="font-size:.90rem">Confirm your email so we can send you a copy of your Zakat info. 😊</p>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">email</span>
+              </div>
+              <input type="email" name="email" class="form-control" id="email-field-2">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+                <button type="button" id= "noreceipt" class="btn btn-secondary" 
+                      data-dismiss="modal">Don't Save</button>
+                <button type="button" id="savereceipt" class="btn btn-primary" 
+                      data-dismiss="modal"style="background-color: green; border-color: green">Calculate and Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
       <script>
         window.intercomSettings = {
           app_id: "zifidfn5"
@@ -790,7 +824,6 @@
       // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/zifidfn5'
       (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/zifidfn5';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
       </script>
-  
     </body>
   
   
@@ -810,31 +843,31 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
 
       <!-- Intializing Firebase -->
- 			<!-- The core Firebase JS SDK is always required and must be listed first -->
-			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
 
-			<!-- TODO: Add SDKs for Firebase products that you want to use
-					 https://firebase.google.com/docs/web/setup#available-libraries -->
-			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-			<script>
-				// Your web app's Firebase configuration
-				var firebaseConfig = {
-					apiKey: "AIzaSyBKcpUup2AgggJ1TUl9cE2_K6o3XCnNXXo",
-					authDomain: "zakatfyi.firebaseapp.com",
-					databaseURL: "https://zakatfyi.firebaseio.com",
-					projectId: "zakatfyi",
-					storageBucket: "zakatfyi.appspot.com",
-					messagingSenderId: "276889567756",
-					appId: "1:276889567756:web:a5e9a74fba43a33cb3e429",
-					measurementId: "G-65LY6WE4BV"
-				};
-				// Initialize Firebase
-				firebase.initializeApp(firebaseConfig);
-				firebase.analytics();
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBKcpUup2AgggJ1TUl9cE2_K6o3XCnNXXo",
+          authDomain: "zakatfyi.firebaseapp.com",
+          databaseURL: "https://zakatfyi.firebaseio.com",
+          projectId: "zakatfyi",
+          storageBucket: "zakatfyi.appspot.com",
+          messagingSenderId: "276889567756",
+          appId: "1:276889567756:web:a5e9a74fba43a33cb3e429",
+          measurementId: "G-65LY6WE4BV"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
         $('#form').validate()
-			</script> 
- 			<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+      </script> 
+      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
       <script type="module" src="js/index.js"></script>
     </body>
   </html>  
