@@ -782,14 +782,12 @@
         </div>
         <div class="modal-body"> 
           <p style="font-size:.90rem">Confirm your email so we can send you a copy of your Zakat info. 😊</p>
-          <div class="email-receipt" style="margin-top: 20px;">
-            <div class="text-center" style="margin-top:10px; max-width: 450px; width: 100%;">
-              <form class="zakat-email-receipt">
-                <input class="form-control simplebox lfont zakat-receipt-email-input" style="border-radius:.3rem .3rem 0 0" placeholder="Enter your email" type="email" name="field[eca505dd-d266-4a70-827f-11e4e38c0deb]" id="field[eca505dd-d266-4a70-827f-11e4e38c0deb]" required="required">
-
-                <button class="btn btn-md btn-success send-zakat-receipt lfont" style="width:100%;border-radius:0 0 .3rem .3rem;background-color:#24c76c" type="submit">Send My Zakat Receipt</button>
-                <p id="zakat-email-receipt-disclaimer-success" class="lfont mt-1 zakat-email-receipt-success" style="display:none;color:green">Your Zakat receipt has been sent</p>
-              </form>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">email</span>
+              </div>
+              <input type="email" name="email" class="form-control" id="email-field-2">
             </div>
           </div>
 
