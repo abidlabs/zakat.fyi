@@ -58,7 +58,9 @@ $(function() {
 
   $("#calculate-zakat-button-end").click(function(){
   	$('#calculate-zakat-button-end').css('display', 'none')
-  	$('#ending-messages').css('display', 'block')
+  	$('#ending-messages').css('display', 'block');
+    // Populate email form with previously entered email, if not use whatever they enter here to send to our db
+    $('.zakat-receipt-email-input').val($('#email-field').val());
   })
 
   $("#form :input").change(db.sendToDB);
