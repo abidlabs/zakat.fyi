@@ -712,6 +712,35 @@
     &nbsp;
     &nbsp;
 
+    <!-- Modal -->
+    <div class="modal email-receipt-modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="emailModalLabel">Send Me My Calculation</h5>
+            <button type="button" class="close exit-email-modal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"> 
+            <p style="font-size:.90rem">Confirm your email so we can send you a copy of your Zakat info. 😊</p>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">email</span>
+                </div>
+                <input type="email" name="email" class="form-control email-receipt-confirm" id="email-recapture">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          <button type="button" id="noreceipt" class="btn btn-secondary exit-email-modal" data-dismiss="modal">Skip to Zakat Summary</button>
+          <button type="button" id="savereceipt" class="btn btn-primary exit-email-modal" data-dismiss="modal"style="background-color: green; border-color: green">Calculate and Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </form>
   
   
@@ -798,38 +827,6 @@
           <li class="list-inline-item"><a href="support.html">Support Us</a></li>
         </ul>
       </footer>
-
-
-  
-
-  <!-- Modal -->
-  <div class="modal email-receipt-modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="emailModalLabel">Send Me My Calculation</h5>
-          <button type="button" class="close exit-email-modal" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body"> 
-          <p style="font-size:.90rem">Confirm your email so we can send you a copy of your Zakat info. 😊</p>
-          <div class="form-group">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">email</span>
-              </div>
-              <input type="email" name="email" class="form-control email-receipt-confirm" id="email-field-2">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-        <button type="button" id="noreceipt" class="btn btn-secondary exit-email-modal" data-dismiss="modal">Skip to Zakat Summary</button>
-        <button type="button" id="savereceipt" class="btn btn-primary exit-email-modal" data-dismiss="modal"style="background-color: green; border-color: green">Calculate and Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   
       <script>
