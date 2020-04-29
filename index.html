@@ -690,7 +690,7 @@
   <div class="congrats-message-container" style="/*display: none;*/">
 
   <center>
-    <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#emailModal" id="calculate-zakat-button-end"><strong>Calculate Your Zakat!</strong></button>
+    <button class="btn btn-success btn-lg" id="calculate-zakat-button-end"><strong>Calculate Your Zakat!</strong></button>
   </center>
 
 
@@ -714,7 +714,7 @@
           <li style="display: inline;"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fzakat.fyi&amp;title=Calculate%20your%20zakat%20in%205%20minutes&amp;summary=Check%20out%20this%20salary%20transparency%20tool%20for%20software%20engineering%20companies&amp;source=http%3A%2F%2Fzakat.fyi" target="_blank" title="Share on LinkedIn"><span style="font-size: 45px; margin-left: 10px; margin-right: 10px; color: #0077B5;"><i class="fab fa-linkedin"></i></span></a></li>
         </ul>
 
-        <div class="email-receipt" style="margin-top: 20px;">
+        <!-- <div class="email-receipt" style="margin-top: 20px;">
           <div class="text-center" style="margin-top:10px; max-width: 450px; width: 100%;">
             <form class="zakat-email-receipt">
               <input class="form-control simplebox lfont zakat-receipt-email-input" style="border-radius:.3rem .3rem 0 0" placeholder="Enter your email" type="email" name="field[eca505dd-d266-4a70-827f-11e4e38c0deb]" id="field[eca505dd-d266-4a70-827f-11e4e38c0deb]" required="required">
@@ -723,7 +723,7 @@
               <p id="zakat-email-receipt-disclaimer-success" class="lfont mt-1 zakat-email-receipt-success" style="display:none;color:green">Your Zakat receipt has been sent</p>
             </form>
           </div>
-        </div>
+        </div> -->
 
         <!-- <div id="donation" style="margin-top: 20px !important;">
           <p>If you found this app useful, help by sharing it and support us with a cup of coffee!</p>
@@ -771,14 +771,14 @@
   
 
   <!-- Modal -->
-  <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+  <div class="modal email-receipt-modal" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-                <h5 class="modal-title" id="emailModalLabel">Send Me My Calculation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+          <h5 class="modal-title" id="emailModalLabel">Send Me My Calculation</h5>
+          <button type="button" class="close exit-email-modal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body"> 
           <p style="font-size:.90rem">Confirm your email so we can send you a copy of your Zakat info. 😊</p>
@@ -787,16 +787,13 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">email</span>
               </div>
-              <input type="email" name="email" class="form-control" id="email-field-2">
+              <input type="email" name="email" class="form-control email-receipt-confirm" id="email-field-2">
             </div>
           </div>
-
         </div>
         <div class="modal-footer">
-                <button type="button" id= "noreceipt" class="btn btn-secondary" 
-                      data-dismiss="modal">Don't Save</button>
-                <button type="button" id="savereceipt" class="btn btn-primary" 
-                      data-dismiss="modal"style="background-color: green; border-color: green">Calculate and Send</button>
+        <button type="button" id="noreceipt" class="btn btn-secondary exit-email-modal" data-dismiss="modal">Skip to Zakat Summary</button>
+        <button type="button" id="savereceipt" class="btn btn-primary exit-email-modal" data-dismiss="modal"style="background-color: green; border-color: green">Calculate and Send</button>
         </div>
       </div>
     </div>

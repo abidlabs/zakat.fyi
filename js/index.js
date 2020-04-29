@@ -58,10 +58,15 @@ $(function() {
 
   $("#calculate-zakat-button-end").click(function(){
   	$('#calculate-zakat-button-end').css('display', 'none')
-  	$('#ending-messages').modal('show');
+  	$('#emailModal').modal('show');
     // Populate email form with previously entered email, if not use whatever they enter here to send to our db
-    $('.zakat-receipt-email-input').val($('#email-field').val());
-  })
+    $('.email-receipt-confirm').val($('#email-field').val());
+  });
+
+  $('#emailModal').on('hidden.bs.modal', function(e) {
+    $('#form').hide();
+    $('#ending-messages').show();
+  });
 
   $("#form :input").change(db.sendToDB);
   $("form :input").change(functions.updatePage);
