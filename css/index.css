@@ -9,6 +9,8 @@
 }
 
 h1 { margin-top: 15px; margin-bottom: 30px; font-family: Helvetica Neue, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+h2 { margin-top: 50px; margin-bottom: 20px; }
+
 h3 { margin-top: 15px; margin-bottom: 20px; font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px; } 
 p { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
 blockquote { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
