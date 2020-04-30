@@ -50,6 +50,21 @@ $(function() {
     $('.business-related').css('display', 'none')
   })
 
+  $('#metals-yes').click(function(){
+    $('.metals-related').css('display', 'block')
+  })
+  $('#metals-no').click(function(){
+    $('.metals-related').css('display', 'none')
+  })
+
+  $('#accounts-yes').click(function(){
+    $('.accounts-related').css('display', 'block')
+  })
+  $('#accounts-no').click(function(){
+    $('.accounts-related').css('display', 'none')
+  })
+
+
   $("#calculate-zakat-button").click(function() {
       $('html, body').animate({
           scrollTop: $("nav").offset().top

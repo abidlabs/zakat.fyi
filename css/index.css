@@ -23,6 +23,7 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 
 .p1 {
 	font-weight: 500;
+	margin-top: 50px;
 }
 
 
@@ -44,7 +45,16 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 	background-color: #f6fff6;
 	padding: 20px;
 }
-
+.metals-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
+.accounts-related{
+	display: none;
+	background-color: #f6fff6;
+	padding: 20px;
+}
 .business-related{
 	display: none;
 	background-color: #f6fff6;
