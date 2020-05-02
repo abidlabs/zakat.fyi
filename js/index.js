@@ -31,6 +31,14 @@ $(function() {
 
   $('#coffee-image').click(function(){
     $('#donate').css('display', 'block')
+    $('.navbar').css('visibility', 'hidden')
+    $('.progress-container').css('visibility', 'hidden')    
+  })
+
+  $('#close-modal').click(function(){
+    $('#donate').css('display', 'none')
+    $('.navbar').css('visibility', 'visible')
+    $('.progress-container').css('visibility', 'visible')    
   })
 
   $('#investments-yes').click(function(){
