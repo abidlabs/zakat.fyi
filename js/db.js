@@ -49,10 +49,9 @@ export function incrementUsers() {
 }
 
 export function getNumUsers() {
-  var user_count = 558;
   var docRef = db.collection("web_stats").doc("statistics");
   docRef.get().then(function(doc) {
-    user_count = doc.data().user_count;
+    var user_count = doc.data().user_count;
 		//user_count = Math.max(559, user_count);
 		$(".num-people-count").html(user_count);
 
