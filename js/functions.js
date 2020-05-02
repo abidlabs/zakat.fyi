@@ -45,9 +45,8 @@ export function updateFinancialsTable() {
         financialsTotalZakat += zakatAmount; 
     }
 
-    console.log('updating financials');
     $('#financials-total-hidden').val(financialsTotalZakat);
-	$('#financials-total').html(financialsTotalZakat);
+	$('#financials-total').val(financialsTotalZakat);
     updateZakatAmount();
 }
 
