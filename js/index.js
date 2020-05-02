@@ -111,4 +111,9 @@ $(function() {
 	// When the user scrolls the page, execute myFunction
 	window.onscroll = functions.updateProgressBar
 
+  $("#financials-table").on("change", "input", function(event){  // Explicitly reincluded to include bindings.
+      functions.updateFinancialsTable();
+  });
+
+
 });
