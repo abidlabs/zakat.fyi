@@ -91,6 +91,13 @@ $(function() {
     $('.email-receipt-confirm').val($('#email-field').val());
   });
 
+  $('#savereceipt').click(function() {
+        var email = $('#email-recapture').val();
+        var subject = 'Your 2020 Zakat.fyi Receipt';
+        var emailBody = 'Salaam!%0D%0A%0D%0AThank you for using Zakat.fyi to calculate your true zakat for 2020.%0D%0A%0D%0AYour Zakat amount is: ' + $('.currency-prepend').html()+$('.zakat-amount').html() + '%0D%0A%0D%0ASalaam,%0D%0AZakat.fyi team';
+        document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+  })
+
   $('#emailModal').on('hidden.bs.modal', function(e) {
     $('#form').hide();
     $('#hero').hide()
