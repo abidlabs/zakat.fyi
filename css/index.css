@@ -31,7 +31,10 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 	margin-top: 50px;
 }
 
-
+#donate{
+	z-index: 999;
+	text-align: center
+}
 
 /* The progress container (grey background) */
 .progress-container {
@@ -203,9 +206,14 @@ label {
 	margin-bottom: 40px;
 }
 
-#coffee_image{
+#coffee-image{
 	border-radius:12px; 
-	width:150px;
+	width:130px;
+	position: fixed;
+	bottom: 20px;
+	left: 30px;
+	cursor: pointer;
+	 box-shadow: 0 4px 3px -3px black;
 }
 
 .border-box{
@@ -216,3 +224,4 @@ label {
 .headshot{
 	width:90%;
 }
+

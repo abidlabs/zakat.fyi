@@ -29,6 +29,10 @@ $(function() {
   *********** SECTION: Event Handlers **********
   ******************************************** */
 
+  $('#coffee-image').click(function(){
+    $('#donate').css('display', 'block')
+  })
+
   $('#investments-yes').click(function(){
     $('.investments-related').css('display', 'block')
   })
@@ -73,6 +77,7 @@ $(function() {
 
   $("#calculate-zakat-button-end").click(function(){
   	$('#calculate-zakat-button-end').css('display', 'none')
+
   	$('#emailModal').modal('show');
     // Populate email form with previously entered email, if not use whatever they enter here to send to our db
     $('.email-receipt-confirm').val($('#email-field').val());
@@ -80,7 +85,9 @@ $(function() {
 
   $('#emailModal').on('hidden.bs.modal', function(e) {
     $('#form').hide();
+    $('#hero').hide()
     $('#ending-messages').show();
+    window.scrollTo(0, 0);
   });
 
   $("#form :input").change(db.sendToDB);
