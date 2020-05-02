@@ -84,6 +84,8 @@ export const formToJSON = elements => [].reduce.call(elements, (data, element) =
   return data;
 }, {});
 
+
+
 /**
 * A handler function to prevent default submission and run our custom script.
 * @param  {Event} event  the submit event triggered by the user

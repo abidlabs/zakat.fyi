@@ -14,9 +14,10 @@ import * as prices from "./prices.js";
 })(jQuery);
 
 export function updatePage() {
-  updateProgressBar();
-  updateZakatAmount();
-  updateMetalTotals()
+    updateProgressBar();
+    updateZakatAmount();
+    updateMetalTotals();
+    updateFinancialsTable();
 }
 
 export function updateMetalTotals() {
@@ -27,6 +28,27 @@ export function updateMetalTotals() {
 	$('#silver-total').html(silverTotal.toFixed(2))	
 	$('#silver-total-hidden').val(silverTotal)
 	updateZakatAmount();
+}
+
+export function updateFinancialsTable() {
+    var table = document.getElementById("financials-table");
+    var financialsTotalZakat = 0;
+    for (var i = 0, row; row = table.rows[i]; i++) {
+       //iterate through rows
+        var stockName = row.cells[0];
+        var totalAssets = row.cells[1];
+        var sharesOutstanding = row.cells[2];
+        var sharesOwned = row.cells[3];
+
+        # calculate zakat, rounded to 2 decimal places
+        var zakatAmount = Math.round(totalAssets * (sharesOutstanding * 100.0) / sharesOwned) / 100;
+        financialsTotalZakat += zakatAmount; 
+    }
+
+    console.log('updating financials');
+    $('#financials-total-hidden').val(financialsTotalZakat);
+	$('#financials-total').html(financialsTotalZakat);
+    updateZakatAmount();
 }
 
 export function updateProgressBar() {

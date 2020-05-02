@@ -313,9 +313,7 @@
         <thead>
           <tr>
             <th style="text-align:center;">Stock Name</th>
-            <th style="text-align:center;">Cash & Cash Equivalents</th>
-            <th style="text-align:center;">Inventories</th>
-            <th style="text-align:center;">Receivables</th>
+            <th style="text-align:center;">Total Assets Value</th>
             <th style="text-align:center;">Shares Outstanding</th>
             <th style="text-align:center;">Your number of shares</th>
           </tr>
@@ -323,40 +321,30 @@
         <tbody>
           <tr>
             <td>
-              <input type="text" class="form-control asset" id="stock-name" placeholder="Stock A" data-multiplier="0.0" style="width=5px;">
+              <!-- Stock Name Field -->
+              <input type="text" class="form-control" placeholder="Stock A" style="width=5px;">
             </td>
             <td>
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control asset" id="c-field" placeholder="0" data-multiplier="0.0" style="width=10%;">
+                    <!-- Total Assets Field --> 
+                    <input type="text" class="form-control" placeholder="0" data-multiplier="0.0" style="width=10%;">
                   </div>
                 </div>
             </td>
             <td>
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control asset" id="i-field" placeholder="0" data-multiplier="0.0" style="width=10%;">
+                    <!-- Shares Outstanding Field --> 
+                    <input type="text" class="form-control" placeholder="0" style="width=10%;">
                   </div>
                 </div>
             </td>
             <td>
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control asset" id="r-field" placeholder="0" data-multiplier="0.0" style="width=10%;">
-                  </div>
-                </div>
-            </td>
-            <td>
-                <div class="form-group money-text-field required">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control asset" id="sharesOwned-field" placeholder="0" data-multiplier="0.0" style="width=10%;">
-                  </div>
-                </div>
-            </td>
-            <td>
-                <div class="form-group money-text-field required">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control asset" id="outstandingShares-field" placeholder="0" data-multiplier="0.0" style="width=10%;">
+                    <!-- Shares Owned Field --> 
+                    <input type="text" class="form-control" placeholder="0" style="width=10%;">
                   </div>
                 </div>
             </td>
@@ -367,15 +355,20 @@
     <!-- Button to edit financials table -->
     <script>
         function addFinancialsRow() {
-            var text = "\"<tr><td><input type=\"text\" class=\"form-control asset\" id=\"stock-name\" placeholder=\"Stock A\" data-multiplier=\"0.0\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control asset\" id=\"c-field\" placeholder=\"0\" data-multiplier=\"0.0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control asset\" id=\"i-field\" placeholder=\"0\" data-multiplier=\"0.0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control asset\" id=\"r-field\" placeholder=\"0\" data-multiplier=\"0.0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control asset\" id=\"sharesOwned-field\" placeholder=\"0\" data-multiplier=\"0.0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control asset\" id=\"outstandingShares-field\" placeholder=\"0\" data-multiplier=\"0.0\" style=\"width=10%;\"></div></div></td></tr>\""
+            var text = "\"<tr><td><input type=\"text\" class=\"form-control\" placeholder=\"Stock A\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"0\" style=\"width=10%;\"></div></div></td></tr>\""
             $("#financials-table").append(text);
         }
     </script>
-    <button type="button" id="financialUpdateButton"
-            class="btn btn-primary"
-            onclick="addFinancialsRow()">
-      Add Stock
-    </button>
+    <div>
+        <button type="button" id="financialUpdateButton"
+                class="btn btn-primary"
+                onclick="addFinancialsRow();">
+          Add Stock
+        </button>
+    </div>
+    <div style="">
+    <span class="d-none d-sm-inline">Total: </span><span id="financials-total-value" class="heavy"><span class="currency-prepend">$</span><span id="financials-total">0.00</span><input type="hidden" id="financials-total-hidden" class="asset" data-multiplier="0.025"></span>
+    </div>
 
   <p class="p1">13. Dividends 🔖 󠀥󠀥󠀥</p>
     <p class="explanation">  
