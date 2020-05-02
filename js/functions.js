@@ -47,7 +47,7 @@ export function updateFinancialsTable() {
 	})
 	$('#financials-total-hidden').val(financialsTotalAssets);
 	$('#financials-total').html(financialsTotalAssets.toFixed(2));
-    updateZakatAmount();
+  updateZakatAmount();
 }
 
 export function updateProgressBar() {
