@@ -181,74 +181,81 @@
       <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
       <p class="explanation">We will use the price of silver at <span class="currency-prepend">$</span><span class="silver-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your silver in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
 
-      <div class="container" style="margin: 20px 0px">
+      <div class="container">
         <div class="row">
-          <div class="col-sm">
-         <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">oz</span>
+          <div style="width:25%">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">oz</span>
+              </div>
+              <input type="text" class="form-control silver-related" id="silver-oz" placeholder="0">
+            </div>
           </div>
-          <input type="text" class="form-control silver-related" id="silver-oz" placeholder="0">
-        </div>
-          </div>
-          <div class="col-2 text-center" style="padding-top:8px">
+          <div class="text-center" style="padding-top:8px; width:10%">
             <i class="fa fa-plus"></i>
           </div>
-          <div class="col-sm">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+          <div class="" style="width:25%">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+              </div>
+              <input type="text" class="form-control silver-related" id="silver-value" placeholder="0">
+            </div>
           </div>
-          <input type="text" class="form-control silver-related" id="silver-value" placeholder="0">
-        </div>
-          </div>
-            <div class="col-2 text-center" style="padding-top:8px">
+          <div class="text-center" style="padding-top:8px; width:10%">
             <i class="fa fa-equals"></i>
           </div>
-
+          <div style="padding-top:4px; width:25%">
+                  <span class="border-box">      
+                  <span class="d-none d-sm-inline">Total value: </span><span id="silver-total-value" class="heavy"><span class="currency-prepend">$</span><span id="silver-total">0.00</span></span>
+                  </div>  <input type="hidden" id="silver-total-hidden" class="asset" data-multiplier="0.025">
+                  </span>
+          </div>
         </div>
       </div>
 
-      
-      Total value of silver: <span id="silver-total-value" class="heavy"><span class="currency-prepend">$</span><span id="silver-total">0.00</span></span>
-      </div>  <input type="hidden" id="silver-total-hidden" class="asset" data-multiplier="0.025">
 
       <p class="p1">10. Gold 🏆 </p>
         <div class="form-group required">
       <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
       <p class="explanation">We will use the price of silver at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
   
-      <div class="container" style="margin: 20px 0px">
+
+
+      <div class="container">
         <div class="row">
-          <div class="col-sm">
-         <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">oz</span>
-          </div>
+          <div style="width:25%">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">oz</span>
+              </div>
           <input type="text" class="form-control gold-related" id="gold-oz" placeholder="0">
-        </div>
+            </div>
           </div>
-          <div class="col-2 text-center" style="padding-top:8px">
+          <div class="text-center" style="padding-top:8px; width:10%">
             <i class="fa fa-plus"></i>
           </div>
-          <div class="col-sm">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-          </div>
+          <div class="" style="width:25%">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+              </div>
           <input type="text" class="form-control gold-related" id="gold-value" placeholder="0">
-        </div>
+            </div>
           </div>
-            <div class="col-2 text-center" style="padding-top:8px">
+          <div class="text-center" style="padding-top:8px; width:10%">
             <i class="fa fa-equals"></i>
           </div>
-
+          <div style="padding-top:4px; width:25%">
+                  <span class="border-box">      
+                  <span class="d-none d-sm-inline">Total value: </span><span id="gold-total-value" class="heavy"><span class="currency-prepend">$</span><span id="gold-total">0.00</span></span>
+                  </div>  <input type="hidden" id="gold-total-hidden" class="asset" data-multiplier="0.025">
+                  </span>
+          </div>
         </div>
       </div>
 
-      Total value of gold: <span id="gold-total-value" class="heavy"><span class="currency-prepend">$</span><span id="gold-total">0.00</span></span> 
-      </div>   <input type="hidden" id="gold-total-hidden" class="asset" data-multiplier="0.025">
- 
+
 
     <div class="form-group required">
       <label class="p1">11-13. Do you have financial investments, such as stocks and bonds?</label>
