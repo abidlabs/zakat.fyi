@@ -225,3 +225,7 @@ label {
 	width:90%;
 }
 
+#charity-carousel{
+	display: none;
+	padding-top:40px;
+}

@@ -95,6 +95,7 @@ $(function() {
     $('#form').hide();
     $('#hero').hide()
     $('#ending-messages').show();
+    $('#charity-carousel').css('display', 'block')
     window.scrollTo(0, 0);
   });
 
