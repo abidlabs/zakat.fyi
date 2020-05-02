@@ -14,9 +14,10 @@ import * as prices from "./prices.js";
 })(jQuery);
 
 export function updatePage() {
-  updateProgressBar();
-  updateZakatAmount();
-  updateMetalTotals()
+    updateProgressBar();
+    updateZakatAmount();
+    updateMetalTotals();
+    updateFinancialsTable();
 }
 
 export function updateMetalTotals() {
@@ -27,6 +28,26 @@ export function updateMetalTotals() {
 	$('#silver-total').html(silverTotal.toFixed(2))	
 	$('#silver-total-hidden').val(silverTotal)
 	updateZakatAmount();
+}
+
+export function updateFinancialsTable() {
+	var financialsTotalAssets = 0;
+	$('#financials-table tr').each(function (i, row) {
+		if (i > 0) { // ignore <th>
+			var row = $(row);
+            var stockName = row.find('input[class*="stock-name"]').val();
+	        var totalAssets = parseFloat(row.find('input[class*="stock-assets"]').val()) || 0;
+	        var sharesOutstanding = parseFloat(row.find('input[class*="stock-total-shares"]').val()) || 0;
+	        var sharesOwned = parseFloat(row.find('input[class*="stock-your-shares"]').val()) || 0;
+        	console.log(stockName, totalAssets, sharesOutstanding, sharesOwned)
+		}
+		if (sharesOutstanding > 0 ) {
+			financialsTotalAssets += sharesOwned / sharesOutstanding * totalAssets;
+		}
+	})
+	$('#financials-total-hidden').val(financialsTotalAssets);
+	$('#financials-total').html(financialsTotalAssets.toFixed(2));
+    updateZakatAmount();
 }
 
 export function updateProgressBar() {
