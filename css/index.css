@@ -186,3 +186,8 @@ label {
 .form-group {
 	margin-bottom: 40px;
 }
+
+#coffee_image{
+	border-radius:12px; 
+	width:150px;
+}
