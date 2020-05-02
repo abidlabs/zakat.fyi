@@ -29,6 +29,18 @@ $(function() {
   *********** SECTION: Event Handlers **********
   ******************************************** */
 
+  $('#coffee-image').click(function(){
+    $('#donate').css('display', 'block')
+    $('.navbar').css('visibility', 'hidden')
+    $('.progress-container').css('visibility', 'hidden')    
+  })
+
+  $('#close-modal').click(function(){
+    $('#donate').css('display', 'none')
+    $('.navbar').css('visibility', 'visible')
+    $('.progress-container').css('visibility', 'visible')    
+  })
+
   $('#investments-yes').click(function(){
     $('.investments-related').css('display', 'block')
   })
@@ -50,6 +62,21 @@ $(function() {
     $('.business-related').css('display', 'none')
   })
 
+  $('#metals-yes').click(function(){
+    $('.metals-related').css('display', 'block')
+  })
+  $('#metals-no').click(function(){
+    $('.metals-related').css('display', 'none')
+  })
+
+  $('#accounts-yes').click(function(){
+    $('.accounts-related').css('display', 'block')
+  })
+  $('#accounts-no').click(function(){
+    $('.accounts-related').css('display', 'none')
+  })
+
+
   $("#calculate-zakat-button").click(function() {
       $('html, body').animate({
           scrollTop: $("nav").offset().top
@@ -58,6 +85,7 @@ $(function() {
 
   $("#calculate-zakat-button-end").click(function(){
   	$('#calculate-zakat-button-end').css('display', 'none')
+
   	$('#emailModal').modal('show');
     // Populate email form with previously entered email, if not use whatever they enter here to send to our db
     $('.email-receipt-confirm').val($('#email-field').val());
@@ -65,7 +93,10 @@ $(function() {
 
   $('#emailModal').on('hidden.bs.modal', function(e) {
     $('#form').hide();
+    $('#hero').hide()
     $('#ending-messages').show();
+    $('#charity-carousel').css('display', 'block')
+    window.scrollTo(0, 0);
   });
 
   $("#form :input").change(db.sendToDB);
