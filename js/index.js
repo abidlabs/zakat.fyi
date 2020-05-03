@@ -46,6 +46,7 @@ $(function() {
   })
   $('#investments-no').click(function(){
     $('.investments-related').css('display', 'none')
+    $('.investments-related input').val(0)
   })
 
   $('#real-estate-yes').click(function(){
@@ -53,6 +54,7 @@ $(function() {
   })
   $('#real-estate-no').click(function(){
     $('.real-estate-related').css('display', 'none')
+    $('.real-estate-related input').val(0)
   })
 
   $('#business-yes').click(function(){
@@ -60,6 +62,7 @@ $(function() {
   })
   $('#business-no').click(function(){
     $('.business-related').css('display', 'none')
+    $('.business-related input').val(0)
   })
 
   $('#metals-yes').click(function(){
@@ -67,6 +70,7 @@ $(function() {
   })
   $('#metals-no').click(function(){
     $('.metals-related').css('display', 'none')
+    $('.metals-related input').val(0)
   })
 
   $('#accounts-yes').click(function(){
@@ -74,6 +78,25 @@ $(function() {
   })
   $('#accounts-no').click(function(){
     $('.accounts-related').css('display', 'none')
+    $('.accounts-related input').val(0)
+  })
+
+
+  $('#illiquid-yes').click(function(){
+    $('.illiquid-related').css('display', 'block')
+  })
+  $('#illiquid-no').click(function(){
+    $('.illiquid-related').css('display', 'none')
+    $('.illiquid-related input').val(0)
+  })
+
+
+  $('#fines-yes').click(function(){
+    $('.fines-related').css('display', 'block')
+  })
+  $('#fines-no').click(function(){
+    $('.fines-related').css('display', 'none')
+    $('.fines-related input').val(0)
   })
 
 

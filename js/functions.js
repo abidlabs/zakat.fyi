@@ -39,7 +39,6 @@ export function updateFinancialsTable() {
 	        var totalAssets = parseFloat(row.find('input[class*="stock-assets"]').val()) || 0;
 	        var sharesOutstanding = parseFloat(row.find('input[class*="stock-total-shares"]').val()) || 0;
 	        var sharesOwned = parseFloat(row.find('input[class*="stock-your-shares"]').val()) || 0;
-        	console.log(stockName, totalAssets, sharesOutstanding, sharesOwned)
 		}
 		if (sharesOutstanding > 0 ) {
 			financialsTotalAssets += sharesOwned / sharesOutstanding * totalAssets;
@@ -79,16 +78,19 @@ export function updateZakatAmount() {
 	var totalAssetsMinusLiabilities = 0
 
 	$('form *').filter(':input').each(function(){
-		var val = $(this).val().replace(',', '')
+		var val = $(this).val().replace(',', '') || 0
 		var multiplier = $(this).attr('data-multiplier') || 0
-		if ($.isNumeric(val)) {
-			zakatAmount += parseFloat(val) * parseFloat(multiplier);
+		try {
+			zakatAmount += eval(val) * parseFloat(multiplier);
 			if ($(this).hasClass('asset')){
-				totalAssetsMinusLiabilities += parseFloat(val)
+				totalAssetsMinusLiabilities += eval(val)
 			}
 			else if ($(this).hasClass('liability')) {
-				totalAssetsMinusLiabilities -= parseFloat(val)
+				totalAssetsMinusLiabilities -= eval(val)
 			}
+		}
+		catch(SyntaxError) {
+			// pass
 		}
 	});
 	if (totalAssetsMinusLiabilities < nisab){
