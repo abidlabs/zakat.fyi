@@ -44,30 +44,13 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
   margin-bottom: 40px;	
 }
 
-.investments-related{
+.illiquid-related, .investments-related, .real-estate-related, .metals-related, .accounts-related, .business-related, .fines-related{
 	display: none;
 	background-color: #f6fff6;
-	padding: 20px;
+	padding: 5px 20px;
 }
-.real-estate-related{
-	display: none;
-	background-color: #f6fff6;
-	padding: 20px;
-}
-.metals-related{
-	display: none;
-	background-color: #f6fff6;
-	padding: 20px;
-}
-.accounts-related{
-	display: none;
-	background-color: #f6fff6;
-	padding: 20px;
-}
-.business-related{
-	display: none;
-	background-color: #f6fff6;
-	padding: 20px;
+a {
+	color: #4caf50 !important;
 }
 label.error{
 	font-size: 0.8rem;

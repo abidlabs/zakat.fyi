@@ -59,7 +59,7 @@
       <p><strong>Let's get started on yours by calculating your Zakat step by step</strong></p>
       <p>&nbsp;</p>
       <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Calculate your Zakat</strong></button>
-      <p id="learn-more"><a href="about.html"><u>Learn more about the methodology</u></a></p>
+      <p id="learn-more"><a href="about.html" style="color:gray !important"><u>Learn more about the methodology</u></a></p>
     </div>
   </div>
 
@@ -85,6 +85,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
   
+<h3>🧾 Before You Start</h3>
   <form id="form">
     <div class="form-group">
       <p class="p1">1. Currency Selection </p>
@@ -102,10 +103,9 @@
     <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (S) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount.</p>
 
     <p class="p1">3. Understand the <em>Hawl</em> </p>
-    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. Look back in your account history. You start calculating Zakat on the day your account was greater than the niṣāb. If that amount remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. To keep things simple, you can set your <em>hawl</em> date on the day you calculated or paid Zakat last lunar year (i.e. the 14th of Ramadan). </p>
-    <p class="explanation"> If you're worried your total liable wealth dropped below <span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span> sometime during the <em>hawl</em>, double check using a snapshot of the dates in question on the calculator below. Otherwise, continue through the calculator with your current financial snapshot, and we'll let you know if and how much you owe in Zakat!</p>
+    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. Look back in your account history. If your balance remained consistently above the niṣāb for one year, you must pay Zakat on your total liable wealth. If you think that your total liable wealth dropped below <span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span> sometime during the <em>hawl</em>, put the information below based on that date in question, and we'll let you know if and how much you owe in Zakat!</p>
 
-    <div class="form-group">
+<!--     <div class="form-group">
       <label>What is your hawl date?</label>  
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -114,7 +114,7 @@
         <input type="date" class="form-control" id="hawl-date" placeholder="">
       </div>
     </div>
-
+ -->
     <p class="p1">4. You vs. You + Your Spouse </p>
     <p class="explanation"> The Zakat is due by the person who owns the wealth, whether man or woman. If you choose, you can pay Zakat on behalf of your spouse, in which case, make sure to the sum the total for both spouses for each of these questions.</p>
 
@@ -143,7 +143,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
         </div>  
-        <input type="text" class="form-control asset" id="checking-field" placeholder="0" data-multiplier="0.025">
+        <input type="text" class="form-control asset" id="checking-field" placeholder="you can do math here e.g. 100 + 200" data-multiplier="0.025">
       </div>
     </div>
 
@@ -174,7 +174,6 @@
 
     <div class="form-group required">
       <label class="p1">9-10. Do you own any gold or silver?</label>
-          <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. Zakat is not due on any of the precious jewels IN your gold or silver jewelry. You want to get the weight of the pure weight of silver/gold, and not any other metal that may be mixed in. Since this isn't easy, you may want to have them measured by a jeweler. Don't forget about utensils and other gold items you may own. </p>
 
 
       <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
@@ -188,6 +187,8 @@
     </div>
 
     <div class="metals-related"> <!-- Metal Questions Toggled -->
+
+      <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. Zakat is not due on any of the precious jewels IN your gold or silver jewelry. You want to get the weight of the pure weight of silver/gold, and not any other metal that may be mixed in. Since this isn't easy, you may want to have them measured by a jeweler. Don't forget about utensils and other gold items you may own. </p>
 
       <p class="p1">9. Silver 🥄 </p>
            
@@ -302,7 +303,7 @@
 
     <p class="p1">12. Passive Investments 📊 </p>
      <p class="explanation">This section applies to the stocks or funds that you are planning on holding for more than 366 days.  To calculate the Zakat on each stock you hold, you will need to access the company's balance sheet. </p>
-      <p class="explanation">You can find this information on online, e.g. on Yahoo! Finance or Morningstar. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
+      <p class="explanation">You can find this information on online, e.g. on <a href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or Morningstar. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
      
      <center>
      <img src="assets/balance-sheet-screenshot.png" style="max-width: 400px; border: 2px solid black">
@@ -361,11 +362,11 @@
             $("#financials-table").append(text);
         }
     </script>
-    <div>
+    <div class="text-center">
         <button type="button" id="financialUpdateButton"
-                class="btn btn-primary"
+                class="btn btn-success"
                 onclick="addFinancialsRow();">
-          Add Stock
+          Add Another Stock
         </button>
     </div>
     <div style="">
@@ -444,10 +445,9 @@
     </div>
 
     <p class="p1">17. Post-tax ESA withdrawals 🎒</p>
-         <p class="explanation"> For the same reasons as the previous questions, if you've contributed to a Coverdell ESA, you will pay only on what you've withdrawn this hawl. </p>
+         <p class="explanation"> For the same reasons as the previous questions, if you've contributed to a Coverdell ESA, you will pay only on what you've withdrawn this hawl. If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax ESA withdrawals?</label>  
-      <p class="explanation"> If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them. </p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -457,10 +457,9 @@
     </div>      
 
     <p class="p1">18. Post-tax 529 withdrawals 📚 </p>
-         <p class="explanation"> For the same reasons as the previous questions, if you've contributed to a 529 College Savings Account, you will pay only on what you've withdrawn this hawl. </p>
+         <p class="explanation"> For the same reasons as the previous questions, if you've contributed to a 529 College Savings Account, you will pay only on what you've withdrawn this hawl. If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them.</p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Post-tax 529 withdrawals?</label>  
-      <p class="explanation">If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -599,8 +598,23 @@
     </div>
   </div> <!-- Business Questions Toggle End-->
 
+  <div class="form-group required">
+    <label class="p1">26-28. Do you have other illiquid investments, livestock, or debt owed to you?</label><br>
+
+    <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
+      <label class="btn btn-success active">
+        <input type="radio" name="illiquid-options" id="illiquid-yes" autocomplete="off"> &nbsp; &nbsp; Yes, do &nbsp; &nbsp;
+      </label> &nbsp;
+      <label class="btn btn-success">
+        <input type="radio" name="illiquid-options" id="illiquid-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+      </label>
+    </div>
+  </div>
+
+  <div class="illiquid-related"> <!-- Business Questions Toggle -->
+
     <p class="p1">26. Other Illiquid Investments 🖼️ </p>
-         <p class="explanation"> If you have a piece of property or real estate that is highly illiquid and the price is not readily determinable because of how unique or rare it is, treat it the same as a passive investment and only pay Zakat on it when you sell it. Otherwise, move on to the next question. </p>
+         <p class="explanation"> If you have a piece of art or real estate that is highly illiquid and the price is not readily determinable because of how unique or rare it is, treat it the same as a passive investment and only pay Zakat on it when you sell it. Otherwise, move on to the next question. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your illiquid investments that you've sold this hawl?</label>  
       <p class="explanation">If the sale price is already in your checking account or another account previously listed, be sure not to double count it here.</p>
@@ -639,6 +653,8 @@
       </div>
     </div>
 
+  </div>
+
 <!-- ADD 2v FIXED INCOME QUESTION HERE --> 
 
 
@@ -648,7 +664,7 @@
     
 
     <p class="p1">29. Debts 💳 </p>
-         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in instalments, such as a mortgage or large credit card debt, then do not include that here, but instead look at 3(c). </p>
+         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in instalments, such as a mortgage or large credit card debt, then do not include that here, but instead look at the next question. </p>
         <div class="form-group money-text-field required">
 
       <label>What is the total of your debts owed to others?</label>  
@@ -676,19 +692,7 @@
     </div>
 
 
-    <p class="p1">31. Delinquent Tax Payment 📅 </p>
-      <p class="explanation">This is money that you owe the government.</p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of your delinquent tax payments?</label>  
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control liability" id="delinquent-field" placeholder="0" data-multiplier="-0.025">
-      </div>
-    </div>
-
-    <p class="p1">32. Periodic Insurance Expenses 🚗</p>
+    <p class="p1">31. Periodic Insurance Expenses 🚗</p>
          <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.)</p>
         <div class="form-group money-text-field required">
       <label>What is the total of your insurance payments?</label>  
@@ -701,7 +705,7 @@
       </div>
     </div>
     
-    <p class="p1">33. Property Tax Payments 📋</p>
+    <p class="p1">32. Property Tax Payments 📋</p>
          <p class="explanation"> You can deduct this if you are about to pay the property tax immediately. </p>
         <div class="form-group money-text-field required">
       <label>What is the total of your property tax payments?</label>  
@@ -713,6 +717,32 @@
       </div>
     </div>
 
+  <div class="form-group required">
+    <label class="p1">33-34. Do you have late tax payments or fines to pay off?</label><br>
+
+    <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
+      <label class="btn btn-success active">
+        <input type="radio" name="fines-options" id="fines-yes" autocomplete="off"> &nbsp; &nbsp; Yes, do &nbsp; &nbsp;
+      </label> &nbsp;
+      <label class="btn btn-success">
+        <input type="radio" name="fines-options" id="fines-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
+      </label>
+    </div>
+  </div>
+
+  <div class="fines-related"> <!-- Business Questions Toggle -->
+
+    <p class="p1">33. Delinquent Tax Payment 📅 </p>
+      <p class="explanation">This is money that you owe the government.</p>
+        <div class="form-group money-text-field required">
+      <label>What is the total of your delinquent tax payments?</label>  
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control liability" id="delinquent-field" placeholder="0" data-multiplier="-0.025">
+      </div>
+    </div>
 
     <p class="p1">34. Miscellaneous Fines 🧾</p>
          <p class="explanation"> For example, this might be parking tickets. </p>
@@ -727,7 +757,9 @@
       </div>
     </div>
 
-    <p class="explanation"> <b>Important Note:</b> There are <em>two</em> categories of assets which we did not cover in this calculator. 1) If you have any farming assets that you harvest for sale, you will need to calculate that Zakat separately. 2) If you have any haram earnings (fixed-income investments such as bonds; equity investments tainted with things like: interest, haram substances like alcohol or drugs, gambling/betting, adult entertainment, conventional financial services, weapons manufacturing), you will need to calculate the Zakat you owe to purify that wealth. Consult a specialist in Islamic Finance. We recommend scheduling a <a target="_blank" href="https://www.joebradford.net/">consultation with Sh. Joe Bradford</a>, as this calculation method is his. </p>
+</div>    
+
+    <p class="explanation"> <b>Important Note:</b> There are <em>two</em> categories of assets which we did not cover in this calculator. (1) Farming assets that you harvest for sale (2) Haram earnings (fixed-income investments such as bonds; equity investments tainted with things like: interest, haram substances like alcohol or drugs, etc.). If you have these, please consult a specialist in Islamic Finance. We suggest scheduling a <a target="_blank" href="https://www.joebradford.net/">consultation with Sh. Joe Bradford</a>, as this calculation method is his. </p>
     &nbsp;
     &nbsp;
     &nbsp;
