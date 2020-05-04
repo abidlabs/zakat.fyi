@@ -29,10 +29,11 @@ $(function() {
   *********** SECTION: Event Handlers **********
   ******************************************** */
 
-  $('#coffee-image').click(function(){
+  $('.support-button').click(function(){
     $('#donate').css('display', 'block')
     $('.navbar').css('visibility', 'hidden')
-    $('.progress-container').css('visibility', 'hidden')    
+    $('.progress-container').css('visibility', 'hidden')  
+    return false;  
   })
 
   $('#close-modal').click(function(){
