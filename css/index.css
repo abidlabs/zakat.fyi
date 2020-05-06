@@ -49,7 +49,8 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 	background-color: #f6fff6;
 	padding: 5px 20px;
 }
-a {
+
+a:not(.btn) {
 	color: #4caf50 !important;
 }
 label.error{

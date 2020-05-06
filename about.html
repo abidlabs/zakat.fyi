@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" href="css/index.css?v=6">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <title>Zakat.fyi</title>
 
@@ -79,7 +80,7 @@
 
           <p> To save you the time of going through endless forums and asking your local imams for their opinion, we created Zakat.fyi to serve you as a secure and Shariah-compliant tool. 
 
-          <p> Our tool uses Sheikh Joe Bradford's <a href="https://read.amazon.com/?asin=B01BVM6XIS/"><u>Simple Zakat Guide</u></a> methodology. In the future, inshaAllah, we expect to launch more accredited opinions from other Islamic Finance experts you can trust.</p></p>
+          <p> Our tool uses Sheikh Joe Bradford's <a href="https://www.amazon.com/Simple-Zakat-Guide-Understand-Calculate/dp/0996519203"><u>Simple Zakat Guide</u></a> methodology. In the future, inshaAllah, we expect to launch more accredited opinions from other Islamic Finance experts you can trust.</p></p>
         </p>
       </div>
 
@@ -128,7 +129,7 @@
         <div class="container h-100" id="masthead-intro">
           <h2 style="margin-top:100;" >Support Us </h2>
           
-          <p> If you have used our calculator and found it useful, please consider donating to help us cover our running costs. Your donation helps keep the spirit of entrepreneurship alive in the Ummah. Support us with as little as the cost of <a href="http://zakat.fyi/support">one cup of coffee.</a></p>
+          <p> If you have used our calculator and found it useful, please consider donating to help us cover our running costs. Your donation helps keep the spirit of entrepreneurship alive in the Ummah. Support us with as little as the cost of <a href="#" class="support-button">one cup of coffee.</a></p>
 
           <p> We have a lot more features planned to make your zakat experience run as smoothly as possible. We appreciate your donation, and pray for blessings in your effort to please Allah SWT through your Zakat calculation and payment. </p>
   </div>
@@ -137,6 +138,36 @@
 </div>
 </div>
 </header>
+
+
+            <div id="donate" class="w3-modal">
+              <div class="w3-modal-content">
+                <div class="w3-container" style="margin-top:1%;">
+
+                  <span id="close-modal" class="w3-button w3-display-topright">&times;</span>
+                  <p style="padding-top:20px; font-size:20px;">This website is run by independent Muslim developers.
+                        We appreciate your support in helping us cover our running costs.
+                        Donating the equivalent of one cup of coffee via PayPal goes a long way in helping us continue this effort and adding new features soon; stay tuned!
+                  </p><br><br>
+                  </button><br><br>
+                  <!-- <button style="padding-top:7px; padding-bottom:7px; width: 75%; background-color:#5EC49E; border-radius:8px; color: white; font-size:20px;">PayPal -->
+                  <!-- </button> -->
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick" />
+                  <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                  </form>
+
+                  <br><br>
+                  <br><br>
+                  <p style="font-size:20px">Jazakum Allahu Khair 🙏🙏🙏 </p>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+
+
 
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -163,7 +194,17 @@
   
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-      <script src="js/index.js"></script>
+      <script>
+          $('.support-button').click(function(){
+            $('#donate').css('display', 'block')
+            return false;  
+          })
+          $('#close-modal').click(function(){
+            $('#donate').css('display', 'none')
+          })
+
+
+      </script>
   
     </body>
   </html>  
