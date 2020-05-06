@@ -40,7 +40,6 @@ export function updateFinancialsTable() {
         var sharesOutstanding = row.cells[2];
         var sharesOwned = row.cells[3];
 
-        # calculate zakat, rounded to 2 decimal places
         var zakatAmount = Math.round(totalAssets * (sharesOutstanding * 100.0) / sharesOwned) / 100;
         financialsTotalZakat += zakatAmount; 
     }

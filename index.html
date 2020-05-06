@@ -828,19 +828,24 @@
                         We appreciate your support in helping us cover our running costs.
                         Donating the equivalent of one cup of coffee via PayPal goes a long way in helping us continue this effort and adding new features soon; stay tuned!
                   </p><br><br>
-                  </button><br><br>
-                  <!-- <button style="padding-top:7px; padding-bottom:7px; width: 75%; background-color:#5EC49E; border-radius:8px; color: white; font-size:20px;">PayPal -->
-                  <!-- </button> -->
-                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                  <input type="hidden" name="cmd" value="_s-xclick" />
-                  <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
-                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                  </form>
-
+                  <!-- <button style="padding-top:7px; padding-bottom:7px; width: 75%; background-color:#5EC49E; border-radius:8px; color: white; font-size:20px;">PayPal </button> -->
+                    <div style="display: inline-block;">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
+                        <div style="border:solid; border-radius: 12px; border-width: 2px;">
+                        <input type="image" src="assets/paypal.png" class="donate-button" border="0" name="submit" title="PayPal" alt="PayPal" />
+                        </div>
+                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                            </form>
+                        <div style="border-radius: 12px; text-align:center;">
+                            <button class="donate-button" style="padding-top: 10px; padding-bottom:10px; font-size: 25px; background-color: #5ec49e;Helvetica Neue, sans-serif; color: white;" id="checkout-button-sku_HAkut0UgxPvp6j">Credit/Debit Card</button>
+                        </div>
+                        <div id="stripe-error-message"></div>
+                    </div>
                   <br><br>
                   <br><br>
-                  <p style="font-size:20px">Jazakum Allahu Khair 🙏🙏🙏 </p>
+                  <p style="font-size:20px">Jazakum Allahu Khairan 🙏🙏🙏 </p>
                   <br><br>
                 </div>
               </div>
@@ -1023,7 +1028,7 @@
         <p class="mb-1">&copy; 2020 Zakat.fyi</p>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="about.html">About</a></li>
-          <li class="list-inline-item"><a href="support.html">Support Us</a></li>
+          <li class="list-inline-item"><a href="">Support Us</a></li>
         </ul>
       </footer>
 
@@ -1087,5 +1092,39 @@
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
       <script type="module" src="js/index.js"></script>
       <script type="module" src="js/email.js"></script>
+      <!-- Load Stripe.js on your website. -->
+      <script src="https://js.stripe.com/v3"></script>
+
+
+      <script>
+      (function() {
+        var stripe = Stripe('pk_live_QiS3p2WxtIWhSoCfOXAiolqH00T5YPX4Vl');
+
+        var checkoutButton = document.getElementById('checkout-button-sku_HAkut0UgxPvp6j');
+        checkoutButton.addEventListener('click', function () {
+          // When the customer clicks on the button, redirect
+          // them to Checkout.
+          stripe.redirectToCheckout({
+            items: [{sku: 'sku_HAkut0UgxPvp6j', quantity: 1}],
+
+            // Do not rely on the redirect to the successUrl for fulfilling
+            // purchases, customers may not always reach the success_url after
+            // a successful payment.
+            // Instead use one of the strategies described in
+            // https://stripe.com/docs/payments/checkout/fulfillment
+            successUrl: window.location.protocol + '//zakat.fyi/success',
+            cancelUrl: window.location.protocol + '//zakat.fyi/canceled',
+        })
+          .then(function (result) {
+            if (result.error) {
+              // If `redirectToCheckout` fails due to a browser or network
+              // error, display the localized error message to your customer.
+              var displayError = document.getElementById('stripe-error-message');
+              displayError.textContent = result.error.message;
+            }
+          });
+        });
+      })();
+      </script>
     </body>
   </html>  

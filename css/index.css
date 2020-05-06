@@ -206,14 +206,24 @@ label {
 	margin-bottom: 40px;
 }
 
-#coffee-image{
+#coffee-image {
 	border-radius:12px; 
 	width:130px;
 	position: fixed;
 	bottom: 20px;
 	left: 30px;
 	cursor: pointer;
-	 box-shadow: 0 4px 3px -3px black;
+	box-shadow: 0 4px 3px -3px black;
+}
+
+.donate-button {
+    border-radius: 12px;
+    width: 300px;
+}
+
+.donate-style {
+    border:solid;
+    font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px; 
 }
 
 .border-box{
@@ -221,11 +231,11 @@ label {
 	padding:10px;
 }
 
-.headshot{
+.headshot {
 	width:90%;
 }
 
-#charity-carousel{
+#charity-carousel {
 	display: none;
 	padding-top:40px;
 }
