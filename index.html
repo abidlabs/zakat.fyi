@@ -1106,8 +1106,8 @@
             // a successful payment.
             // Instead use one of the strategies described in
             // https://stripe.com/docs/payments/checkout/fulfillment
-            successUrl: window.location.protocol + '//zakat.fyi/success',
-            cancelUrl: window.location.protocol + '//zakat.fyi/canceled',
+            successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
+            cancelUrl: window.location.protocol + '//zakat.fyi/',
         })
           .then(function (result) {
             if (result.error) {
