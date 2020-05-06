@@ -301,48 +301,36 @@
     </div>
 
     <p class="p1">12. Passive Investments 📊 </p>
-     <p class="explanation">This section applies to the stocks or funds that you are planning on holding for more than 366 days.</p>
-     <p class="explanation"> To calculate the Zakat on each stock you hold, you will need to access the company's balance sheet. You can find this information on Yahoo! Finance or Morningstar. Here are the numbers to note: </p>
+     <p class="explanation">This section applies to the stocks or funds that you are planning on holding for more than 366 days.  To calculate the Zakat on each stock you hold, you will need to access the company's balance sheet. </p>
+      <p class="explanation">You can find this information on online, e.g. on Yahoo! Finance or Morningstar. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
      
-     <p class="explanation">C - Cash and cash equivalents</p>
-     <p class="explanation">R - Receivables</p>
-     <p class="explanation">I - Inventories</p>
-     <p class="explanation">Shares Outstanding - Total number of shares issued by the company</p>
-     <p class="explanation">For example, if we are calculating the information for Microsoft, we can find the information needed on the <a href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT" style="color:blue;">Yahoo! Finance page.</a></p>
-     <p class="explanation">  
-      This is the equation we will use to calculate your Zakat Liable Amount on passive investments:: 
-
-            $$ z = {{{C + R + I} \over outstandingShares} * sharesOwned}.$$
-
-      But don't worry about doing the math. We've got that part covered. 
-
-      Give us the information on each passive investment, and we'll compute it for you.  </p>
-
+     <center>
+     <img src="assets/balance-sheet-screenshot.png" style="max-width: 400px; border: 2px solid black">
+   </center>
+   <br>
 
     <!-- Investment financials table -->
     <div class="container">
-      <h2>Long-term financial investments</h2>
-      <p>As explained above, please use Yahoo! Finance or your favorite financial data source to fill the following:</p>            
       <table class="table table-bordered" id="financials-table">
         <thead>
           <tr>
             <th style="text-align:center;">Stock Name</th>
-            <th style="text-align:center;">Total Assets Value</th>
-            <th style="text-align:center;">Shares Outstanding</th>
-            <th style="text-align:center;">Your number of shares</th>
+            <th style="text-align:center;">Current Assets (in <span class="currency-prepend">$</span>)</th>
+            <th style="text-align:center;"># of Shares Issued</th>
+            <th style="text-align:center;"># of Shares You Own</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
               <!-- Stock Name Field -->
-              <input type="text" class="form-control" placeholder="Stock A" style="width=5px;">
+              <input type="text" class="form-control stock-name" placeholder="First stock">
             </td>
             <td>
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Total Assets Field --> 
-                    <input type="text" class="form-control" placeholder="0" data-multiplier="0.0" style="width=10%;">
+                    <input type="text" class="form-control stock-assets" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -350,7 +338,7 @@
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Shares Outstanding Field --> 
-                    <input type="text" class="form-control" placeholder="0" style="width=10%;">
+                    <input type="text" class="form-control stock-total-shares" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -358,7 +346,7 @@
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Shares Owned Field --> 
-                    <input type="text" class="form-control" placeholder="0" style="width=10%;">
+                    <input type="text" class="form-control stock-your-shares" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -369,7 +357,7 @@
     <!-- Button to edit financials table -->
     <script>
         function addFinancialsRow() {
-            var text = "\"<tr><td><input type=\"text\" class=\"form-control\" placeholder=\"Stock A\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"0\" style=\"width=10%;\"></div></div></td></tr>\""
+            var text = "\"<tr><td><input type=\"text\" class=\"form-control stock-name\" placeholder=\"Another stock\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" style=\"width=10%;\"></div></div></td></tr>\""
             $("#financials-table").append(text);
         }
     </script>
@@ -381,21 +369,13 @@
         </button>
     </div>
     <div style="">
-    <span class="d-none d-sm-inline">Total: </span><span id="financials-total-value" class="heavy"><span class="currency-prepend">$</span><span id="financials-total">0.00</span><input type="hidden" id="financials-total-hidden" class="asset" data-multiplier="0.025"></span>
+    <span>Effective value of your assets: </span><span id="financials-total-value" class="heavy"><span class="currency-prepend">$</span><span id="financials-total">0.00</span><input type="hidden" id="financials-total-hidden" class="asset" data-multiplier="0.025"></span>
     </div>
 
   <p class="p1">13. Dividends 🔖 󠀥󠀥󠀥</p>
-    <p class="explanation">  
-      The equation we will use to calculate your Zakat Liable Amount on divdends is this: 
-
-            $$ z = {DividendPerShare * SharesOwned}.$$
-
-      But don't worry about doing the math. We've got that part covered. 
-
-      Give us the information, and we'll compute it for you.  </p>
-
+    <p class="explanation">  If you have received dividends from your financial investments, add the total amount received over the <em>hawl</em> here. If you have already added your dividends to your general checking or savings accounts, do not double count the earnings here.
     <div class="form-group money-text-field required">
-      <label>What is the total dividend per share from your investment?</label>  
+      <label>What is the total dividends you received over the last year?</label>  
       <p class="explanation"> </p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -404,30 +384,8 @@
         <input type="text" class="form-control asset" id="DividendPerShare-field" placeholder="0" data-multiplier="0.0">
       </div>
     </div>
-
-        <div class="form-group money-text-field required">
-      <label>How many shares do you own?</label>  
-      <p class="explanation"> </p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control asset" id="SharesOwned-field" placeholder="0" data-multiplier="0.0">
-      </div>
-    </div>
-
-     <p> If you are selling a long term asset, you do not need to calculate 2g or 2h. You will pay on the aggregate cash out price of long-term shares.  </p>
-        <div class="form-group money-text-field required">
-      <label>What is the aggregate cash out price of your long term shares?</label>  
-      <p class="explanation"> </p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control asset" id="selling-longterm-field" placeholder="0" data-multiplier="0.025">
-      </div>
-    </div>
-    </div>
+  </p>
+</div>
 
 
     <div class="form-group required">
@@ -798,7 +756,7 @@
           </div>
           <div class="modal-footer">
           <button type="button" id="noreceipt" class="btn btn-secondary exit-email-modal" data-dismiss="modal">Skip to Zakat Summary</button>
-          <button type="button" id="savereceipt" class="btn btn-primary exit-email-modal" data-dismiss="modal"style="background-color: green; border-color: green">Calculate and Send</button>
+          <button type="button" id="savereceipt" class="btn btn-primary exit-email-modal" data-dismiss="modal" style="background-color: green; border-color: green">Calculate and Send</button>
           </div>
         </div>
       </div>

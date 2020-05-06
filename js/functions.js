@@ -31,22 +31,23 @@ export function updateMetalTotals() {
 }
 
 export function updateFinancialsTable() {
-    var table = document.getElementById("financials-table");
-    var financialsTotalZakat = 0;
-    for (var i = 0, row; row = table.rows[i]; i++) {
-       //iterate through rows
-        var stockName = row.cells[0];
-        var totalAssets = row.cells[1];
-        var sharesOutstanding = row.cells[2];
-        var sharesOwned = row.cells[3];
-
-        var zakatAmount = Math.round(totalAssets * (sharesOutstanding * 100.0) / sharesOwned) / 100;
-        financialsTotalZakat += zakatAmount; 
-    }
-
-    $('#financials-total-hidden').val(financialsTotalZakat);
-	$('#financials-total').val(financialsTotalZakat);
-    updateZakatAmount();
+	var financialsTotalAssets = 0;
+	$('#financials-table tr').each(function (i, row) {
+		if (i > 0) { // ignore <th>
+			var row = $(row);
+            var stockName = row.find('input[class*="stock-name"]').val();
+	        var totalAssets = parseFloat(row.find('input[class*="stock-assets"]').val()) || 0;
+	        var sharesOutstanding = parseFloat(row.find('input[class*="stock-total-shares"]').val()) || 0;
+	        var sharesOwned = parseFloat(row.find('input[class*="stock-your-shares"]').val()) || 0;
+        	console.log(stockName, totalAssets, sharesOutstanding, sharesOwned)
+		}
+		if (sharesOutstanding > 0 ) {
+			financialsTotalAssets += sharesOwned / sharesOutstanding * totalAssets;
+		}
+	})
+	$('#financials-total-hidden').val(financialsTotalAssets);
+	$('#financials-total').html(financialsTotalAssets.toFixed(2));
+  updateZakatAmount();
 }
 
 export function updateProgressBar() {
