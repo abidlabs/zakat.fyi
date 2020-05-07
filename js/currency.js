@@ -14,9 +14,12 @@ export var currencyConversions = {
   "TRY": 1.00
 }; // These are updated through JSON requests
 
+
 $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
 	for (var curr in currencyConversions){
 	    currencyConversions[curr] = json["rates"][curr]
 	};	
 	$('#currency-select').removeAttr('disabled')
+  $('#currency-select').trigger('change')
+
 });

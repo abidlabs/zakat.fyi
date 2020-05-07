@@ -10,18 +10,20 @@ export var silver_price_per_oz =  15.154
 
 // Handle currency conversions (should happen after dynamic loading of prices)
 $.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
-    gold_price_per_oz_usd = json["items"][0]["xauPrice"]
-    silver_price_per_oz_usd = json["items"][0]["xagPrice"]
-    nisab_usd = silver_price_per_oz_usd*21
+  gold_price_per_oz_usd = json["items"][0]["xauPrice"]
+  silver_price_per_oz_usd = json["items"][0]["xagPrice"]
+  nisab_usd = silver_price_per_oz_usd*21
 
-    window.nisab = nisab_usd
-    gold_price_per_oz = gold_price_per_oz_usd
-    silver_price_per_oz = silver_price_per_oz_usd
+  window.nisab = nisab_usd
+  gold_price_per_oz = gold_price_per_oz_usd
+  silver_price_per_oz = silver_price_per_oz_usd
 
 	$('.nisab-price-value').html(nisab.toFixed(2))
 	$('.gold-price-value').html(gold_price_per_oz.toFixed(2))
 	$('.silver-price-value').html(silver_price_per_oz.toFixed(2))    
   $('.price-last-updated').html("today") // last updated = today
+
+  $('#currency-select').trigger('change')  
 });	
 
 $('#currency-select').change(function(){
