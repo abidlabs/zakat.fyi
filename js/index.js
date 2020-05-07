@@ -22,7 +22,9 @@ $(function() {
     // restore a previous session 
 		var data = JSON.parse(localStorage.getItem("data"));	
 	  form.restoreForm(data);	
-    functions.updatePage();
+    setTimeout(functions.loadRelatedDivs, 1000); // Very hacky way to make sure form data is fully loaded before updating
+    setTimeout(functions.updatePage, 1000); // Very hacky way to make sure form data is fully loaded before updating
+    // functions.loadRelatedDivs();
   }
 
   /* *******************************************
@@ -42,62 +44,79 @@ $(function() {
     $('.progress-container').css('visibility', 'visible')    
   })
 
-  $('#investments-yes').click(function(){
-    $('.investments-related').css('display', 'block')
-  })
-  $('#investments-no').click(function(){
-    $('.investments-related').css('display', 'none')
-    $('.investments-related input').val(0)
-  })
-
-  $('#real-estate-yes').click(function(){
-    $('.real-estate-related').css('display', 'block')
-  })
-  $('#real-estate-no').click(function(){
-    $('.real-estate-related').css('display', 'none')
-    $('.real-estate-related input').val(0)
+  $("#btn-real-estate").click(function(){
+    if ($(this).hasClass('active')){
+      $('.real-estate-related').css('display', 'none')
+      $('.real-estate-related input').val(0)      
+    } else {
+      $('.real-estate-related').css('display', 'block')
+    }
   })
 
-  $('#business-yes').click(function(){
-    $('.business-related').css('display', 'block')
-  })
-  $('#business-no').click(function(){
-    $('.business-related').css('display', 'none')
-    $('.business-related input').val(0)
-  })
-
-  $('#metals-yes').click(function(){
-    $('.metals-related').css('display', 'block')
-  })
-  $('#metals-no').click(function(){
-    $('.metals-related').css('display', 'none')
-    $('.metals-related input').val(0)
-  })
-
-  $('#accounts-yes').click(function(){
-    $('.accounts-related').css('display', 'block')
-  })
-  $('#accounts-no').click(function(){
-    $('.accounts-related').css('display', 'none')
-    $('.accounts-related input').val(0)
+  $("#btn-investments").click(function(){
+    if ($(this).hasClass('active')){
+      $('.investments-related').css('display', 'none')
+      $('.investments-related input').val(0)      
+    } else {
+      $('.investments-related').css('display', 'block')
+    }
   })
 
 
-  $('#illiquid-yes').click(function(){
-    $('.illiquid-related').css('display', 'block')
-  })
-  $('#illiquid-no').click(function(){
-    $('.illiquid-related').css('display', 'none')
-    $('.illiquid-related input').val(0)
+  $("#btn-business").click(function(){
+    if ($(this).hasClass('active')){
+      $('.business-related').css('display', 'none')
+      $('.business-related input').val(0)      
+    } else {
+      $('.business-related').css('display', 'block')
+    }
   })
 
 
-  $('#fines-yes').click(function(){
-    $('.fines-related').css('display', 'block')
+
+  $("#btn-metals").click(function(){
+    if ($(this).hasClass('active')){
+      $('.metals-related').css('display', 'none')
+      $('.metals-related input').val(0)      
+    } else {
+      $('.metals-related').css('display', 'block')
+    }
   })
-  $('#fines-no').click(function(){
-    $('.fines-related').css('display', 'none')
-    $('.fines-related input').val(0)
+
+  $("#btn-accounts").click(function(){
+    if ($(this).hasClass('active')){
+      $('.accounts-related').css('display', 'none')
+      $('.accounts-related input').val(0)      
+    } else {
+      $('.accounts-related').css('display', 'block')
+    }
+  })
+
+  $("#btn-illiquid").click(function(){
+    if ($(this).hasClass('active')){
+      $('.illiquid-related').css('display', 'none')
+      $('.illiquid-related input').val(0)      
+    } else {
+      $('.illiquid-related').css('display', 'block')
+    }
+  })
+
+  $("#btn-fines").click(function(){
+    if ($(this).hasClass('active')){
+      $('.fines-related').css('display', 'none')
+      $('.fines-related input').val(0)      
+    } else {
+      $('.fines-related').css('display', 'block')
+    }
+  })
+
+    $("#btn-debt").click(function(){
+    if ($(this).hasClass('active')){
+      $('.debt-related').css('display', 'none')
+      $('.debt-related input').val(0)      
+    } else {
+      $('.debt-related').css('display', 'block')
+    }
   })
 
 
@@ -119,7 +138,7 @@ $(function() {
         var email = $('#email-recapture').val();
         var subject = 'Your 2020 Zakat.fyi Receipt';
         var emailBody = 'Salaam!%0D%0A%0D%0AThank you for using Zakat.fyi to calculate your true zakat for 2020.%0D%0A%0D%0AYour Zakat amount is: ' + $('.currency-prepend').html()+$('.zakat-amount').html() + '%0D%0A%0D%0ASalaam,%0D%0AZakat.fyi team';
-        document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+        window.open("mailto:"+email+"?subject="+subject+"&body="+emailBody);
   })
 
   $('#emailModal').on('hidden.bs.modal', function(e) {
@@ -146,5 +165,11 @@ $(function() {
       functions.updateFinancialsTable();
   });
 
+  var numbered_item = 0;
+  $('body').find('.numbered-item').each(function () {
+    numbered_item += 1;
+    $(this).html(numbered_item + '.');
+  });
 
+  // show the related sections if the button was pressed
 });

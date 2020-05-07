@@ -24,6 +24,48 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 	font-size: 1rem;
 	line-height: 1.7rem
 }
+.icon-turbo{
+	font-size: 3rem;
+}
+.desc-turbo{
+	padding-top:20px;
+	font-size: 0.85rem;
+	font-weight: bold;
+}
+.col-turbo{
+	padding: 10px 5px !important;
+}
+.btn-turbo{
+	width:150px;
+	height:170px;	
+	padding:8px;
+	border-radius: 10px;
+	color: black !important;
+}
+.btn-turbo:not(.active){
+	border: 0px !important;
+	background-color: white !important;
+	-moz-box-shadow: 0 0 9px #ccc !important; 
+	-webkit-box-shadow: 0 0 9px #ccc !important;
+	box-shadow: 0 0 9px #ccc !important;
+
+}
+
+.btn-turbo.active{
+	border: 1px solid #5ec49e !important;
+	background-color: #edfff8 !important;
+	-moz-box-shadow: 0 0 0px #ccc !important; 
+	-webkit-box-shadow: 0 0 0px #ccc !important;
+	box-shadow: 0 0 0px #ccc !important;
+}
+
+.container-turbo{
+	margin: 40px 0px;
+	max-width: 800px;
+}
+.row-turbo{
+	margin: 20px 0px;
+}
 
 .p1 {
 	margin-top: 100px;
@@ -44,10 +86,10 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
   margin-bottom: 40px;	
 }
 
-.illiquid-related, .investments-related, .real-estate-related, .metals-related, .accounts-related, .business-related, .fines-related{
+.illiquid-related, .debt-related, .investments-related, .real-estate-related, .metals-related, .accounts-related, .business-related, .fines-related{
 	display: none;
-	background-color: #f6fff6;
-	padding: 5px 20px;
+	/*background-color: #f6fff6;*/
+	/*padding: 5px 20px;*/
 }
 
 a:not(.btn) {
