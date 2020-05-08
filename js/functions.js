@@ -20,6 +20,17 @@ export function updatePage() {
     updateFinancialsTable();
 }
 
+export function loadRelatedDivs() {
+  var turbo_buttons = [$("#btn-illiquid"), $("#btn-debt"), $("#btn-investments"), $("#btn-real-estate"), $("#btn-metals"), $("#btn-accounts"), $("#btn-business"), $("#btn-fines")] 
+  var turbo_related = [$(".illiquid-related"), $(".debt-related"), $(".investments-related"), $(".real-estate-related"), $(".metals-related"), $(".accounts-related"), $(".business-related"), $(".fines-related")]
+  for (var i = 1; i < turbo_buttons.length; i++) {
+    var btn = turbo_buttons[i]
+    if (btn.hasClass('active')) {
+      turbo_related[i].css('display', 'block')      
+    }
+  }	
+}
+
 export function updateMetalTotals() {
 	var goldTotal = Number($('#gold-oz').val()) * prices.gold_price_per_oz + Number($('#gold-value').val())  
 	var silverTotal = Number($('#silver-oz').val()) * prices.silver_price_per_oz + Number($('#silver-value').val())  
