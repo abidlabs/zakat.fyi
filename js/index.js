@@ -21,10 +21,11 @@ $(function() {
   } else {
     // restore a previous session 
 		var data = JSON.parse(localStorage.getItem("data"));	
-	  form.restoreForm(data);	
-    setTimeout(functions.loadRelatedDivs, 1000); // Very hacky way to make sure form data is fully loaded before updating
-    setTimeout(functions.updatePage, 1000); // Very hacky way to make sure form data is fully loaded before updating
-    // functions.loadRelatedDivs();
+	  form.restoreForm(data, function() {
+      functions.loadRelatedDivs();
+      functions.updatePage();
+      // functions.loadRelatedDivs();
+    });	
   }
 
   /* *******************************************

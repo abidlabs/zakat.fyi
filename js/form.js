@@ -1,22 +1,29 @@
 // reset form values from json object
-export function restoreForm(data) {
-	$.each(data, function(id, val){
-		var $el = $('[id="'+id+'"]'),
-				type = $el.attr('type');
+export function restoreForm(data, cb) {
+  var keys = Object.keys(data);
+  for (var i = 0; i < keys.length; i++) {
+    var id = keys[i];
+    var val = data[id];
+    var $el = $('[id="'+id+'"]'),
+        type = $el.attr('type');
 
-		switch(type){
-			case 'checkbox':
-					$el.prop('checked', true);
-					break;
-			case 'radio':
-					$el.prop('checked', true);
+    switch(type){
+      case 'checkbox':
+          $el.prop('checked', true);
+          break;
+      case 'radio':
+          $el.prop('checked', true);
           var $el_block = $('[class="' + id.replace("yes", "related") + '"]'); 
           $el_block.css('display', 'block');
-					break;
-			default:
-					$el.val(val);
-		}
-	});
+          break;
+      default:
+          $el.val(val);
+    }
+
+    if (i === keys.length - 1 && cb) {
+      return cb();
+    }
+  }
 }
 
 /**
