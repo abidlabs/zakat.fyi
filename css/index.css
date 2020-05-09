@@ -86,12 +86,25 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
   margin-bottom: 40px;	
 }
 
+#donate p{
+	font-size: 17px;
+}
+
 .illiquid-related, .debt-related, .investments-related, .real-estate-related, .metals-related, .accounts-related, .business-related, .fines-related{
 	display: none;
 	/*background-color: #f6fff6;*/
 	/*padding: 5px 20px;*/
 }
 
+.stripe-donate-button{
+	padding-top: 10px; 
+	padding-bottom:10px; 
+	font-size: 25px; 
+	background-color: #5ec49e;
+	color: white; 
+	border-radius: 12px; 
+	border: 1px #5ec49e solid;
+}
 a:not(.btn) {
 	color: #4caf50 !important;
 }
@@ -239,7 +252,7 @@ label {
 	bottom: 20px;
 	left: 30px;
 	cursor: pointer;
-	box-shadow: 0 4px 3px -3px black;
+	/*box-shadow: 0 4px 3px -3px black;*/
 }
 
 .donate-button {
