@@ -48,26 +48,18 @@ export function incrementUsers() {
 	});
 }
 
-export function getNumUsers() {
+export async function getNumUsers() {
   var docRef = db.collection("web_stats").doc("statistics");
-  docRef.get().then(function(doc) {
-    var user_count = doc.data().user_count;
-		//user_count = Math.max(559, user_count);
-		$(".num-people-count").html(user_count);
 
-      $('.num-people-count').each(function () {
-        var $this = $(this);
-        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
-          duration: 1000,
-          easing: 'swing',
-          step: function () {
-            $this.text(Math.ceil(this.Counter));
-          }
-        });
-      });
+  var user_count = 500;
 
+  await docRef.get().then(function(doc) {
+    var db_user_count = doc.data().user_count;
+    user_count = db_user_count;
 
   }).catch(function(error) {
-        console.error("Error adding document: ", error);
+    console.error("Error adding document: ", error);
   });
+
+  return user_count;
 }

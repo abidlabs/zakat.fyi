@@ -9,11 +9,28 @@ import * as form from "./form.js";
 window.nisab = prices.nisab_usd
 
 // wait for document ready
-$(function() {
+$(async function() {
   /* *******************************************
   ******** SECTION: Intialization **************
   ******************************************** */
-  var user_count = db.getNumUsers();
+
+  // load the number of users into the page
+  var user_count = await db.getNumUsers();
+  $(".num-people-count").html(user_count);
+
+  $('.num-people-count').each(function () {
+    var $this = $(this);
+    jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+      duration: 1000,
+      easing: 'swing',
+      step: function () {
+        $this.text(Math.ceil(this.Counter));
+      }
+    });
+  });
+
+
+  // get user cookies
   var uid = cookies.getCookie("uid");
   if (uid==null) {
     // initialize a UID
