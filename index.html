@@ -123,8 +123,8 @@
         <div class="row text-center row-turbo">
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-metals">
-                <input type="checkbox" autocomplete="off" id="checkbox-metals"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-metals" category="metals">
+                <input type="checkbox" autocomplete="off" id="checkbox-metals" category="metals"> 
                   <div class="icon-turbo">💍</div> 
                   <div class="desc-turbo">Own gold or silver (e.g. coins, jewelry, utensils)</div>
               </label>
@@ -132,8 +132,8 @@
           </div>
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-investments">
-                <input type="checkbox" autocomplete="off" id="checkbox-investments"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-investments" category="investments">
+                <input type="checkbox" autocomplete="off" id="checkbox-investments" category="investments"> 
                   <div class="icon-turbo">📈</div> 
                   <div class="desc-turbo">Own financial instruments (e.g. stocks & funds)</div>
               </label>
@@ -141,8 +141,8 @@
           </div>
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-accounts">
-                <input type="checkbox" autocomplete="off" id="checkbox-accounts"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-accounts" category="accounts">
+                <input type="checkbox" autocomplete="off" id="checkbox-accounts" category="accounts"> 
                   <div class="icon-turbo">📊</div> 
                   <div class="desc-turbo">Own special financial accounts (IRA, 401k, ESA, HSA, 529)</div>
               </label>
@@ -150,9 +150,9 @@
           </div>
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-real-estate">
-                <input type="checkbox" autocomplete="off" id="checkbox-real-estate"> 
-                  <div class="icon-turbo">🏚️</div> 
+              <label class="btn btn-secondary btn-turbo" id="btn-real-estate" category="real-estate">
+                <input type="checkbox" autocomplete="off" id="checkbox-real-estate" category="real-estate"> 
+                  <div class="icon-turbo">🏘️</div> 
                   <div class="desc-turbo">Own real estate for business purposes</div>
               </label>
             </div>
@@ -161,8 +161,8 @@
         <div class="row text-center row-turbo">
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-business">
-                <input type="checkbox" autocomplete="off" id="checkbox-business"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-business" category="business">
+                <input type="checkbox" autocomplete="off" id="checkbox-business" category="business"> 
                   <div class="icon-turbo">🏪</div> 
                   <div class="desc-turbo">Own any businesses (by yourself or with partners)</div>
               </label>
@@ -170,8 +170,8 @@
           </div>
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-illiquid">
-                <input type="checkbox" autocomplete="off" id="checkbox-illiquid"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-illiquid" category="illiquid">
+                <input type="checkbox" autocomplete="off" id="checkbox-illiquid" category="illiquid"> 
                   <div class="icon-turbo">🐄</div> 
                   <div class="desc-turbo">Posess illiquid investments or livestock</div>
               </label>
@@ -179,8 +179,8 @@
           </div>
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-debt">
-                <input type="checkbox" autocomplete="off" id="checkbox-debt"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-debt" category="debt">
+                <input type="checkbox" autocomplete="off" id="checkbox-debt" category="debt"> 
                   <div class="icon-turbo">💳</div> 
                   <div class="desc-turbo">Have debt owed to you that you expect to be repaid</div>
               </label>
@@ -188,8 +188,8 @@
           </div>
           <div class="col-sm col-turbo">
             <div class="btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary btn-turbo" id="btn-fines">
-                <input type="checkbox" autocomplete="off" id="checkbox-fines"> 
+              <label class="btn btn-secondary btn-turbo" id="btn-fines" category="fines">
+                <input type="checkbox" autocomplete="off" id="checkbox-fines" category="fines"> 
                   <div class="icon-turbo">📋</div> 
                   <div class="desc-turbo">Have late tax payments or fines to pay off</div>
               </label>
@@ -252,10 +252,13 @@
       </div>
       </div>
 
+    <div class="metals-hidden related-hidden" category="metals">
+      10-11. Precious Metals 💍 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
 
-    <div class="metals-related"> <!-- Metal Questions Toggled -->
+    <div class="metals-related related-show" category="metals"> <!-- Metal Questions Toggled -->
 
-      <p class="p1">10-11. Precious Metals</p>
+      <p class="p1">10-11. Precious Metals 💍</p>
 
 
       <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. Zakat is not due on any of the  jewels <i>in</i> your gold or silver jewelry. Sso you would <i>not</i> pay any zakat on a platinum and diamond ring, for example.</p>
@@ -342,13 +345,16 @@
         </div> <!-- Metal Questions Toggle End -->
       </div>
 
+    <div class="investments-hidden related-hidden" category="investments">
+      12-14. Financial Instruments (stocks, mutual funds, etc.) 📈 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
 
-    <div class="investments-related">
+
+    <div class="investments-related related-show" category="investments">
 
       <p class="p1"><span class="numbered-item"></span> Active Investments 📈 </p>
         <div class="form-group money-text-field required">
-      <label>What is the aggregate value of your <strong>actively</strong> traded shares? </label>  
-      <p class="explanation">A good rule of thumb for active investments is: are you planning on holding these stocks or funds for less than 366 days? You will treat these shares the same way you would if you had them as cash in your pocket.</p>
+      <p class="explanation">A good rule of thumb to consider an investments "active" is: are you planning on holding these stocks or funds for less than 366 days? You will treat these shares the same way you would if you had them as cash in your pocket.</p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -358,7 +364,7 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Passive Investments 📊 </p>
-     <p class="explanation">This section applies to the stocks or funds that you are planning on holding for more than 366 days.  To calculate the Zakat on each stock you hold, you will need to access the company's balance sheet. </p>
+     <p class="explanation">This section applies to the stocks that you are planning on holding long-term (e.g. for more than 366 days). You may end up paying less Zakat by treating the stock as a passive investment. To properly calculate the Zakat on each stock you hold passively, you will need to access the company's balance sheet. </p>
       <p class="explanation">You can find this information on online, e.g. on <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
      
      <center>
@@ -459,7 +465,13 @@
       </div>
     </div> -->
 
-    <div class="accounts-related"> <!-- Accounts Questions Toggle -->
+
+    <div class="accounts-hidden related-hidden" category="accounts">
+      15-20. Special Accounts 📊 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
+
+
+    <div class="accounts-related related-show" category="accounts"> <!-- Accounts Questions Toggle -->
 
       <p class="p1"><span class="numbered-item"></span> Roth IRA  🎂 </p>
          <p class="explanation"> If you are below the age of 59 and a half, you will pay this ONLY on your Roth IRA contributions, since that money is accessible to you. If you are above that age, the earnings (greater than 5 years old) are also accessible for you. Therefore, if you are above the age of 59 and a half, you should pay on your total Roth amount (and subtract any earnings less than 5 years old). </p>
@@ -555,8 +567,12 @@
     </div>
  -->
 
+    <div class="real-estate-hidden related-hidden" category="real-estate">
+      21-23. Real estate for business purposes 🏘️ &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
 
-    <div class="real-estate-related"> <!-- Real Estate Questions Toggle -->
+
+    <div class="real-estate-related related-show" category="real-estate"> <!-- Real Estate Questions Toggle -->
     <p class="p1"><span class="numbered-item"></span> Property for sale 🏡 </p>
          <p class="explanation"> If you have a properly listed for sale, pay Zakat on the amount you would earn if you sold it right now. </p>
         <div class="form-group money-text-field required">
@@ -611,7 +627,11 @@
     </div>
   </div>
  -->
-  <div class="business-related"> <!-- Business Questions Toggle -->
+    <div class="business-hidden related-hidden" category="business">
+      24-26. Owning a Business 🏪 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
+
+  <div class="business-related related-show" category="business"> <!-- Business Questions Toggle -->
 
 <!--     <p class="explanation">When you have a business, all of your inventory, including raw ingredients and final products, is liable for Zakat. You also pay Zakat on cash you expect For example, </p>
  -->
@@ -669,7 +689,12 @@
     </div>
   </div>
  -->
-  <div class="illiquid-related"> <!-- Business Questions Toggle -->
+
+     <div class="illiquid-hidden related-hidden" category="illiquid">
+      27-28. Owning Illiquid Assets 🖼️ or Livestock 🐄 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
+
+  <div class="illiquid-related related-show" category="illiquid"> <!-- Business Questions Toggle -->
 
     <p class="p1"><span class="numbered-item"></span> Other Illiquid Investments 🖼️ </p>
          <p class="explanation"> If you have a piece of art or real estate that is highly illiquid and the price is not readily determinable because of how unique or rare it is, only pay Zakat on it when you sell it. </p>
@@ -699,7 +724,12 @@
 
   </div>
 
-      <div class="debt-related"> <!-- Business Questions Toggle -->
+       <div class="debt-hidden related-hidden" category="debt">
+      29. Debt Owed To You 💳 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
+
+
+      <div class="debt-related related-show" category="debt"> <!-- Business Questions Toggle -->
 
 
     <p class="p1"><span class="numbered-item"></span> Good Debt (Owed to You) 💱 </p>
@@ -718,10 +748,9 @@
 
   </div>
 
-<!-- ADD 2v FIXED INCOME QUESTION HERE --> 
 
 
-  <h3 style= "margin-top: 100px;margin-bottom: 20px;">🚑 Expenses and Liabilites</h3>
+  <h3 style= "margin-top: 40px;margin-bottom: 20px;">🚑 Expenses and Liabilites</h3>
 
   <p class="explanation">When calculating your Zakat liable amount, you should remove the amount of money that you owe to others. In addition to debts, you can also deduct bills that are "immediately due." For example, if you pay your rent monthly, you can deduct one month of your rent. If you pay your insurance every 6 months, and your insurance payment is up immediately, you can deduct the 6 month insurance bill.</p>
     
@@ -793,7 +822,13 @@
     </div>
   </div>
  -->
-  <div class="fines-related"> <!-- Business Questions Toggle -->
+
+       <div class="fines-hidden related-hidden" category="fines">
+      34-35. Late tax payments or fines 📋 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+    </div>
+
+
+  <div class="fines-related related-show" category="fines"> <!-- Business Questions Toggle -->
 
     <p class="p1"><span class="numbered-item"></span> Delinquent Tax Payment 📅 </p>
       <p class="explanation">This is money that you owe the government.</p>
@@ -822,7 +857,7 @@
 
 </div>    
 
-    <p class="explanation"> <b>Important Note:</b> There are <em>two</em> categories of assets which we did not cover in this calculator. (1) Farming assets that you harvest for sale (2) Haram earnings (fixed-income investments such as bonds; equity investments tainted with things like: interest, haram substances like alcohol or drugs, etc.). If you have these, please consult a specialist in Islamic Finance. We suggest scheduling a <a target="_blank" href="https://www.joebradford.net/">consultation with Sh. Joe Bradford</a>, as this calculation method is his. </p>
+    <p class="explanation" style="margin-top:40px"> <b>Important Note:</b> There are <em>two</em> categories of assets which we did not cover in this calculator. (1) Farming assets that you harvest for sale (2) Haram earnings (fixed-income investments such as bonds; equity investments tainted with things like: interest, haram substances like alcohol or drugs, etc.). If you have these, please consult a specialist in Islamic Finance. We suggest scheduling a <a target="_blank" href="https://www.joebradford.net/">consultation with Sh. Joe Bradford</a>, as this calculation method is his. </p>
     &nbsp;
     &nbsp;
     &nbsp;
@@ -946,7 +981,7 @@
 
 <div class="container my-4" id="charity-carousel">
 
-    <p class="font-weight-bold">Take a look at our favorite Zakat-Eleigible organizations! </p>
+    <p class="font-weight-bold">Take a look at our favorite Zakat-Eligible organizations! </p>
 
     <p><strong> </p>
 

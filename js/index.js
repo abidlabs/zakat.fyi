@@ -17,7 +17,6 @@ $(async function() {
   // load the number of users into the page
   var user_count = await db.getNumUsers();
   $(".num-people-count").html(user_count);
-
   $('.num-people-count').each(function () {
     var $this = $(this);
     jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
@@ -39,16 +38,14 @@ $(async function() {
     // restore a previous session 
 		var data = JSON.parse(localStorage.getItem("data"));	
 	  form.restoreForm(data, function() {
-      functions.loadRelatedDivs();
       functions.updatePage();
-      // functions.loadRelatedDivs();
+      functions.loadRelatedDivs();
     });	
   }
 
   /* *******************************************
   *********** SECTION: Event Handlers **********
   ******************************************** */
-
   $('.support-button').click(function(){
     $('#donate').css('display', 'block')
     $('.navbar').css('visibility', 'hidden')
@@ -62,80 +59,28 @@ $(async function() {
     $('.progress-container').css('visibility', 'visible')    
   })
 
-  $("#btn-real-estate").click(function(){
+
+  /// SET UP RELATED-DIVS EVENT HANDLERS
+  $('.related-hidden .show-link').click(function() {
+    var category = $(this).parent().attr('category')
+    $('.related-hidden[category=' + category + ']').hide()  // the related hid div
+    $('.related-show[category=' + category + ']').show() // the related show div
+    $('.btn-turbo[category=' + category + ']').addClass('active')
+    $('input[category=' + category + ']').prop("checked", true);
+  })
+
+  $('.btn-turbo').click(function() {
+    var category = $(this).attr('category')
     if ($(this).hasClass('active')){
-      $('.real-estate-related').css('display', 'none')
-      $('.real-estate-related input').val(0)      
+      $('.related-hidden[category=' + category + ']').show()  // the related hid div
+      $('.related-show[category=' + category + ']').hide() // the related show div      
+      $('.related-show[category=' + category + '] input').val(0) // the related show div      
     } else {
-      $('.real-estate-related').css('display', 'block')
+      $('.related-hidden[category=' + category + ']').hide()  // the related hid div
+      $('.related-show[category=' + category + ']').show() // the related show div
     }
   })
 
-  $("#btn-investments").click(function(){
-    if ($(this).hasClass('active')){
-      $('.investments-related').css('display', 'none')
-      $('.investments-related input').val(0)      
-    } else {
-      $('.investments-related').css('display', 'block')
-    }
-  })
-
-
-  $("#btn-business").click(function(){
-    if ($(this).hasClass('active')){
-      $('.business-related').css('display', 'none')
-      $('.business-related input').val(0)      
-    } else {
-      $('.business-related').css('display', 'block')
-    }
-  })
-
-
-
-  $("#btn-metals").click(function(){
-    if ($(this).hasClass('active')){
-      $('.metals-related').css('display', 'none')
-      $('.metals-related input').val(0)      
-    } else {
-      $('.metals-related').css('display', 'block')
-    }
-  })
-
-  $("#btn-accounts").click(function(){
-    if ($(this).hasClass('active')){
-      $('.accounts-related').css('display', 'none')
-      $('.accounts-related input').val(0)      
-    } else {
-      $('.accounts-related').css('display', 'block')
-    }
-  })
-
-  $("#btn-illiquid").click(function(){
-    if ($(this).hasClass('active')){
-      $('.illiquid-related').css('display', 'none')
-      $('.illiquid-related input').val(0)      
-    } else {
-      $('.illiquid-related').css('display', 'block')
-    }
-  })
-
-  $("#btn-fines").click(function(){
-    if ($(this).hasClass('active')){
-      $('.fines-related').css('display', 'none')
-      $('.fines-related input').val(0)      
-    } else {
-      $('.fines-related').css('display', 'block')
-    }
-  })
-
-    $("#btn-debt").click(function(){
-    if ($(this).hasClass('active')){
-      $('.debt-related').css('display', 'none')
-      $('.debt-related input').val(0)      
-    } else {
-      $('.debt-related').css('display', 'block')
-    }
-  })
 
 
   $("#calculate-zakat-button").click(function() {

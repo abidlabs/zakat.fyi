@@ -21,12 +21,20 @@ export function updatePage() {
 }
 
 export function loadRelatedDivs() {
-  var turbo_buttons = [$("#btn-illiquid"), $("#btn-debt"), $("#btn-investments"), $("#btn-real-estate"), $("#btn-metals"), $("#btn-accounts"), $("#btn-business"), $("#btn-fines")] 
-  var turbo_related = [$(".illiquid-related"), $(".debt-related"), $(".investments-related"), $(".real-estate-related"), $(".metals-related"), $(".accounts-related"), $(".business-related"), $(".fines-related")]
-  for (var i = 1; i < turbo_buttons.length; i++) {
-    var btn = turbo_buttons[i]
-    if (btn.hasClass('active')) {
-      turbo_related[i].css('display', 'block')      
+  const elements = ["illiquid", "debt", "investments", "real-estate", "metals", "accounts", "business", "fines"]  
+  // var turbo_buttons = [$("#checkbox-illiquid"), $("#checkbox-debt"), $("#checkbox-investments"), $("#checkbox-real-estate"), $("#checkbox-metals"), $("#checkbox-accounts"), $("#checkbox-business"), $("#checkbox-fines")] 
+  // var turbo_related = [$(".illiquid-related"), $(".debt-related"), $(".investments-related"), $(".real-estate-related"), $(".metals-related"), $(".accounts-related"), $(".business-related"), $(".fines-related")]
+  for (var i = 0; i < elements.length; i++) {
+    var checkbox = $("#checkbox-" + elements[i])
+    if (checkbox.prop("checked") == true) {
+      console.log(elements[i], 'active')
+      $("."+elements[i]+"-related").css('display', 'block') 
+      $("."+elements[i]+"-hidden").css('display', 'none') 
+    }
+    else {
+      console.log(elements[i], 'inactive')
+      $("."+elements[i]+"-related").css('display', 'none') 
+      $("."+elements[i]+"-hidden").css('display', 'block') 
     }
   }	
 }

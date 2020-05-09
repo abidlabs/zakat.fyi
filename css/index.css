@@ -24,6 +24,20 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 	font-size: 1rem;
 	line-height: 1.7rem
 }
+.related-hidden{
+	font-size: 1.2rem;
+	background-color: #f6fff6;
+	padding: 5px 5px;	
+	margin-bottom: 10px;
+}
+.skipped{
+	font-size: 80%;	
+}
+.show-link{
+	font-size: 80%;
+	text-decoration: underline;
+	cursor: pointer;
+}
 .icon-turbo{
 	font-size: 3rem;
 }
