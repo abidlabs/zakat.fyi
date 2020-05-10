@@ -22,14 +22,37 @@ var db = firebase.firestore();
 export function sendToDB() {
   var finishedForm = document.getElementById("form"); 
   var form_json = form.formToJSON(finishedForm.elements);
+
+  if ('email-field' in form_json) {
+    var email = form_json['email-field'];
+  } else if ('email-recapture' in form_json) {
+    var email = form_json['email-recapture'];
+  } else {
+    var email = "";
+  }
+ 
+  delete form_json['email-field'];
+  delete form_json['email-recapture'];
   var uid = cookies.getCookie("uid");
   db.collection("web_data").doc(uid).set({
     "uid": uid,
     "browser_info": info,
     "form": form_json
   }).catch(function(error) {
-        console.error("Error adding document: ", error);
+    console.error("Error adding document: ", error);
   });
+  
+  if (email != "") {
+    db.collection("emails").doc(email).set({
+      "email": email
+    }).catch(function(error) {
+      console.error("Error adding email: ", error);
+    });
+  }
+
+  // so we can store it locally
+  form_json['email-field'] = email;
+  form_json['email-recapture'] = email;
 	localStorage.setItem("data", JSON.stringify(form_json));
 }
 
