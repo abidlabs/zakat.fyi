@@ -20,23 +20,38 @@
 
   <meta property="og:url" content="https://zakat.fyi" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://i.imgur.com/gWmxYlg.png" />
-  <meta property="og:title" content="Calculate Your Zakat in 5 Minutes | zakat.fyi" />
+  <meta property="og:image" content="https://zakat.fyi/assets/InstagramPost.png" />
+  <meta property="og:title" content="Understand, Calculate, & Donate Your True Zakat | Zakat.fyi" />
   <meta property="og:description"
     content="Understand and calculate your true Zakat obligations through our simple and comprehensive form." />
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@abidlabs">
-  <meta name="twitter:title" content="Calculate Your Zakat in 5 Minutes | zakat.fyi">
+  <meta name="twitter:title" content="Zakat Done Right | Zakat.fyi">
   <meta name="twitter:description"
     content="Understand and calculate your true Zakat obligations through our simple and comprehensive form.">
-  <meta name="twitter:image" content="https://i.imgur.com/gWmxYlg.png">
+  <meta name="twitter:image" content="https://zakat.fyi/assets/InstagramPost.png">
 
   <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
 
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="8f19b3c0-5106-4428-a754-c0aba169f3d7";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52040224-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-
+    gtag('config', 'UA-52040224-4');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166050306-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-166050306-1');
+  </script>
 </head>
 
 <body style = "font-family: Helvetica Neue, sans-serif;" >
@@ -93,7 +108,7 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Know the Niṣāb </p>
-    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (S) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount.</p>
+    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (S) at 21 ounces of Silver. We will not be using the gold nisab calculation in this calculator to stay true to Sheikh Joe Bradford's method. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span><span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount.</p>
 
     <p class="p1"><span class="numbered-item"></span> Understand the <em>Hawl</em> </p>
     <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. The length of the <em>hawl</em> is at most 1 lunar year, or when you last paid Zakat. You pay Zakat on your net assets that you owned consistently for the entire hawl. When putting your assets below, put the amount that you have owned consistently for the entire year, like shown in the chart below. </p>
@@ -114,7 +129,7 @@
     </div>
  -->
     <p class="p1"><span class="numbered-item"></span> You vs. You + Your Spouse </p>
-    <p class="explanation"> The Zakat is due by the person who owns the wealth, whether man or woman. If you choose, you can pay Zakat on behalf of your spouse, in which case, make sure to the sum the total for both spouses for each of these questions.</p>
+    <p class="explanation"> The Zakat is due by the person who owns the wealth, whether man or woman. If you choose, you can pay Zakat on behalf of your spouse, in which case, make sure to sum the total for both spouses for each of these questions.</p>
 
     <p class="p1"><span class="numbered-item"></span> Which of these apply to your financial picture? </p>
     <p class="explanation"> This allows us to ask you the right Zakat questions. If you're not sure, select the box and you can leave the question blank later when we provide explanations.</p>
@@ -173,7 +188,7 @@
               <label class="btn btn-secondary btn-turbo" id="btn-illiquid" category="illiquid">
                 <input type="checkbox" autocomplete="off" id="checkbox-illiquid" category="illiquid"> 
                   <div class="icon-turbo">🐄</div> 
-                  <div class="desc-turbo">Posess illiquid investments or livestock</div>
+                  <div class="desc-turbo">Possess illiquid investments or livestock</div>
               </label>
             </div>
           </div>
@@ -385,16 +400,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="0">
             <td>
               <!-- Stock Name Field -->
-              <input type="text" class="form-control stock-name" placeholder="First stock">
+              <input type="text" id="stockname-0" class="form-control stock-name" placeholder="First stock">
             </td>
             <td>
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Total Assets Field --> 
-                    <input type="text" class="form-control stock-assets" placeholder="0">
+                    <input type="text" id="totalassets-0" class="form-control stock-assets" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -402,7 +417,7 @@
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Shares Outstanding Field --> 
-                    <input type="text" class="form-control stock-total-shares" placeholder="0">
+                    <input type="text" id="totalshares-0" class="form-control stock-total-shares" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -410,10 +425,11 @@
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Shares Owned Field --> 
-                    <input type="text" class="form-control stock-your-shares" placeholder="0">
+                    <input type="text" id="yourshares-0" class="form-control stock-your-shares" placeholder="0">
                   </div>
                 </div>
             </td>
+            <td><input type="button" style="color:white; background-color:#DC143C; border-radius:2px;" value="Delete" onclick="deleteFinancialRow()"></td>
           </tr>
         </tbody>
       </table>
@@ -421,8 +437,17 @@
     <!-- Button to edit financials table -->
     <script>
         function addFinancialsRow() {
-            var text = "\"<tr><td><input type=\"text\" class=\"form-control stock-name\" placeholder=\"Another stock\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" style=\"width=10%;\"></div></div></td></tr>\""
+            var newRow = Number($('#financials-table tr:last').attr('id')) + 1;
+            var text = "\"<tr id=\'"+ newRow +"\'><td><input type=\"text\" class=\"form-control stock-name\" id=\'stockname-"+ newRow +"\' placeholder=\"Stock Name\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" id=\'totalassets-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" id=\'totalshares-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" id=\'yourshares-"+ newRow +"\' style=\"width=10%;\"></div></div></td><td><input type=\"button\" style=\"color:white; background-color:#DC143C; border-radius:2px;\" value=\"Delete\" onclick=\"deleteFinancialRow()\"></td></tr>"
             $("#financials-table").append(text);
+        }
+    </script>
+    <!-- Delete button script -->
+    <script>
+        function deleteFinancialRow() {
+            $('#financials-table').on('click', 'input[type="button"]', function(e){
+               $(this).closest('tr').remove()
+            })
         }
     </script>
     <div class="text-center">
@@ -757,7 +782,7 @@
     
 
     <p class="p1"><span class="numbered-item"></span> Debts 💳 </p>
-         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in instalments, such as a mortgage or large credit card debt, then do not include that here, but instead look at the next question. </p>
+         <p class="explanation">This can include student debts, credit card debts, and any other debts that have become due. While God is merciful and forgiving, man is not and may demand his rights from us on the Day of Judgment. Therefore, pay your debts to man first. However, if a person has a large debt that is being paid off in installments, such as a secondary mortgage or large credit card debt, then do not include that here, but instead look at the next question. Mortgage debt on your primary residence is exempt from this. </p>
         <div class="form-group money-text-field required">
 
       <label>What is the total of your debts owed to others?</label>  
