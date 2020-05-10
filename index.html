@@ -400,16 +400,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="0">
             <td>
               <!-- Stock Name Field -->
-              <input type="text" class="form-control stock-name" placeholder="First stock">
+              <input type="text" id="stockname-0" class="form-control stock-name" placeholder="First stock">
             </td>
             <td>
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Total Assets Field --> 
-                    <input type="text" class="form-control stock-assets" placeholder="0">
+                    <input type="text" id="totalassets-0" class="form-control stock-assets" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -417,7 +417,7 @@
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Shares Outstanding Field --> 
-                    <input type="text" class="form-control stock-total-shares" placeholder="0">
+                    <input type="text" id="totalshares-0" class="form-control stock-total-shares" placeholder="0">
                   </div>
                 </div>
             </td>
@@ -425,10 +425,11 @@
                 <div class="form-group money-text-field required">
                   <div class="input-group mb-3">
                     <!-- Shares Owned Field --> 
-                    <input type="text" class="form-control stock-your-shares" placeholder="0">
+                    <input type="text" id="yourshares-0" class="form-control stock-your-shares" placeholder="0">
                   </div>
                 </div>
             </td>
+            <td><input type="button" style="color:white; background-color:#DC143C; border-radius:2px;" value="Delete" onclick="deleteFinancialRow()"></td>
           </tr>
         </tbody>
       </table>
@@ -436,8 +437,17 @@
     <!-- Button to edit financials table -->
     <script>
         function addFinancialsRow() {
-            var text = "\"<tr><td><input type=\"text\" class=\"form-control stock-name\" placeholder=\"Another stock\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" style=\"width=10%;\"></div></div></td></tr>\""
+            var newRow = Number($('#financials-table tr:last').attr('id')) + 1;
+            var text = "\"<tr id=\'"+ newRow +"\'><td><input type=\"text\" class=\"form-control stock-name\" id=\'stockname-"+ newRow +"\' placeholder=\"Stock Name\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" id=\'totalassets-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" id=\'totalshares-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" id=\'yourshares-"+ newRow +"\' style=\"width=10%;\"></div></div></td><td><input type=\"button\" style=\"color:white; background-color:#DC143C; border-radius:2px;\" value=\"Delete\" onclick=\"deleteFinancialRow()\"></td></tr>"
             $("#financials-table").append(text);
+        }
+    </script>
+    <!-- Delete button script -->
+    <script>
+        function deleteFinancialRow() {
+            $('#financials-table').on('click', 'input[type="button"]', function(e){
+               $(this).closest('tr').remove()
+            })
         }
     </script>
     <div class="text-center">

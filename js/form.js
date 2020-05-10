@@ -1,6 +1,22 @@
 // reset form values from json object
 export function restoreForm(data, cb) {
   var keys = Object.keys(data);
+
+  // handle financials-table ids
+  var financialTableInfo = []
+  for (var i = 0; i < keys.length; i++) {
+    var id = keys[i];
+    var val = data[id];
+    var split_id = id.split("-")[0];
+    if (["stockname", "totalassets", "totalshares", "yourshares"].includes(split_id)) {
+      // this is a financial row
+      var row_num = id.split("-")[1];
+      financialTableInfo.push([row_num, split_id, val]);
+    }
+  }
+  repopulateFinancialTable(financialTableInfo);
+
+  // restore all other ids
   for (var i = 0; i < keys.length; i++) {
     var id = keys[i];
     var val = data[id];
@@ -23,6 +39,44 @@ export function restoreForm(data, cb) {
     if (i === keys.length - 1 && cb) {
       return cb();
     }
+  }
+}
+
+// helper method for restoreForm method
+function repopulateFinancialTable(financialTableInfo) {
+  // clear table first 
+  $("#financials-table tbody").empty();
+
+  // create the rows from the table information
+  var financialTableRows = {};
+  var row_nums = [];
+  for (var i = 0; i < financialTableInfo.length; i++) {
+    var row_num = financialTableInfo[i][0];
+    var id = financialTableInfo[i][1];
+    var val = financialTableInfo[i][2];
+    if (row_nums.indexOf(row_num) == -1) {
+      row_nums.push(row_num);
+    }
+
+    if (row_num in financialTableRows) {
+      financialTableRows[row_num].push({id: val});
+    } else {
+      financialTableRows[row_num] = [{id, val}];
+    }
+  }
+
+  for (var i = 0; i < row_nums.length; i++) {
+    var row_num = row_nums[i];
+    // TODO(ihssan): investigate if storing these numbers is needed at all
+    //                or if getting the id is enough for caching.
+    var ts = financialTableRows[row_num]['totalshares'];
+    var ys = financialTableRows[row_num]['yourshares'];
+    var sn = financialTableRows[row_num]['stockname'];
+    var ta = financialTableRows[row_num]['totalassets'];
+
+    var row = "\"<tr id=\'"+ i +"\'><td><input type=\"text\" class=\"form-control stock-name\" id=\'stockname-"+ i +"\' placeholder=\"Stock Name\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" id=\'totalassets-"+ i +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" id=\'totalshares-"+ i +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" id=\'yourshares-"+ i +"\' style=\"width=10%;\"></div></div></td>\"<td><input type=\"button\" style=\"color:white; background-color:#DC143C; border-radius:2px;\" value=\"Delete\" onclick=\"deleteFinancialRow()\"></td></tr>"
+
+    $("#financials-table").append(row);
   }
 }
 

@@ -63,7 +63,7 @@ export function incrementUsers() {
 			user_count: increment 
 	})
 	.then(function() {
-			console.log("Document successfully updated!");
+			//console.log("Document successfully updated!");
 	})
 	.catch(function(error) {
 			// The document probably doesn't exist.

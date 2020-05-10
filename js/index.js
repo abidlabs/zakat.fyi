@@ -36,8 +36,8 @@ $(async function() {
     cookies.initializeIdentity();
   } else {
     // restore a previous session 
-		var data = JSON.parse(localStorage.getItem("data"));	
-	  form.restoreForm(data, function() {
+    var data = JSON.parse(localStorage.getItem("data"));
+    form.restoreForm(data, function() {
       functions.updatePage();
       functions.loadRelatedDivs();
     });	
@@ -60,7 +60,7 @@ $(async function() {
   })
 
 
-  /// SET UP RELATED-DIVS EVENT HANDLERS
+  // SET UP RELATED-DIVS EVENT HANDLERS
   $('.related-hidden .show-link').click(function() {
     var category = $(this).parent().attr('category')
     $('.related-hidden[category=' + category + ']').hide()  // the related hid div
@@ -82,7 +82,6 @@ $(async function() {
   })
 
 
-
   $("#calculate-zakat-button").click(function() {
       $('html, body').animate({
           scrollTop: $("nav").offset().top
@@ -98,20 +97,20 @@ $(async function() {
   });
 
   $('#savereceipt').click(function() {
-        var dateObj = new Date();
-        var month = dateObj.getUTCMonth(); 
-        var months_list = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-        var month_as_string = months_list[month]
-        var day = dateObj.getUTCDate();
-        var year = dateObj.getUTCFullYear();
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth(); 
+    var months_list = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    var month_as_string = months_list[month]
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
 
-        var newdate = month_as_string + ' ' + day + ", " + year;
+    var newdate = month_as_string + ' ' + day + ", " + year;
 
-        var email = $('#email-recapture').val();
-        var subject = 'Your 2020 Zakat.fyi Receipt';
-        var emailBody = 'Salaam!%0D%0A%0D%0AThank you for using www.Zakat.fyi to calculate your true zakat for 2020.%0D%0A%0D%0AYour Zakatable assets are: ' + $('.currency-prepend').html()+$('.zakat-liable-amount').html() + '%0D%0AYour Zakat amount due is: ' + $('.currency-prepend').html()+$('.zakat-amount').html() + '%0D%0A%0D%0AYou calculated your Zakat on ' + newdate + '. This begins your Hawl for next year.%0D%0A%0D%0ASalaam,%0D%0AZakat.fyi team';
-        window.open("mailto:"+email+"?subject="+subject+"&body="+emailBody);
-  })
+    var email = $('#email-recapture').val();
+    var subject = 'Your 2020 Zakat.fyi Receipt';
+    var emailBody = 'Salaam!%0D%0A%0D%0AThank you for using www.Zakat.fyi to calculate your true zakat for 2020.%0D%0A%0D%0AYour Zakatable assets are: ' + $('.currency-prepend').html()+$('.zakat-liable-amount').html() + '%0D%0AYour Zakat amount due is: ' + $('.currency-prepend').html()+$('.zakat-amount').html() + '%0D%0A%0D%0AYou calculated your Zakat on ' + newdate + '. This begins your Hawl for next year.%0D%0A%0D%0ASalaam,%0D%0AZakat.fyi team';
+    window.open("mailto:"+email+"?subject="+subject+"&body="+emailBody);
+})
 
   $('#emailModal').on('hidden.bs.modal', function(e) {
     $('#form').hide();
