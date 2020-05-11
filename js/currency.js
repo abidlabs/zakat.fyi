@@ -3,7 +3,7 @@ export var currencySymbols = {
   "EUR": "&euro;",
   "CAD": "$", 
   "GBP": "£",
-  "TRY": "₺"
+  "TRY": "₺",
   "INR": "₹"
 };
 
@@ -12,7 +12,7 @@ export var currencyConversions = {
   "EUR": 1.00,
   "CAD": 1.00, 
   "GBP": 1.00,
-  "TRY": 1.00
+  "TRY": 1.00,
   "INR": 1.00
 }; // These are updated through JSON requests
 
