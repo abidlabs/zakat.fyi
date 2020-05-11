@@ -8,6 +8,12 @@ import * as form from "./form.js";
 // honestly, everything is going to touch nisab, so let's leave it to be global.
 window.nisab = prices.nisab_usd
 
+// global Google analytics objects
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-166050306-1');
+
 // wait for document ready
 $(async function() {
   /* *******************************************
@@ -90,7 +96,7 @@ $(async function() {
 
   $("#calculate-zakat-button-end").click(function(){
   	$('#calculate-zakat-button-end').css('display', 'none')
-
+    gtag('event', 'zakat-calculate-button-clicked')
   	$('#emailModal').modal('show');
     // Populate email form with previously entered email, if not use whatever they enter here to send to our db
     $('.email-receipt-confirm').val($('#email-field').val());
