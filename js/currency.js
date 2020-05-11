@@ -4,6 +4,7 @@ export var currencySymbols = {
   "CAD": "$", 
   "GBP": "£",
   "TRY": "₺"
+  "INR": "₹"
 };
 
 export var currencyConversions = {
@@ -12,6 +13,7 @@ export var currencyConversions = {
   "CAD": 1.00, 
   "GBP": 1.00,
   "TRY": 1.00
+  "INR": 1.00
 }; // These are updated through JSON requests
 
 
