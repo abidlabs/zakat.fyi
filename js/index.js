@@ -115,6 +115,7 @@ $(async function() {
     var email = $('#email-recapture').val();
     var subject = 'Your 2020 Zakat.fyi Receipt';
     var emailBody = 'Salaam!%0D%0A%0D%0AThank you for using www.Zakat.fyi to calculate your true zakat for 2020.%0D%0A%0D%0AYour Zakatable assets are: ' + $('.currency-prepend').html()+$('.zakat-liable-amount').html() + '%0D%0AYour Zakat amount due is: ' + $('.currency-prepend').html()+$('.zakat-amount').html() + '%0D%0A%0D%0AYou calculated your Zakat on ' + newdate + '. This begins your Hawl for next year.%0D%0A%0D%0ASalaam,%0D%0AZakat.fyi team';
+    gtag('event', 'send-email-receipt-button-clicked')
     window.open("mailto:"+email+"?subject="+subject+"&body="+emailBody);
 })
 
