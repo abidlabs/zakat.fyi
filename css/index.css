@@ -49,6 +49,12 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 .col-turbo{
 	padding: 10px 5px !important;
 }
+@media only screen and (max-width: 600px) {
+	.col-turbo{
+		width: 50%;
+	}
+}
+
 .btn-turbo{
 	width:150px;
 	height:170px;	
