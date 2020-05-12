@@ -22,6 +22,10 @@ export var currencyConversions = {
 $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
 	for (var curr in currencyConversions){
 	    currencyConversions[curr] = json["rates"][curr]
+      // Add a manaul conversion rate for BDT for now
+      if (curr === "BDT") {
+        currencyConversions[curr] = 85.43;
+      }
 	};	
 	$('#currency-select').removeAttr('disabled')
   $('#currency-select').trigger('change')
