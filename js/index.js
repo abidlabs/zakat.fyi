@@ -149,5 +149,24 @@ $(async function() {
     $(this).html(numbered_item + '.');
   });
 
+  var adjusted_financials_data = {}
+  for (var i = 0; i < financials_data.length; i++){
+    adjusted_financials_data[financials_data[i]['symbol']] = {
+      'assets': financials_data[i]['assets'],
+      'shares': financials_data[i]['shares']
+    }
+  }
+
+  $('body').on("change", ".stock-name", function(){
+    var stock_name = $(this).val().toUpperCase()
+    console.log(stock_name, stock_name in adjusted_financials_data) 
+    if (stock_name in adjusted_financials_data){
+      $(this).parent().parent().find('.stock-assets').val(adjusted_financials_data[stock_name]['assets']);
+      $(this).parent().parent().find('.stock-total-shares').val(adjusted_financials_data[stock_name]['shares']);
+      $(this).parent().parent().find('.stock-your-shares').focus();            
+    }
+  })
+
+
   // show the related sections if the button was pressed
 });

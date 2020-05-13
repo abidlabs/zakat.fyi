@@ -374,7 +374,7 @@
     <p class="p1"><span class="numbered-item"></span> Passive Investments 📊 </p>
      <p class="explanation">This section applies to the stocks that you are planning on holding long-term (e.g. for more than 366 days). You may end up paying less Zakat by treating the stock as a passive investment. To properly calculate the Zakat on each stock you hold passively, you will need to access the company's balance sheet. If you are unable to do this for a particular investment (e.g. you are holding a mutual fund, which is composed of many different stocks), then you may simply add the value of the investment to #12. </p>
 
-      <p class="explanation">You can find this information on online, e.g. on <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
+      <p class="explanation">This might sound complicated, but here's the good news! We can automatically fill in the information for more than 600 common stocks! Simply type the stock name below and it will automatically fill. If there's one we don't have the info for, you can find it for your stock online, e.g. on <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
      
      <center>
      <img src="assets/balance-sheet-screenshot.png" style="width:90%; max-width: 400px; border: 2px solid black">
@@ -1162,6 +1162,7 @@
   
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+      <!-- <script src="https://raw.githubusercontent.com/typeiii/jquery-csv/master/src/jquery.csv.min.js"></script> -->
 
       <!-- Intializing Firebase -->
       <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -1171,6 +1172,8 @@
            https://firebase.google.com/docs/web/setup#available-libraries -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<!--       <script src="https://raw.githubusercontent.com/typeiii/jquery-csv/master/src/jquery.csv.min.js"></script>
+ -->      
       <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -1189,6 +1192,7 @@
         $('#form').validate()
       </script> 
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+      <script src="data/financials.js"></script>
       <script type="module" src="js/index.js"></script>
       <script type="module" src="js/email.js"></script>
       <!-- Load Stripe.js on your website. -->
