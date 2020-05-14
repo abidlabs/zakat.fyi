@@ -3069,4 +3069,4 @@ var financials_data = [
     "assets": 1527000000,
     "shares": 300000000
   }
-]
+];
