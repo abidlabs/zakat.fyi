@@ -372,20 +372,14 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Passive Investments 📊 </p>
-     <p class="explanation">This section applies to the stocks that you are planning on holding long-term (e.g. for more than 366 days). You may end up paying less Zakat by treating the stock as a passive investment. To properly calculate the Zakat on each stock you hold passively, you will need to access the company's balance sheet. If you are unable to do this for a particular investment (e.g. you are holding a mutual fund, which is composed of many different stocks), then you may simply add the value of the investment to #12. </p>
+     <p class="explanation">This section applies to the stocks that you are planning on holding long-term (e.g. for more than 366 days). You may end up paying less Zakat by treating the stock as a passive investment. To properly calculate the Zakat on passive investments, you will need to access <em>each company's</em> balance sheet, and look at the <em>Current Assets</em> and <em>Shares Issued</em>. <b>Here's the good news:</b> We can do this automatically for more than 600 common stocks! </p>
 
-      <p class="explanation">You can find this information on online, e.g. on <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <b>Current Assets</b> and <b>Shares Issued</b>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <b>Number of Shares You Own</b>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
-
-     <center>
-     <img src="assets/balance-sheet-screenshot.png" style="width:90%; max-width: 400px; border: 2px solid black">
-   </center>
    <br>
 
     <!-- Investment financials table -->
-    <div class="container">
       <div class="autocomplete">
-        <p>You can use this field to lookup stocks, which will be added automatically to the table. If a stock doesn't autocomplete,
-           then it does not currently exist in our database. Feel free to send us its name on the message icon, and we can add it!</p>
+        <p class="explanation">You can use this search bar to lookup stocks, which will be added automatically to the table. If a stock doesn't autocomplete,
+           then it does not currently exist in our database. Feel free to <a href="mailto:zakatfyi@gmail.com">send us its name</a>, and we can add it!</p>
         <div>
           <input class="form-control" id="stockname-autocomplete" type="text" placeholder="Write Stock Name Here..">
         </div>
@@ -399,6 +393,16 @@
         </div>
       </div>
       <br><br>
+
+      <div class="no-stock-link">What if my stock doesn't show up?</div>
+      <div class="no-stock-body">
+      <p class="explanation">You can find the relevant information online, e.g. on <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <em>Current Assets</em> and <em>Shares Issued</em>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <em>Number of Shares You Own</em>, we can calculate the effective value of your assets of the company, which becomes part of your net assets. Note: this is very difficult to calculate for funds that consist of multiple stocks, so we recommend simply treating them as active investments (and adding the cash value to the previous question).</p>
+
+     <center>
+        <img src="assets/balance-sheet-screenshot.png" style="width:90%; max-width: 400px; border: 2px solid black">
+       </center>
+     </div>
+
 
       <table class="table table-bordered" id="financials-table">
         <thead>
@@ -443,11 +447,12 @@
           </tr>
         </tbody>
       </table>
-    </div>
     <!-- Button to edit financials table -->
     <script>
       function addFinancialsRow() {
-        var newRow = Number($('#financials-table tr:last').attr('id')) + 1; // TODO: Change this because ids that are just numbers won't be unique (0, 1, etc.)
+        var newRow = $('#financials-table tr:last').attr('id') || -1;
+        newRow = Number(newRow) + 1; // TODO: Change this because ids that are just numbers won't be unique (0, 1, etc.)
+
         var text = "\"<tr id=\'"+ newRow +"\'><td><input type=\"text\" class=\"form-control stock-name\" id=\'stockname-"+ newRow +"\' placeholder=\"Stock Name\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" id=\'totalassets-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" id=\'totalshares-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" id=\'yourshares-"+ newRow +"\' style=\"width=10%;\"></div></div></td><td><input type=\"button\" style=\"color:white; background-color:#DC143C; border-radius:2px;\" value=\"Delete\" onclick=\"deleteFinancialRow()\"></td></tr>"
         $("#financials-table").append(text);
       }
@@ -605,22 +610,6 @@
     </div>
 
     </div><!-- Account Questions Toggle End -->
-
-
-
-<!--     <div class="form-group required">
-      <label class="p1">20-22. Do you own any real estate for business/investment purposes?</label><br>
-
-      <div class="btn-toolbar btn-toolbar-toggle" data-toggle="buttons">
-        <label class="btn btn-success active">
-          <input type="radio" name="real-estate-options" id="real-estate-yes" autocomplete="off"> &nbsp; &nbsp; Yes, I own such real estate &nbsp; &nbsp;
-        </label> &nbsp;
-        <label class="btn btn-success">
-          <input type="radio" name="real-estate-options" id="real-estate-no" autocomplete="off" checked>  &nbsp; &nbsp; No, I don't &nbsp; &nbsp;
-        </label>
-      </div>
-    </div>
- -->
 
     <div class="real-estate-hidden related-hidden" category="real-estate">
       21-23. Real estate for business purposes 🏘️ &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>

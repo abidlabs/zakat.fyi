@@ -46,6 +46,7 @@ $(async function() {
     form.restoreForm(data, function() {
       functions.updatePage();
       functions.loadRelatedDivs();
+      $('#currency-select').trigger('change');
     });	
   }
 
@@ -160,12 +161,15 @@ $(async function() {
   $('body').on("change", ".stock-name", function(){
     var stock_name = $(this).val().toUpperCase()
     if (stock_name in adjusted_financials_data){
-      $(this).parent().parent().find('.stock-assets').val(adjusted_financials_data[stock_name]['assets']);
+      $(this).parent().parent().find('.stock-assets').val(adjusted_financials_data[stock_name]['assets'] * prices.conversionRate);
       $(this).parent().parent().find('.stock-total-shares').val(adjusted_financials_data[stock_name]['shares']);
       $(this).parent().parent().find('.stock-your-shares').focus();            
     }
   })
 
+  $('.no-stock-link').click(function(){
+    $('.no-stock-body').toggle()
+  })
 
   // show the related sections if the button was pressed
 });

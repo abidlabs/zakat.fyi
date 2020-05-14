@@ -7,6 +7,7 @@ export var gold_price_per_oz_usd = 1723.82
 export var gold_price_per_oz = 1723.82
 export var silver_price_per_oz_usd =  15.154
 export var silver_price_per_oz =  15.154
+export var conversionRate = 1.00
 
 // Handle currency conversions (should happen after dynamic loading of prices)
 $.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
@@ -28,7 +29,7 @@ $.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
 
 $('#currency-select').change(function(){
   var symbol = currency.currencySymbols[$(this).val()]
-  var conversionRate = currency.currencyConversions[$(this).val()]
+  conversionRate = currency.currencyConversions[$(this).val()]
   $('.currency-prepend').html(symbol)
   window.nisab = nisab_usd * conversionRate
   gold_price_per_oz = gold_price_per_oz_usd * conversionRate
