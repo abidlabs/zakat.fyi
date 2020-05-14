@@ -46,6 +46,7 @@ $(async function() {
     form.restoreForm(data, function() {
       functions.updatePage();
       functions.loadRelatedDivs();
+      $('#currency-select').trigger('change');
     });	
   }
 
@@ -148,6 +149,27 @@ $(async function() {
     numbered_item += 1;
     $(this).html(numbered_item + '.');
   });
+
+  var adjusted_financials_data = {}
+  for (var i = 0; i < financials_data.length; i++){
+    adjusted_financials_data[financials_data[i]['symbol']] = {
+      'assets': financials_data[i]['assets'],
+      'shares': financials_data[i]['shares']
+    }
+  }
+
+  $('body').on("change", ".stock-name", function(){
+    var stock_name = $(this).val().toUpperCase()
+    if (stock_name in adjusted_financials_data){
+      $(this).parent().parent().find('.stock-assets').val(adjusted_financials_data[stock_name]['assets'] * prices.conversionRate);
+      $(this).parent().parent().find('.stock-total-shares').val(adjusted_financials_data[stock_name]['shares']);
+      $(this).parent().parent().find('.stock-your-shares').focus();            
+    }
+  })
+
+  $('.no-stock-link').click(function(){
+    $('.no-stock-body').toggle()
+  })
 
   // show the related sections if the button was pressed
 });
