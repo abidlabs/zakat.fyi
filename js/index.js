@@ -97,7 +97,6 @@ $(async function() {
 
   $("#calculate-zakat-button-end").click(function(){
   	$('#calculate-zakat-button-end').css('display', 'none')
-    gtag('event', 'zakat-calculate-button-clicked')
   	$('#emailModal').modal('show');
     // Populate email form with previously entered email, if not use whatever they enter here to send to our db
     $('.email-receipt-confirm').val($('#email-field').val());
