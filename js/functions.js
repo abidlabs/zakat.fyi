@@ -55,9 +55,9 @@ export function updateFinancialsTable() {
 		if (i > 0) { // ignore <th>
 			var row = $(row);
             var stockName = row.find('input[class*="stock-name"]').val();
-	        var totalAssets = parseFloat(row.find('input[class*="stock-assets"]').val()) || 0;
-	        var sharesOutstanding = parseFloat(row.find('input[class*="stock-total-shares"]').val()) || 0;
-	        var sharesOwned = parseFloat(row.find('input[class*="stock-your-shares"]').val()) || 0;
+	        var totalAssets = parseFloat(row.find('input[class*="stock-assets"]').val().replace(/\,/g, '')) || 0;
+	        var sharesOutstanding = parseFloat(row.find('input[class*="stock-total-shares"]').val().replace(/\,/g, '')) || 0;
+	        var sharesOwned = parseFloat(row.find('input[class*="stock-your-shares"]').val().replace(/\,/g, '')) || 0;
 		}
 		if (sharesOutstanding > 0 ) {
 			financialsTotalAssets += sharesOwned / sharesOutstanding * totalAssets;
@@ -97,7 +97,7 @@ export function updateZakatAmount() {
 	var totalAssetsMinusLiabilities = 0
 
 	$('form *').filter(':input').each(function(){
-		var val = $(this).val().replace(',', '') || 0
+		var val = $(this).val().replace(/\,/g, '') || 0
 		var multiplier = $(this).attr('data-multiplier') || 0
 		try {
 			zakatAmount += eval(val) * parseFloat(multiplier);
@@ -116,9 +116,12 @@ export function updateZakatAmount() {
 		zakatAmount = '0.00'
 		$('.below-nisab').css('display', 'inline') 
 	} else {
-		zakatAmount = zakatAmount.toFixed(2)
+		zakatAmount = Math.round(zakatAmount * 100) / 100
+		zakatAmount = zakatAmount.toLocaleString()
 		$('.below-nisab').css('display', 'none') 
 	}
-	$('.zakat-liable-amount').html(totalAssetsMinusLiabilities.toFixed(2))
+	totalAssetsMinusLiabilities = Math.round(totalAssetsMinusLiabilities * 100) / 100
+	totalAssetsMinusLiabilities = totalAssetsMinusLiabilities.toLocaleString()	
+	$('.zakat-liable-amount').html(totalAssetsMinusLiabilities)
 	$('.zakat-amount').html(zakatAmount) 
 }
