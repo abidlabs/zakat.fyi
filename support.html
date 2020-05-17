@@ -53,7 +53,7 @@
       </div>
       <p class="separator" style="font-size: 40px;">Support Us</p>
       <br><br>
-      <p><a href="index.html" style="color:gray"><u>Go back to Calculator.</u></a></p>
+      <p><a href="index.html" style="color:gray"><u>Go back to Calculator</u></a></p>
       <br>
       </div>
     </div>
@@ -183,13 +183,24 @@
           $("#otherAmount").val("$");
         })
       </script>
+      <!-- If inputting custom amount, toggle `other` radio button -->
+      <script>
+        $("#otherAmount").click(function() {
+          $("#other").prop("checked", true);
+          $("#otherAmount").val("$");
+        })
+      </script>
       <!-- Script for selecting radio buttons -->
       <script>
         function getDonationAmountFrequency() {
           var amountValue = $("input[name='amount']:checked").val();
           if(amountValue == "other"){
             amountValue = $("#otherAmount").val();
-            amountValue = amountValue.substr(1)
+            if (amountValue.length > 1) {
+              if (amountValue.charAt(0) == '$') {
+                amountValue = amountValue.substr(1)
+              }
+            }
           }
           var frequency = $("input[name='frequency']:checked").val();
           return [amountValue, frequency];
@@ -268,7 +279,7 @@
               // Instead use one of the strategies described in
               // https://stripe.com/docs/payments/checkout/fulfillment
               successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
-              cancelUrl: window.location.protocol + '//zakat.fyi/',
+              cancelUrl: window.location.protocol + '//zakat.fyi/support.html',
             })
             .then(function (result) {
               if (result.error) {
@@ -283,7 +294,7 @@
               lineItems: [{price: plan, quantity: quantity}],
               mode: 'subscription',
               successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
-              cancelUrl: window.location.protocol + '//zakat.fyi/',
+              cancelUrl: window.location.protocol + '//zakat.fyi/suppport.html',
             })
             .then(function (result) {
               if (result.error) {
