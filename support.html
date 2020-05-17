@@ -65,6 +65,7 @@
         <!-- Description Column -->
         <div class="col-md-6 col-6">
           <h2>Help us do more</h2>
+          <br>
           <p class="donation-text">This website is run by indepdendent Muslim developers. If you have
             used <a href="index.html">our calculator</a> and found it useful, please
             consider donating to help us cover our running costs.
@@ -210,7 +211,7 @@
       <!-- Credit/Debit donate button -->
       <script>
       (function() {
-        var live_mode = true; // true for PROD, false for DEV
+        var live_mode = false; // true for PROD, false for DEV
 
         if (live_mode) {
           var stripe = Stripe('pk_live_QiS3p2WxtIWhSoCfOXAiolqH00T5YPX4Vl');
@@ -250,7 +251,7 @@
             }
           } else if (frequency == 'monthly') {
             if (amount == '10') {
-              plan = (live_mode === true) ? 'plan_HIJbAVOajrB90t': 'plan_HIUwgkwCjuF1NJ';
+              plan = (live_mode === true) ? 'plan_HIJaDfshbmrOK4': 'plan_HIUwgkwCjuF1NJ';
             } else if (amount == '25') {
               plan = (live_mode === true) ? 'plan_HIJamFOtRY5TpQ' : 'plan_HIUxGzeP9xNdAZ';
             } else if (amount == '50') {
@@ -293,7 +294,7 @@
               lineItems: [{price: plan, quantity: quantity}],
               mode: 'subscription',
               successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
-              cancelUrl: window.location.protocol + '//zakat.fyi/suppport.html',
+              cancelUrl: window.location.protocol + '//zakat.fyi/support.html',
             })
             .then(function (result) {
               if (result.error) {
