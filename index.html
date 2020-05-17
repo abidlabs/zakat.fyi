@@ -456,7 +456,7 @@
         var text = "\"<tr id=\'"+ newRow +"\'><td><input type=\"text\" class=\"form-control stock-name\" id=\'stockname-"+ newRow +"\' placeholder=\"Stock Name\" style=\"width=5px;\"></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-assets\" id=\'totalassets-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-total-shares\" id=\'totalshares-"+ newRow +"\' placeholder=\"0\" style=\"width=10%;\"></div></div></td><td><div class=\"form-group money-text-field required\"><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control stock-your-shares\" placeholder=\"0\" id=\'yourshares-"+ newRow +"\' style=\"width=10%;\"></div></div></td><td><input type=\"button\" style=\"color:white; background-color:#DC143C; border-radius:2px;\" value=\"Delete\" onclick=\"deleteFinancialRow()\"></td></tr>"
         $("#financials-table").append(text);
       }
-      
+
       function submitAutocomplete() {
         // take the last row
         var lastRowNum = Number($('#financials-table tr:last').attr('id')); // TODO: also change this id.
@@ -950,41 +950,7 @@
   </center>
 
 
-    <img id="coffee-image" class="support-button" type="image" alt="support-us" src="assets/coffee_logo_flat.png">
-
-            <div id="donate" class="w3-modal">
-              <div class="w3-modal-content">
-                <div class="w3-container" style="margin-top:1%;">
-
-                  <span id="close-modal" class="w3-button w3-display-topright">&times;</span>
-                  <p style="padding-top:20px;">This website is run by independent Muslim developers.
-                        We appreciate your support in helping us cover our running costs. Donating the equivalent of one cup of coffee via PayPal goes a long way in helping us continue this effort and add new features soon.
-                  </p><br><br>
-                  <!-- <button style="padding-top:7px; padding-bottom:7px; width: 75%; background-color:#5EC49E; border-radius:8px; color: white; font-size:20px;">PayPal </button> -->
-                    <div style="display: inline-block;">
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_s-xclick" />
-                        <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
-                        <div style="border:solid; border-radius: 12px; border-width: 2px;">
-                        <input type="image" src="assets/paypal.png" class="donate-button" border="0" name="submit" title="PayPal" alt="PayPal" />
-                        </div>
-                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                            </form>
-                        <div>
-                            <button class="donate-button stripe-donate-button" id="checkout-button-sku_HAkut0UgxPvp6j">Credit/Debit Card</button>
-                        </div>
-                        <div id="stripe-error-message"></div>
-                    </div>
-                  <br><br>
-                  <br><br>
-                  <p>Jazakum Allahu Khairan 🙏🙏🙏 </p>
-                  <br><br>
-                </div>
-              </div>
-            </div>
-
-
-
+  <img id="coffee-image" onclick="window.open('support.html');" type="image" alt="support-us" src="assets/coffee_logo_flat.png">
 
   <div id="ending-messages">
     <h3 class="text-center" style="margin-bottom: 25px; line-height: 35px;">🎉 Congratulations, you've calculated your true Zakat! </h3>
@@ -1164,15 +1130,12 @@
         <ul class="list-inline">
           <li class="list-inline-item"><a href="about.html">About</a></li>
           <li class="list-inline-item"><a href="testimonials.html">Testimonials</a></li>
-          <li class="list-inline-item"><a href="#" class="support-button">Support Us</a></li>          
+          <li class="list-inline-item"><a href="support.html">Support Us</a></li>
 
         </ul>
       </footer>
 
     </body>
-
-
-
 
 
       <!-- Optional JavaScript -->
@@ -1219,44 +1182,11 @@
       <script src="data/financials.js"></script>
       <script type="module" src="js/index.js"></script>
       <script type="module" src="js/email.js"></script>
-      <!-- Load Stripe.js on your website. -->
-      <script src="https://js.stripe.com/v3"></script>
 
       <!-- Javascript for financials-table autocomplete -->
       <script src="data/autocomplete_financials.js"></script>
       <script src="js/autocomplete.js"></script>
       <script>autocomplete(document.getElementById("stockname-autocomplete"), stocksList);</script>
 
-
-      <script>
-      (function() {
-        var stripe = Stripe('pk_live_QiS3p2WxtIWhSoCfOXAiolqH00T5YPX4Vl');
-
-        var checkoutButton = document.getElementById('checkout-button-sku_HAkut0UgxPvp6j');
-        checkoutButton.addEventListener('click', function () {
-          // When the customer clicks on the button, redirect
-          // them to Checkout.
-          stripe.redirectToCheckout({
-            items: [{sku: 'sku_HAkut0UgxPvp6j', quantity: 1}],
-
-            // Do not rely on the redirect to the successUrl for fulfilling
-            // purchases, customers may not always reach the success_url after
-            // a successful payment.
-            // Instead use one of the strategies described in
-            // https://stripe.com/docs/payments/checkout/fulfillment
-            successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
-            cancelUrl: window.location.protocol + '//zakat.fyi/',
-        })
-          .then(function (result) {
-            if (result.error) {
-              // If `redirectToCheckout` fails due to a browser or network
-              // error, display the localized error message to your customer.
-              var displayError = document.getElementById('stripe-error-message');
-              displayError.textContent = result.error.message;
-            }
-          });
-        });
-      })();
-      </script>
     </body>
   </html>

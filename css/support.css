@@ -1,0 +1,66 @@
+.donate-now {
+  list-style-type:none;
+  margin:25px 0 0 0;
+  padding:0;
+}
+
+.donate-now li {
+  float:left;
+  margin:0 5px 0 0;
+  width:100px;
+  height:45px;
+  position:relative;
+}
+
+#paypal-form{
+  display: inline;
+}
+
+#checkout-button-paypal{
+  width:100px;
+  vertical-align:middle; 
+  border: 1px solid #1e7e34;
+  border-radius: 3px;
+  padding:3px;
+}
+
+.donate-now label, .donate-now input {
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+   /*border-radius: 10px;*/
+  text-align: center;
+}
+
+.donate-now label{
+}
+
+.donate-now input[type="radio"] {
+  opacity:0.011;
+  z-index:100;
+}
+
+.donate-now input[type="radio"]:checked + label {
+  background: #5ec49e;
+  color: white;
+  /* background:black; */
+}
+
+.donate-now label {
+  padding:5px;
+  background-color: #f8f9fa;
+  cursor:pointer;
+  z-index:90;
+}
+
+.donate-now label:hover {
+  background:#DDD;
+}
+
+.donation-text {
+  font-size: 20px;
+  line-height: 2;
+}
