@@ -3,7 +3,7 @@
 	margin: 20px;
 }
 .heavy{
-	font-weight: 700;	
+	font-weight: 700;
 	font-size: 1.1rem;
 }
 #num-people{
@@ -17,7 +17,7 @@
 .no-stock-link{
 	text-decoration: underline;
 	cursor: pointer;
-	color: #28a745;	
+	color: #28a745;
 }
 #financials-table{
 	margin-top:30px;
@@ -53,12 +53,12 @@
 
 
 
-h1 { margin-top: 15px; margin-bottom: 30px; font-family: Helvetica Neue, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+h1 { margin-top: 15px; margin-bottom: 30px; font-family: Helvetica Neue, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
 h2 { margin-top: 50px; margin-bottom: 20px; }
 
-h3 { margin-top: 15px; margin-bottom: 20px; font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px; } 
-p { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.428rem; } 
-blockquote { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+h3 { margin-top: 15px; margin-bottom: 20px; font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px; }
+p { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.428rem; }
+blockquote { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
 pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 .explanation {
 	color: gray;
@@ -68,11 +68,11 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 .related-hidden{
 	font-size: 1.2rem;
 	background-color: #f6fff6;
-	padding: 5px 5px;	
+	padding: 5px 5px;
 	margin-bottom: 10px;
 }
 .skipped{
-	font-size: 80%;	
+	font-size: 80%;
 }
 .show-link{
 	font-size: 80%;
@@ -98,7 +98,7 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 
 .btn-turbo{
 	width:150px;
-	height:170px;	
+	height:170px;
 	padding:8px;
 	border-radius: 10px;
 	color: black !important;
@@ -106,7 +106,7 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 .btn-turbo:not(.active){
 	border: 0px !important;
 	background-color: white !important;
-	-moz-box-shadow: 0 0 9px #ccc !important; 
+	-moz-box-shadow: 0 0 9px #ccc !important;
 	-webkit-box-shadow: 0 0 9px #ccc !important;
 	box-shadow: 0 0 9px #ccc !important;
 
@@ -115,7 +115,7 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 .btn-turbo.active{
 	border: 1px solid #5ec49e !important;
 	background-color: #edfff8 !important;
-	-moz-box-shadow: 0 0 0px #ccc !important; 
+	-moz-box-shadow: 0 0 0px #ccc !important;
 	-webkit-box-shadow: 0 0 0px #ccc !important;
 	box-shadow: 0 0 0px #ccc !important;
 }
@@ -144,7 +144,7 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
   width: 100%;
   height: 8px;
   background: #d4deda;
-  margin-bottom: 40px;	
+  margin-bottom: 40px;
 }
 
 #donate p{
@@ -158,12 +158,12 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 }
 
 .stripe-donate-button{
-	padding-top: 10px; 
-	padding-bottom:10px; 
-	font-size: 25px; 
+	padding-top: 10px;
+	padding-bottom:10px;
+	font-size: 25px;
 	background-color: #5ec49e;
-	color: white; 
-	border-radius: 12px; 
+	color: white;
+	border-radius: 12px;
 	border: 1px #5ec49e solid;
 }
 a:not(.btn) {
@@ -278,23 +278,23 @@ label {
 	font-weight: 400;
 }
 
-.form-group.required>label:before { 
+.form-group.required>label:before {
    /*content:"* ";*/
    /*color:red;*/
 }
 
-.form-group.hidden>label:after { 
+.form-group.hidden>label:after {
    content:" (skip) ";
-   font-style: italic; 
+   font-style: italic;
    font-family: Helvetica Neue, sans-serif;
 }
 
-.form-group.hidden .input-group{ 
+.form-group.hidden .input-group{
    display: none;
 }
 
-.form-group.hidden>label { 
-   color: gray; 
+.form-group.hidden>label {
+   color: gray;
 }
 
 
@@ -307,7 +307,7 @@ label {
 }
 
 #coffee-image {
-	border-radius:12px; 
+	border-radius:12px;
 	width:130px;
 	position: fixed;
 	bottom: 20px;
@@ -317,12 +317,14 @@ label {
 }
 
 .donate-button {
-    width: 300px;
+    /* width: 300px; */
+		width: 300px;
 }
 
 .donate-style {
     border:solid;
-    font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px; 
+    font-family: Helvetica Neue, sans-serif; font-size: 14px; font-style: normal; font-variant: normal;
+		font-weight: 700; line-height: 20px;
 }
 
 .border-box{

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" href="css/index.css?v=6">
+  <link rel="stylesheet" href="css/support.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <title>Support | Zakat.fyi</title>
+
+  <meta property="og:url" content="https://zakat.fyi" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://zakat.fyi/assets/InstagramPost.png" />
+  <meta property="og:title" content="Testimonials | Zakat.fyi" />
+  <meta property="og:description"
+    content="Understand and calculate your true Zakat obligations through our simple and comprehensive form." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@abidlabs">
+  <meta name="twitter:title" content="Testimonials | Zakat.fyi">
+  <meta name="twitter:description"
+    content="Understand and calculate your true Zakat obligations through our simple and comprehensive form.">
+  <meta name="twitter:image" content="https://zakat.fyi/assets/InstagramPost.png">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166050306-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-166050306-1');
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container" id="hero">
+      <a href="index.html"><img src="assets/logo.png" id="header-logo" class="img-fluid" alt="Responsive image"></a>
+      <div id="desc">
+        <img id="plant1" src="assets/plants1.svg">
+        <img id="plant2" src="assets/plants2.svg">
+      </div>
+      <p class="separator" style="font-size: 40px;">Support Us</p>
+      <br><br>
+      <p><a href="index.html" style="color:gray"><u>Go back to Calculator.</u></a></p>
+      <br>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+      <div class="row text-center text-lg-left">
+        <!-- Description Column -->
+        <div class="col-md-6 col-6">
+          <h2>Help us do more</h2>
+          <br>
+          <p class="donation-text">This website is run by indepdendent Muslim developers. If you have
+            used <a href="index.html">our calculator</a> and found it useful, please
+            consider donating to help us cover our running costs.
+          </p>
+          <p class="donation-text">Your donation helps keep the spirit of entrepreneurship alive
+            in the Ummah. Support us with as little as the cost of one cup of
+              coffee.
+          </p>
+          <p class="donation-text">We have a lot more features planned to make your zakat experience run
+            as smoothly as possible. We appreciate your donation, and pray for
+            blessings in your effort to please Allah SWT through your Zakat
+            calculation and payment.
+          </p>
+          <p class="donation-text">Jazakum Allahu Khairan 🙏🙏🙏 </p>
+        </div>
+        <!-- Donations Column -->
+        <div class="col-md-6">
+          <div>
+            <h2>Frequency</h2>
+            <header>Select gift frequency</header>
+            <ul class="donate-now">
+              <li>
+                  <input type="radio" id="donate-once" name="frequency" value="one-time" checked/>
+                  <label for="donate-once">One Time</label>
+              </li>
+              <li>
+                  <input type="radio" id="donate-monthly" name="frequency" value="monthly"/>
+                  <label for="donate-monthly">Monthly</label>
+              </li>
+            </ul>
+          </div>
+          <br><br>
+          <br><br>
+          <div>
+            <h2>Donation Amount</h2>
+            <header>Select donation amount</header>
+            <ul class="donate-now">
+              <li>
+                  <input type="radio" id="amount-10" value="10" name="amount" checked/>
+                  <label for="amount-10">$10</label>
+              </li>
+              <li>
+                  <input type="radio" id="amount-25" value="25" name="amount" />
+                  <label for="amount-25">$25</label>
+              </li>
+              <li>
+                  <input type="radio" id="amount-50" value="50" name="amount" />
+                  <label for="amount-50">$50</label>
+              </li>
+              <li>
+                  <input type="radio" id="amount-100" value="100" name="amount" />
+                  <label for="amount-100">$100</label>
+              </li>
+              <br><br>
+              <li><input type="radio" id="other" value="other" name="amount"/><label for="other">Other:</label></li>
+              <li><input type="text" id="otherAmount" name="numAmount" placeholder="$"/></li>
+            </ul>
+
+          </div>
+          <br><br>
+          <br><br>
+          <div>
+            <h2 style="bottom-margin: 100px;">Payment Method</h2>
+            <br>
+            <div>
+              <button class="donate-button stripe-donate-button" id="checkout-button-stripe">Credit/Debit Card</button>
+            </div>
+            <br>
+            <div id="stripe-error-message"></div>
+            <div>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
+                <div style="border:solid; border-radius: 12px; border-width: 2px; width: 300px;">
+                  <input type="image" src="assets/paypal.png" id="checkout-button-paypal" class="donate-button" border="0" name="submit" title="PayPal" alt="PayPal" />
+                </div>
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2020 Zakat.fyi</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="index.html">Home</a></li>
+      </ul>
+    </footer>
+
+  </body>
+
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+      <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+      </script>
+      <script
+          src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+          integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+          crossorigin="anonymous">
+      </script>
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+      <!-- Script for other radio button -->
+      <script>
+        $("#other").click(function() {
+          $("#otherAmount").focus();
+          $("#otherAmount").val("$");
+        })
+      </script>
+      <!-- Script for selecting radio buttons -->
+      <script>
+        function getDonationAmountFrequency() {
+          var amountValue = $("input[name='amount']:checked").val();
+          if(amountValue == "other"){
+            amountValue = $("#otherAmount").val();
+            amountValue = amountValue.substr(1)
+          }
+          var frequency = $("input[name='frequency']:checked").val();
+          return [amountValue, frequency];
+        };
+      </script>
+      <!-- Load Stripe.js on your website. -->
+      <script src="https://js.stripe.com/v3"></script>
+      <!-- Credit/Debit donate button -->
+      <script>
+      (function() {
+        var stripe = Stripe('pk_live_QiS3p2WxtIWhSoCfOXAiolqH00T5YPX4Vl');
+
+        var checkoutButton = document.getElementById('checkout-button-stripe');
+
+
+        checkoutButton.addEventListener('click', function () {
+          // When the customer clicks on the button, redirect
+          // them to Checkout.
+          var donationInfo = getDonationAmountFrequency();
+
+          // other donation sku_HIJ51wRwAEnplQ
+          var amount = donationInfo[0];
+          var frequency = donationInfo[1];
+          var sku, plan;
+          var quantity = 1;
+
+          if (frequency == 'one-time') {
+            if (amount == '10') {
+              sku = 'sku_HIJUxJjKyn3R7w';
+            } else if (amount == '25') {
+              sku = 'sku_HIJXUBj9QPzPYK';
+            } else if (amount == '50') {
+              sku = 'sku_HIJXlfc5gifIr5';
+            } else if (amount == '100') {
+              sku = 'sku_HIJX77Tr7MjTJ0';
+            } else {
+              // other custom amount
+              sku = 'sku_HIJ51wRwAEnplQ'; // $1 donation
+              quantity = Number(amount);
+            }
+          } else if (frequency == 'monthly') {
+            if (amount == '10') {
+              plan = 'plan_HIJbAVOajrB90t';
+            } else if (amount == '25') {
+              plan = 'plan_HIJamFOtRY5TpQ';
+            } else if (amount == '50') {
+              plan = 'plan_HIJbow3Uer39jh';
+            } else if (amount == '100') {
+              plan = 'plan_HIJbFVZCP1FqNW';
+            } else {
+              // other
+              plan = 'plan_HIJbAVOajrB90t';
+              quantity = Number(amount);
+            }
+          }
+          console.log(plan, sku, quantity);
+
+          if (frequency == 'one-time') {
+            stripe.redirectToCheckout({
+              items: [{sku: sku, quantity: 1}],
+              // Do not rely on the redirect to the successUrl for fulfilling
+              // purchases, customers may not always reach the success_url after
+              // a successful payment.
+              // Instead use one of the strategies described in
+              // https://stripe.com/docs/payments/checkout/fulfillment
+              successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
+              cancelUrl: window.location.protocol + '//zakat.fyi/',
+            })
+            .then(function (result) {
+              if (result.error) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, display the localized error message to your customer.
+                var displayError = document.getElementById('stripe-error-message');
+                displayError.textContent = result.error.message;
+              }
+            });
+          } else if (frequency == 'monthly') {
+            stripe.redirectToCheckout({
+              lineItems: [{price: plan, quantity: 1}],
+              mode: 'subscription',
+              successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
+              cancelUrl: window.location.protocol + '//zakat.fyi/',
+            })
+            .then(function (result) {
+              if (result.error) {
+                var displayError = document.getElementById('stripe-error-message');
+                displayError.textContent = result.error.message;
+              }
+            });
+          }
+        });
+      })();
+      </script>
+      <!-- Paypal donate button -->
+      <script>
+        $("#checkout-button-paypal").click(function(){
+        })
+      </script>
+
+    </body>
+  </html>

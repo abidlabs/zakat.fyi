@@ -41,30 +41,24 @@ $(async function() {
     // initialize a UID
     cookies.initializeIdentity();
   } else {
-    // restore a previous session 
+    // restore a previous session
     var data = JSON.parse(localStorage.getItem("data"));
     form.restoreForm(data, function() {
       functions.updatePage();
       functions.loadRelatedDivs();
       $('#currency-select').trigger('change');
-    });	
+    });
   }
 
   /* *******************************************
   *********** SECTION: Event Handlers **********
   ******************************************** */
-  $('.support-button').click(function(){
-    $('#donate').css('display', 'block')
-    $('.navbar').css('visibility', 'hidden')
-    $('.progress-container').css('visibility', 'hidden')  
-    return false;  
-  })
-
-  $('#close-modal').click(function(){
-    $('#donate').css('display', 'none')
-    $('.navbar').css('visibility', 'visible')
-    $('.progress-container').css('visibility', 'visible')    
-  })
+  //
+  // $('#close-modal').click(function(){
+  //   $('#donate').css('display', 'none')
+  //   $('.navbar').css('visibility', 'visible')
+  //   $('.progress-container').css('visibility', 'visible')
+  // })
 
 
   // SET UP RELATED-DIVS EVENT HANDLERS
@@ -80,8 +74,8 @@ $(async function() {
     var category = $(this).attr('category')
     if ($(this).hasClass('active')){
       $('.related-hidden[category=' + category + ']').show()  // the related hid div
-      $('.related-show[category=' + category + ']').hide() // the related show div      
-      $('.related-show[category=' + category + '] input').val(0) // the related show div      
+      $('.related-show[category=' + category + ']').hide() // the related show div
+      $('.related-show[category=' + category + '] input').val(0) // the related show div
     } else {
       $('.related-hidden[category=' + category + ']').hide()  // the related hid div
       $('.related-show[category=' + category + ']').show() // the related show div
@@ -104,7 +98,7 @@ $(async function() {
 
   $('#savereceipt').click(function() {
     var dateObj = new Date();
-    var month = dateObj.getUTCMonth(); 
+    var month = dateObj.getUTCMonth();
     var months_list = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     var month_as_string = months_list[month]
     var day = dateObj.getUTCDate();
@@ -162,7 +156,7 @@ $(async function() {
     if (stock_name in adjusted_financials_data){
       $(this).parent().parent().find('.stock-assets').val(adjusted_financials_data[stock_name]['assets'] * prices.conversionRate);
       $(this).parent().parent().find('.stock-total-shares').val(adjusted_financials_data[stock_name]['shares']);
-      $(this).parent().parent().find('.stock-your-shares').focus();            
+      $(this).parent().parent().find('.stock-your-shares').focus();
     }
   })
 
