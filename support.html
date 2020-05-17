@@ -203,7 +203,13 @@
       <!-- Credit/Debit donate button -->
       <script>
       (function() {
-        var stripe = Stripe('pk_live_QiS3p2WxtIWhSoCfOXAiolqH00T5YPX4Vl');
+        var live_mode = false; // true for PROD, false for DEV
+
+        if (live_mode) {
+          var stripe = Stripe('pk_live_QiS3p2WxtIWhSoCfOXAiolqH00T5YPX4Vl');
+        } else {
+          var stripe = Stripe('pk_test_B7HIKsdEPzHHu0nnFZjIyo4u00AZldxybk');
+        }
 
         var checkoutButton = document.getElementById('checkout-button-stripe');
 
@@ -220,39 +226,45 @@
           var quantity = 1;
 
           if (frequency == 'one-time') {
+            // sku can either be the live mode one or the test mode one
             if (amount == '10') {
-              sku = 'sku_HIJUxJjKyn3R7w';
+              sku = (live_mode === true) ? 'sku_HIJUxJjKyn3R7w' : 'sku_HIUpv1hoflmyUM';
             } else if (amount == '25') {
-              sku = 'sku_HIJXUBj9QPzPYK';
+              sku = (live_mode === true) ? 'sku_HIJXUBj9QPzPYK' : 'sku_HIUtJHQxzjBcfX';
             } else if (amount == '50') {
-              sku = 'sku_HIJXlfc5gifIr5';
+              sku = (live_mode === true) ? 'sku_HIJXlfc5gifIr5' : 'sku_HIUusi6oGMZZwh';
             } else if (amount == '100') {
-              sku = 'sku_HIJX77Tr7MjTJ0';
+              sku = (live_mode === true) ? 'sku_HIJX77Tr7MjTJ0': 'sku_HIUuKbSTaadLzU';
             } else {
               // other custom amount
-              sku = 'sku_HIJ51wRwAEnplQ'; // $1 donation
+              //  we do $1 donations and multiply it by a quantity
+              sku = (live_mode === true) ? 'sku_HIJ51wRwAEnplQ' :'sku_HIUnOIvdTPO0Y8';
               quantity = Number(amount);
             }
           } else if (frequency == 'monthly') {
             if (amount == '10') {
-              plan = 'plan_HIJbAVOajrB90t';
+              plan = (live_mode === true) ? 'plan_HIJbAVOajrB90t': 'plan_HIUwgkwCjuF1NJ';
             } else if (amount == '25') {
-              plan = 'plan_HIJamFOtRY5TpQ';
+              plan = (live_mode === true) ? 'plan_HIJamFOtRY5TpQ' : 'plan_HIUxGzeP9xNdAZ';
             } else if (amount == '50') {
-              plan = 'plan_HIJbow3Uer39jh';
+              plan = (live_mode === true) ? 'plan_HIJbow3Uer39jh' : 'plan_HIUxi8oqIuyFdt';
             } else if (amount == '100') {
-              plan = 'plan_HIJbFVZCP1FqNW';
+              plan = (live_mode === true) ? 'plan_HIJbFVZCP1FqNW' : 'plan_HIUx28999V0kBc';
             } else {
-              // other
-              plan = 'plan_HIJbAVOajrB90t';
+              // other custom amount
+              //  we do $1 donations and multiply it by a quantity
+              plan = (live_mode === true) ? 'plan_HIJbAVOajrB90t' :'plan_HIUxwx6uSSzARi';
               quantity = Number(amount);
             }
           }
-          console.log(plan, sku, quantity);
+
+          if (live_mode === false) {
+            console.log(plan, sku, quantity);
+          }
 
           if (frequency == 'one-time') {
             stripe.redirectToCheckout({
-              items: [{sku: sku, quantity: 1}],
+              items: [{sku: sku, quantity: quantity}],
               // Do not rely on the redirect to the successUrl for fulfilling
               // purchases, customers may not always reach the success_url after
               // a successful payment.
@@ -271,7 +283,7 @@
             });
           } else if (frequency == 'monthly') {
             stripe.redirectToCheckout({
-              lineItems: [{price: plan, quantity: 1}],
+              lineItems: [{price: plan, quantity: quantity}],
               mode: 'subscription',
               successUrl: window.location.protocol + '//zakat.fyi/',  // TODO: make this interactive!
               cancelUrl: window.location.protocol + '//zakat.fyi/',
