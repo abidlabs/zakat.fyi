@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" href="css/index.css?v=6">
   <link rel="stylesheet" href="css/support.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <title>Support | Zakat.fyi</title>
 
@@ -85,67 +84,65 @@
         <!-- Donations Column -->
         <div class="col-md-6">
           <div>
-            <h2>Frequency</h2>
-            <header>Select gift frequency</header>
+            <h2>Donate below</h2>
+
+            You can donate with
+
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal-form">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
+                  <input type="image" src="assets/paypal.png" id="checkout-button-paypal" class="donate-button" border="0" name="submit" title="PayPal" alt="PayPal" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+
+            or directly with your credit/debit card by filling out the form:
+            <p>&nbsp;</p>
+            <h3> Select Donation Frequency </h3>
             <ul class="donate-now">
               <li>
-                  <input type="radio" id="donate-once" name="frequency" value="one-time" checked/>
-                  <label for="donate-once">One Time</label>
+                  <input type="radio" id="donate-once" name="frequency" value="one-time" checked>
+                  <label class="btn btn-large" for="donate-once" style="">One Time</label>
               </li>
               <li>
                   <input type="radio" id="donate-monthly" name="frequency" value="monthly"/>
-                  <label for="donate-monthly">Monthly</label>
+                  <label class="btn" for="donate-monthly">Monthly</label>
               </li>
             </ul>
           </div>
           <br><br>
-          <br><br>
           <div>
-            <h2>Donation Amount</h2>
-            <header>Select donation amount</header>
+            <h3>Select donation amount</h3>
             <ul class="donate-now">
               <li>
                   <input type="radio" id="amount-10" value="10" name="amount" checked/>
-                  <label for="amount-10">$10</label>
+                  <label for="amount-10" class="btn">$10</label>
               </li>
               <li>
                   <input type="radio" id="amount-25" value="25" name="amount" />
-                  <label for="amount-25">$25</label>
+                  <label for="amount-25" class="btn">$25</label>
               </li>
               <li>
                   <input type="radio" id="amount-50" value="50" name="amount" />
-                  <label for="amount-50">$50</label>
+                  <label for="amount-50" class="btn">$50</label>
               </li>
               <li>
                   <input type="radio" id="amount-100" value="100" name="amount" />
-                  <label for="amount-100">$100</label>
+                  <label for="amount-100" class="btn">$100</label>
               </li>
               <br><br>
-              <li><input type="radio" id="other" value="other" name="amount"/><label for="other">Other:</label></li>
-              <li><input type="text" id="otherAmount" name="numAmount" placeholder="$"/></li>
+              <li><input type="radio" id="other" value="other" name="amount"/><label for="other" class="btn">Other:</label></li>
+              <li style="height:35px"><input type="text" id="otherAmount" name="numAmount" placeholder="$"/></li>
             </ul>
 
           </div>
-          <br><br>
-          <br><br>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
           <div>
-            <h2 style="bottom-margin: 100px;">Payment Method</h2>
-            <br>
             <div>
-              <button class="donate-button stripe-donate-button" id="checkout-button-stripe">Credit/Debit Card</button>
+              <button class="donate-button stripe-donate-button" id="checkout-button-stripe">Donate Now</button>
             </div>
             <br>
             <div id="stripe-error-message"></div>
-            <div>
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input type="hidden" name="hosted_button_id" value="GMR5676YGC7WL" />
-                <div style="border:solid; border-radius: 12px; border-width: 2px; width: 300px;">
-                  <input type="image" src="assets/paypal.png" id="checkout-button-paypal" class="donate-button" border="0" name="submit" title="PayPal" alt="PayPal" />
-                </div>
-                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-              </form>
-          </div>
           </div>
         </div>
       </div>

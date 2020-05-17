@@ -8,8 +8,20 @@
   float:left;
   margin:0 5px 0 0;
   width:100px;
-  height:40px;
+  height:45px;
   position:relative;
+}
+
+#paypal-form{
+  display: inline;
+}
+
+#checkout-button-paypal{
+  width:100px;
+  vertical-align:middle; 
+  border: 1px solid #1e7e34;
+  border-radius: 3px;
+  padding:3px;
 }
 
 .donate-now label, .donate-now input {
@@ -19,8 +31,11 @@
   left:0;
   right:0;
   bottom:0;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   text-align: center;
+}
+
+.donate-now label{
 }
 
 .donate-now input[type="radio"] {
@@ -30,12 +45,13 @@
 
 .donate-now input[type="radio"]:checked + label {
   background: #5ec49e;
+  color: white;
   /* background:black; */
 }
 
 .donate-now label {
   padding:5px;
-  border:1px solid #CCC;
+  background-color: #f8f9fa;
   cursor:pointer;
   z-index:90;
 }
