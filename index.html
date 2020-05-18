@@ -189,7 +189,7 @@
             <div class="btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-secondary btn-turbo" id="btn-debt" category="debt">
                 <input type="checkbox" autocomplete="off" id="checkbox-debt" category="debt">
-                  <div class="icon-turbo">💳</div>
+                  <div class="icon-turbo">🤝</div>
                   <div class="desc-turbo">Have debt owed to you that you expect to be repaid</div>
               </label>
             </div>
@@ -199,7 +199,7 @@
               <label class="btn btn-secondary btn-turbo" id="btn-fines" category="fines">
                 <input type="checkbox" autocomplete="off" id="checkbox-fines" category="fines">
                   <div class="icon-turbo">📋</div>
-                  <div class="desc-turbo">Have late tax payments or fines to pay off</div>
+                  <div class="desc-turbo">Have property tax, late tax, or fines to pay off</div>
               </label>
             </div>
           </div>
@@ -776,7 +776,7 @@
       <div class="debt-related related-show" category="debt"> <!-- Business Questions Toggle -->
 
 
-    <p class="p1"><span class="numbered-item"></span> Good Debt (Owed to You) 💱 </p>
+    <p class="p1"><span class="numbered-item"></span> Good Debt (Owed to You) 🤝 </p>
          <p class="explanation">Good Debt is debt that you are owed and expect to collect. If something prevents you from doing so, like the inability of a person to pay or their refusal to pay, it becomes Bad Debt. You are liable to pay Zakat on a Bad Debt when you actually receive it.</p>
 
         <div class="form-group money-text-field required">
@@ -811,9 +811,20 @@
       </div>
     </div>
 
+    <p class="p1"><span class="numbered-item"></span> Periodic Insurance Expenses 🚗</p>
+         <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.)</p>
+        <div class="form-group money-text-field required">
+      <label>What is the total of your insurance payments?</label>
+      <p class="explanation"></p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control liability" id="insurance-field" placeholder="0" data-multiplier="-0.025">
+      </div>
+    </div>
 
-
-    <p class="p1"><span class="numbered-item"></span> Debts 💳 </p>
+    <p class="p1"><span class="numbered-item"></span> Debts You Owe 💳 </p>
          <p class="explanation">This can include student debts, credit card debts, a secondary mortgage, and any other debts <strong>that have become due</strong>. If you have a debt that you are paying off in installments, you should only include the upcoming installment that is due, even if you choose to pay off more. Mortgage payments on your primary residence are not a part of this category - they should be accounted for in Monthly Expenses. </p>
         <div class="form-group money-text-field required">
 
@@ -829,30 +840,7 @@
 
 
 
-    <p class="p1"><span class="numbered-item"></span> Periodic Insurance Expenses 🚗</p>
-         <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.)</p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of your insurance payments?</label>
-      <p class="explanation"></p>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control liability" id="insurance-field" placeholder="0" data-multiplier="-0.025">
-      </div>
-    </div>
 
-    <p class="p1"><span class="numbered-item"></span> Property Tax Payments 📋</p>
-         <p class="explanation"> You can deduct this if you are about to pay the property tax immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.) </p>
-        <div class="form-group money-text-field required">
-      <label>What is the total of your property tax payments?</label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
-        </div>
-        <input type="text" class="form-control liability" id="propertytax-field" placeholder="0" data-multiplier="-0.025">
-      </div>
-    </div>
 
 <!--   <div class="form-group required">
     <label class="p1">33-34. Do you have late tax payments or fines to pay off?</label><br>
@@ -868,12 +856,27 @@
   </div>
  -->
 
+
+
        <div class="fines-hidden related-hidden" category="fines">
-      34-35. Late tax payments or fines 📋 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
+      33-35. Property tax, late tax payments, or fines 📋 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
     </div>
 
 
-  <div class="fines-related related-show" category="fines"> <!-- Business Questions Toggle -->
+
+  <div class="fines-related related-show" category="fines"> 
+
+    <p class="p1"><span class="numbered-item"></span> Property Tax Payments 📋</p>
+         <p class="explanation"> You can deduct this if you are about to pay the property tax immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.) </p>
+        <div class="form-group money-text-field required">
+      <label>What is the total of your property tax payments?</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
+        </div>
+        <input type="text" class="form-control liability" id="propertytax-field" placeholder="0" data-multiplier="-0.025">
+      </div>
+    </div>
 
     <p class="p1"><span class="numbered-item"></span> Delinquent Tax Payment 📅 </p>
       <p class="explanation">This is money that you owe the government.</p>
