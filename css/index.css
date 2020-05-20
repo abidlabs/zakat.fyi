@@ -79,6 +79,10 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 
 }
 
+.regular{
+	font-weight: normal;
+}
+
 .explanation {
 	color: gray;
 	font-size: 1rem;
