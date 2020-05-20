@@ -12,7 +12,7 @@ def get_masjid_zipcodes_from_address(address_file):
 
 
 # NOTE: download zipcodes_distances_filepath from https://data.nber.org/data/zip-code-distance-database.html
-def closest_masjids_to_zipcode(masjid_zipcodes_filepath, zipcodes_distances_filepath, output_filepath, num_masjids):
+def closest_masjids_to_zipcode(masjid_zipcodes_filepath, zipcodes_distances_filepath, masjid_db_filepath, output_filepath, num_masjids):
   """Takes in a .csv file of all masjid zip codes. Writes a .json for each zip code, mapped to the
       `num_closest` number of masjids."""
   closest_masjids = {}
@@ -43,10 +43,39 @@ def closest_masjids_to_zipcode(masjid_zipcodes_filepath, zipcodes_distances_file
   # NOTE: will return to you the list of `num_masjid` closest zips, such that each zip contains at least 1 zip.
   #  It may be that the `num_masjids` closest masjids are in the first zip
 
+  zip_to_masjid = {}
+  # get all masjid information
+  with open(masjid_db_filepath) as csvfile:
+    reader = csv.reader(csvfile, delimiter='\t')
+    next(reader)
+    for row in reader:
+      # State Masjid Name Address Zip Code  Image?  Link  Zakat-ul-Fitr Email
+      state, name, address, zip_code, image, link, fitr, email = row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]
+      if zip_code not in zip_to_masjid:
+        zip_to_masjid[zip_code] = []
+      masjid = {"name": name, "address": address, "state": state, "fitr": fitr, "email": email, "link": link}
+      zip_to_masjid[zip_code].append(masjid)
+
+
+  final_masjids = {}
+  for zip1 in closest_masjids:
+    final_masjids[zip1] = []
+    for zip2 in closest_masjids[zip1]:
+      print(len(closest_masjids))
+      print(zip2[0])
+      for masjid in closest_masjids[zip2[0]]:
+        if len(final_masjids[zip1]) < num_masjids:
+          masjid_info = masjid
+          masjid_info["distance"] = zip2[1]
+          final_masjids[zip1].append(zip_to_masjid[zip2[0]][masjid])
+  
+
   with open(output_filepath, 'w') as f:
-    json.dump(closest_masjids, f)
+    json.dump(final_masjids, f, indent=4)
 
   return
 
 
-closest_masjids_to_zipcode('masjid_zip_codes.csv', '/Users/itinawi/Downloads/100miles.csv', 'out.json', 3)
+# NOTE: download zipcodes_distances_filepath from https://data.nber.org/data/zip-code-distance-database.html
+# closest_masjids_to_zipcode(masjid_zipcodes_filepath, zipcodes_distances_filepath, output_filepath, num_masjids):
+closest_masjids_to_zipcode('masjid_zip_codes.csv', '/Users/itinawi/Downloads/100miles.csv', 'masjid_db.tsv', 'zipcodes.json', 3)

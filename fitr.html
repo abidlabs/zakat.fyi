@@ -71,9 +71,9 @@
 
 
 <div class="input-group col-md-4 offset-md-4">
-  <input type="text" class="form-control" placeholder="5 digit zipcode here">
+  <input type="text" class="form-control" placeholder="5 digit zipcode" id="input-zipcode">
   <div class="input-group-append">
-    <button class="btn btn-outline-success" type="button">Go!</button>
+    <button class="btn btn-outline-success" id="go-button" type="button">Go!</button>
   </div>
 </div>
 <p>&nbsp;</p>
@@ -83,31 +83,35 @@
     <div class="col-md-8">
       <!--The div element for the map -->
       <div id="map"><iframe src="https://www.google.com/maps/d/embed?mid=1D0RhIrChSq8f6C8HDNQVnR7vOelY302t" width="100%" height="480"></iframe></div>
-      <!-- Replace the value of the key parameter with your own API key. -->
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
-    </script>
   </div>
 
 
-  <div class="col-md-4">
+  <div class="col-md-4" id="masjid-box">
     <div>
 
       <div class="row green-box">
-        <h4 class="masjid-name">1. Masjid Noor</h4>
-        <p class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345
-        <br><span class="masjid-distance">42 miles away</span></p>
-        <p class=""><a href="#" class="masjid-link">Zakat-al-Fitr: $12</a></p>
+        <p><span class="masjid-name">1. Masjid Noor</span>
+        <br>&nbsp;<br><span class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345</span>
+        <br><span class="masjid-distance">42 miles away</span>
+        <br><span><a href="#"  style="color:black !important" class="masjid-link">Zakat-al-Fitr: $12</a></span></p>
       </div>
 
       <div class="row green-box">
-        <h4 class="masjid-name">1. Masjid Noor</h4>
-        <p class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345
-        <br><span class="masjid-distance">42 miles away</span></p>
-        <p class=""><a href="#" class="masjid-link">Zakat-al-Fitr: $12</a></p>
+        <p><span class="masjid-name">1. Masjid Noor</span>
+        <br>&nbsp;<br><span class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345</span>
+        <br><span class="masjid-distance">42 miles away</span>
+        <br><span><a href="#" style="color:black !important"  class="masjid-link">Zakat-al-Fitr: $12</a></span></p>
       </div>
 
-      <div class="row cant-find-box"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfO9e3tqO8GuVVH1_sbZfkDqfolbS5nsClaWLGNQIJD47I4zQ/viewform" target="_blank">Can't find your mosque? Add it here</a>
+      <div class="row green-box">
+        <p><span class="masjid-name">1. Masjid Noor</span>
+        <br>&nbsp;<br><span class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345</span>
+        <br><span class="masjid-distance">42 miles away</span>
+        <br><span><a href="#" style="color:black !important"  class="masjid-link">Zakat-al-Fitr: $12</a></span></p>
+      </div>
+
+
+      <div class="row cant-find-box text-right"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfO9e3tqO8GuVVH1_sbZfkDqfolbS5nsClaWLGNQIJD47I4zQ/viewform" target="_blank">Can't find your mosque? Add it here</a>
       </div>
 
 
@@ -118,7 +122,7 @@
 
 </div>
     <p> &nbsp; </p>
-    <p style ="font-size: 1.3rem;"class="text-center">Based on the closest mosque, your Zakat-al-Fitr is <span class="green-text bold-text">$12</span> per person.</p>
+    <p style ="font-size: 1.3rem;"class="text-center">Based on the closest mosque, your Zakat-al-Fitr is <span class="green-text bold-text">$<span id="fitr-amount">__</span></span> per person.</p>
 
 
     <h3 class="fitr-faq">FAQ</h3>
@@ -310,6 +314,8 @@
 
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+      <script src="js/fitr.js"></script>
 
     </body>
   </html>
