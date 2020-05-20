@@ -22,6 +22,11 @@
 #financials-table{
 	margin-top:30px;
 }
+.error-message{
+	margin-top: 10px;
+	color: #b05454;
+	display: none;
+}
 .autocomplete-items {
   /*position: absolute;*/
   border: 1px solid #d4d4d4;

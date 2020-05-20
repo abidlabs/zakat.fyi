@@ -1,5 +1,6 @@
 import csv
 import json
+import numpy as np
 
 def get_masjid_zipcodes_from_address(address_file):
   zipcodes = set()
@@ -74,6 +75,8 @@ def closest_masjids_to_zipcode(masjid_zipcodes_filepath, zipcodes_distances_file
     json.dump(final_masjids, f, indent=4)
 
   return
+
+
 
 
 # NOTE: download zipcodes_distances_filepath from https://data.nber.org/data/zip-code-distance-database.html
