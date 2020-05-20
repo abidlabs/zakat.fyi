@@ -63,22 +63,20 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 
 .fitr-faq{
 	margin-top: 80px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	font-weight: bold;
 
-
 }
-
 .fitr-q{
-	font-size: 1rem;
-	line-height: 1.7rem
-	margin-top: 10px;
+	font-size: 1.3rem;
+	line-height: 1.7rem;
 	font-weight: bold;
 }
 .fitr-a{
 	font-size: 1rem;
 	color: gray;
 	line-height: 1.7rem
+
 }
 
 .explanation {
