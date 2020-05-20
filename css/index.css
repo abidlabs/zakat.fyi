@@ -353,13 +353,12 @@ label {
 	font-family: Helvetica Neue, sans-serif;
 	margin-right: 15px;
 	margin-left: 15px;
-  
+}
+
 #calculate-fitr-button{
-	color:white;
 	margin-bottom:15px;
 	font-family: Helvetica Neue, sans-serif;
-	background-color: #346BB4; 
-	border-color: #346BB4;
+}
 
 #ending-messages{
 	display:none;
