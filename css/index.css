@@ -63,22 +63,20 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 
 .fitr-faq{
 	margin-top: 80px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	font-weight: bold;
 
-
 }
-
 .fitr-q{
-	font-size: 1rem;
-	line-height: 1.7rem
-	margin-top: 10px;
+	font-size: 1.3rem;
+	line-height: 1.7rem;
 	font-weight: bold;
 }
 .fitr-a{
 	font-size: 1rem;
 	color: gray;
 	line-height: 1.7rem
+
 }
 
 .explanation {
@@ -225,22 +223,28 @@ label {
 	background-color: #faf8f8;
 }
 .green-box{
-	margin:10px; 
+	margin:15px; 
 	background-color: #cce4d2;
 	padding-left: 10px;
+	padding-top: 5px;
 }
 .cant-find-box{
 	margin: 10px;
 	font-size: 90%;
+}
+#masjid-box{
+	display: none;
 }
 .cant-find-box a{
 	color: teal !important;
 }
 .masjid-name{
 	font-weight: bold;
+	font-size: 1.2rem;
 }
 .masjid-address{
 	font-size: 0.8rem;
+	font-weight: normal;
 }
 .masjid-distance{
 	font-size: 0.8rem;
@@ -250,6 +254,7 @@ label {
 	text-decoration: underline;
 	color: black;
 	font-weight: bold;
+	font-size: 1rem;
 }
 
 #hero {
