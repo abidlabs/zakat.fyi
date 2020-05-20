@@ -199,7 +199,12 @@ label {
 
 .grey-box{
 	margin-top: 20px;
-	background-color: #eee;
+	background-color: #faf8f8;
+}
+.green-box{
+	margin:10px; 
+	background-color: #cce4d2;
+	padding-left: 10px;
 }
 .masjid-name{
 	font-weight: bold;
