@@ -206,6 +206,13 @@ label {
 	background-color: #cce4d2;
 	padding-left: 10px;
 }
+.cant-find-box{
+	margin: 10px;
+	font-size: 90%;
+}
+.cant-find-box a{
+	color: teal !important;
+}
 .masjid-name{
 	font-weight: bold;
 }
