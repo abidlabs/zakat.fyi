@@ -1,5 +1,12 @@
 var zipcodes_closest_mosques;
 
+// global Google analytics objects
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-166050306-1');
+
+
 $.getJSON("data/fitr/zipcodes_to_closest_mosques.json", function(json) {
     zipcodes_closest_mosques = json; // this will show the info it in firebug console
 });
@@ -13,6 +20,7 @@ function getClosestMosques(zipcode){
 $('#go-button').click(function() {
   var zipcode = $('#input-zipcode').val()
   var query_result = getClosestMosques(zipcode)
+   gtag('event', 'go-button-clicked')
 
   	if (typeof query_result !== 'undefined') {
 
@@ -40,9 +48,11 @@ $('#go-button').click(function() {
 		  $('html, body').animate({
 		      scrollTop: $("#masjid-box").offset().top
 		  }, 1000);	
+    	gtag('event', 'go-button-clicked-valid-zipcode', {'zipcode': zipcode})
 
   	} else {
   		$('.error-message').show()
+    	gtag('event', 'go-button-clicked-invalid-zipcode', {'zipcode': zipcode})
 
   	}
 

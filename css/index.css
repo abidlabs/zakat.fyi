@@ -83,6 +83,11 @@ pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-s
 	line-height: 1.7rem
 
 }
+.fitr-a li{
+	font-size: 1rem;
+	color: gray;
+	line-height: 1rem
+}
 
 .regular{
 	font-weight: normal;
@@ -235,6 +240,7 @@ label {
 	margin:15px; 
 	background-color: #cce4d2;
 	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 5px;
 }
 .cant-find-box{
@@ -247,9 +253,13 @@ label {
 .cant-find-box a{
 	color: teal !important;
 }
+/*.card-img-top{
+	height: 300px;
+}
+*/
 .masjid-name{
 	font-weight: bold;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 .masjid-address{
 	font-size: 0.8rem;
@@ -392,6 +402,8 @@ label {
 .form-group {
 	margin-bottom: 40px;
 }
+
+
 
 #coffee-image {
 	border-radius:12px;
