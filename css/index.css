@@ -193,15 +193,39 @@ label {
   width: 0%;
 }
 
+.green-text{
+	color: #5ec49e;	
+}
+
+.grey-box{
+	margin-top: 20px;
+	background-color: #eee;
+}
+.masjid-name{
+	font-weight: bold;
+}
+.masjid-address{
+	font-size: 0.8rem;
+}
+.masjid-distance{
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.masjid-link{
+	text-decoration: underline;
+}
 
 #hero {
 	text-align: center;
 }
-#desc {
+#desc, .desc {
 	padding: 35px 15px;
 	position: relative;
 }
 #desc p {
+	margin-bottom: 0.5em;
+}
+.desc p {
 	margin-bottom: 0.5em;
 }
 #desc img {
