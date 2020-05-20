@@ -223,22 +223,28 @@ label {
 	background-color: #faf8f8;
 }
 .green-box{
-	margin:10px; 
+	margin:15px; 
 	background-color: #cce4d2;
 	padding-left: 10px;
+	padding-top: 5px;
 }
 .cant-find-box{
 	margin: 10px;
 	font-size: 90%;
+}
+#masjid-box{
+	display: none;
 }
 .cant-find-box a{
 	color: teal !important;
 }
 .masjid-name{
 	font-weight: bold;
+	font-size: 1.2rem;
 }
 .masjid-address{
 	font-size: 0.8rem;
+	font-weight: normal;
 }
 .masjid-distance{
 	font-size: 0.8rem;
@@ -248,6 +254,7 @@ label {
 	text-decoration: underline;
 	color: black;
 	font-weight: bold;
+	font-size: 1rem;
 }
 
 #hero {
