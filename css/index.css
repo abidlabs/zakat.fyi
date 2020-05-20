@@ -196,7 +196,9 @@ label {
 .green-text{
 	color: #5ec49e;	
 }
-
+.bold-text{
+	font-weight: bold;
+}
 .grey-box{
 	margin-top: 20px;
 	background-color: #faf8f8;
