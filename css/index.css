@@ -60,6 +60,27 @@ p { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-ser
 li { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 1.428rem; }
 blockquote { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
 pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+.fitr-faq{
+	margin-top: 80px;
+	margin-bottom: 20px;
+	font-weight: bold;
+
+
+}
+
+.fitr-q{
+	font-size: 1rem;
+	line-height: 1.7rem
+	margin-top: 10px;
+	font-weight: bold;
+}
+.fitr-a{
+	font-size: 1rem;
+	color: gray;
+	line-height: 1.7rem
+}
+
 .explanation {
 	color: gray;
 	font-size: 1rem;
@@ -227,6 +248,8 @@ label {
 }
 .masjid-link{
 	text-decoration: underline;
+	color: black;
+	font-weight: bold;
 }
 
 #hero {
@@ -314,6 +337,7 @@ label {
 	background-color: #346BB4; 
 	border-color: #346BB4;
 }
+
 
 
 #ending-messages{
