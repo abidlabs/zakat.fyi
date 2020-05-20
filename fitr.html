@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="css/index.css?v=6">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <title>Zakat.fyi</title>
+
+  <meta property="og:url" content="https://zakat.fyi" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://zakat.fyi/assets/InstagramPost.png" />
+  <meta property="og:title" content="Understand, Calculate, & Donate Your True Zakat | Zakat.fyi" />
+  <meta property="og:description"
+    content="Understand and calculate your true Zakat obligations through our simple and comprehensive form." />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@abidlabs">
+  <meta name="twitter:title" content="Zakat Done Right | Zakat.fyi">
+  <meta name="twitter:description"
+    content="Understand and calculate your true Zakat obligations through our simple and comprehensive form.">
+  <meta name="twitter:image" content="https://zakat.fyi/assets/InstagramPost.png">
+
+  <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
+
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="8f19b3c0-5106-4428-a754-c0aba169f3d7";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166050306-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-166050306-1');
+  </script>
+</head>
+
+<body style = "font-family: Helvetica Neue, sans-serif;" >
+
+  <div class="container" id="hero">
+    <a href="index.html"><img src="assets/logo.png" id="header-logo" class="img-fluid" alt="Responsive image"></a>
+
+    <div id="desc" style="margin:-30px 0px 0px 0px">
+      <img id="plant1" src="assets/plants1.svg">
+      <img id="plant2" src="assets/plants2.svg">
+    </div>
+  </div>
+    <p class="separator" style="margin: -11px 0px">Understand your true Zakat</p>
+
+
+
+  <div class="container">
+    <p>&nbsp;</p>
+
+
+    <p class="text-center" style="font-weight: bold">Find out how much you owe in <span class="green-text">Zakat-al-Fitr</span> this year</p>
+    <p class="text-center" style="margin-bottom:40px;">We've aggregated Zakat-al-Fitr amounts from <span class="green-text" style="font-weight: bold">80</span> mosques in the US. Let's find the closest one to you (or click on the map).</p>
+
+
+<div class="input-group col-md-4 offset-md-4">
+  <input type="text" class="form-control" placeholder="5 digit zipcode" id="input-zipcode">
+  <div class="input-group-append">
+    <button class="btn btn-outline-success" id="go-button" type="button">Go!</button>
+  </div>
+
+</div>
+    <div class="error-message text-center">Zipcode not found!</div>
+
+<p>&nbsp;</p>
+
+<div class="grey-box">
+  <div class="row">
+    <div class="col-md-8">
+      <!--The div element for the map -->
+      <div id="map"><iframe src="https://www.google.com/maps/d/embed?mid=1D0RhIrChSq8f6C8HDNQVnR7vOelY302t" width="100%" height="480"></iframe></div>
+  </div>
+  
+  <div class="col-md-4 text-center" id="masjid-placeholder" style="margin-top: auto; margin-bottom: auto;">
+    Enter your zipcode above
+
+  </div>
+
+
+  <div class="col-md-4" id="masjid-box">
+    <div>
+
+      <div class="row green-box">
+        <p><span class="masjid-name">1. Masjid Noor</span>
+        <br>&nbsp;<br><span class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345</span>
+        <br><span class="masjid-distance">42 miles away</span>
+        <br><span><a href="#" target="_blank"  style="color:#3a8be1 !important" class="masjid-link">Zakat-al-Fitr: $12</a></span></p>
+      </div>
+
+      <div class="row green-box">
+        <p><span class="masjid-name">1. Masjid Noor</span>
+        <br>&nbsp;<br><span class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345</span>
+        <br><span class="masjid-distance">42 miles away</span>
+        <br><span><a href="#" target="_blank" style="color:#3a8be1 !important"  class="masjid-link">Zakat-al-Fitr: $12</a></span></p>
+      </div>
+
+      <div class="row green-box">
+        <p><span class="masjid-name">1. Masjid Noor</span>
+        <br>&nbsp;<br><span class="masjid-address">1234 Looney Toon Lane, Beaumont TX, 12345</span>
+        <br><span class="masjid-distance">42 miles away</span>
+        <br><span><a href="#" target="_blank" style="color:#3a8be1 !important"  class="masjid-link">Zakat-al-Fitr: $12</a></span></p>
+      </div>
+
+
+      <div class="row cant-find-box text-right"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfO9e3tqO8GuVVH1_sbZfkDqfolbS5nsClaWLGNQIJD47I4zQ/viewform" target="_blank">Can't find your mosque? Add it here</a>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+</div>
+    <p> &nbsp; </p>
+    <p style ="font-size: 1.3rem;"class="text-center">Based on the closest mosque, your Zakat-al-Fitr is <span class="green-text bold-text"><span id="fitr-amount">___</span></span> per person in your family.</p>
+
+
+    <h3 class="fitr-faq">FAQ</h3>
+
+    <p class="fitr-q"> What is Zakat-al-Fitr?</p>
+    <p class= "fitr-a">Zakat al-Fitr is a charity taken for the poor a few days before the end of fasting in the Islamic holy month of Ramadan. The Arabic word Fitr means the same as iftar, breaking a fast, and it comes from the same root word as Futoor which means breakfast. Every Muslim is required to pay Zakat al-Fitr at the conclusion of the month of Ramadan as a token of thankfulness to God for having enabled him or her to observe the obligatory fast. </p>
+
+    <p class="fitr-q"> How is Zakat-al-Fitr calculated?</p>
+    <p class= "fitr-a">The amount of Zakat is the same for everyone regardless of their different income brackets. <strong> The minimum amount is one sa` (four double handfuls) of food, grain or dried fruit for each member of the family</strong>. </p>
+
+    <p class= "fitr-a"> This calculation is based on Ibn 'Umar's report that the Prophet made Zakat al-Fitr compulsory and payable by a sa` of dried dates or a sa` of barley. According to the majority of Sunni scholars, one sa' is 2.6 kg-3 kg.</p>
+ 
+    <p class="fitr-q"> When should I pay my Zakat-al-Fitr?</p>
+    <p class= "fitr-a"> Zakat al-Fitr is only Wajib for a particular period of time. If one misses the time period without a good reason, they have sinned and can not make it up. <strong>This form of charity becomes obligatory from sunset on the last day of fasting and remains obligatory until the beginning of `Eid Prayer </strong> (i.e. shortly after sunrise on the following day). </p>
+
+    <p class= "fitr-a">However, it can be paid prior to that, as many of the Sahabah used to pay Sadaqah-al-Fitr a couple days before the `Eid. <strong>After the spread of Islam, the jurists permitted its payment from the beginning and middle of Ramadan</strong> so as to ensure that the Zakat al-Fitr reached its beneficiaries on the day of `Eid. </p>
+
+    <p class ="fitr-q"> Who pays Zakat-al-Fitr?</p>
+    <p class= "fitr-a"> Zakat al-Fitr is must be paid <strong>for every Muslim in the household</strong>, even if they are not fasting. This even includes the unborn child. Take the amount provided by your local masjid and multiply it by the number of people in your household. That is how much you owe in Zakat-al-Fitr. </p>
+
+    <p class ="fitr-q"> Where should I donate my Zakat-al-Fitr?</p>
+    <p class= "fitr-a"> The distribution of Zakat al-Fitr is the same as that of Zakah, and is included within its broader sense. Those who may receive Zakat al-Fitr are the eight categories of recipients mentioned in Surat Al-Tawbah, [9: 60]. They include:
+    </p>
+    <div class="fitr-a">
+        <li class="regular">the poor</li>
+        <li class="regular">the needy</li>
+        <li class="regular">collectors of Zakah</li>
+        <li class="regular">reconciliation of hearts</li>
+        <li class="regular">freeing captives / slaves (fee al-Riqab)</li>
+        <li class="regular">debtors</li>
+        <li class="regular">those fighting for a religious cause or a cause of God (Fī Sabīlillāh) or for Jihad in the way of Allah</li>
+        <li class="regular">the traveler</li>
+      </div>
+
+     <p class ="fitr-faq"> Here's a list of Zakat.fyi's Favorite Places to Donate:</p>
+
+      <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/5b450962f2e6b1dc7cb08d30/1536966546835-DW3UYQIL3KG4FFQYHKPP/ke17ZwdGBToddI8pDm48kNTuS_9w6eTrGFnv1EbBwEVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEQkaj9XyobQfIy9h2BkSDYhqlxrhECdsV3Rk0sjYj--N1lH3P2bFZvTItROhWrBJ0/Rahima+logo-+a+blue+crescent+with+the+words+%22Rahima+Foundation%2C+Compassion+and+Community%22+underneath?format=1500w" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Rahima Foundation - Bay Area locals!</h4>
+                  <p class="card-text"></p>
+                  <a target="_blank" class="btn btn-primary" style="background-color: #5ec49e; color:white; border-color:#5ec49e" href="https://www.rahima.org/donate">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://s3.amazonaws.com/launchgood/project%2F50353%2Frohingya_are_starving__emergency_food_appeal_EMOgmtYXkAIOF6a-700x525.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Rohingya Orphan Emergency Meals</h4>
+                  <p class="card-text"> </p>
+                  <a target="_blank" class="btn btn-primary" style="background-color: #5ec49e; color:white; border-color:#5ec49e"  href="https://www.launchgood.com/campaign/rohingya_are_starving__emergency_food_appeal#!/">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://s3.amazonaws.com/launchgood/project%2F40968%2Ffight_covid19_with_sh_yasir_qadhi_Covid+Campaign+Image-700x525.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Fight COVID-19 With Sh. Yasir Qadhi</h4>
+                  <p class="card-text"></p>
+                  <a target="_blank" class="btn btn-primary" style= "background-color: #5ec49e; color:white; border-color:#5ec49e" href="https://www.launchgood.com/campaign/fight_covid19_with_shaykh_yasir_qadhi#!/">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+      </div>
+
+      <div class="row">
+            
+
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://umrelief.org/wp-content/uploads/2019/09/FoodUpdateNewLogo-2048x1365.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">United Muslim Relief</h4>
+                  <p class="card-text"></p>
+                  <a target="_blank" class="btn btn-primary" style= "background-color: #5ec49e; color:white; border-color:#5ec49e" href="https://give.umrelief.org/give/277749/#!/donation/checkout?designation=35115">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://secure.irusa.org/files/irusa/2020_Ramadan_Donation_Form_AfricaFood.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Islamic Relief</h4>
+                  <p class="card-text"> </p>
+                  <a target="_blank" class="btn btn-primary" style="background-color: #5ec49e; color:white; border-color:#5ec49e"  href="https://secure.irusa.org/donate/donate-now?fund-type=1&amount=&fund=#webform-component-fd-cart-container">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://s3.amazonaws.com/launchgood/project%2F37675%2Ffeed_a_family_8th_year__nourris_une_famille_8me_anne______8__Screenshot+2020-05-20+at+12.00.07+PM-480x292.png" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">NuDay Syria</h4>
+                  <p class="card-text"></p>
+                  <a target="_blank" class="btn btn-primary" style="background-color: #5ec49e; color:white; border-color:#5ec49e" href="https://donate.nudaysyria.org/give/233649/#!/donation/checkout">Donate Now</a>
+                </div>
+              </div>
+            </div>
+      </div>
+
+      <div class="row">
+            
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://hhrd.org/images/BurmeseReliefFund-01.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Helping Hand Relief Fund</h4>
+                  <p class="card-text"></p>
+                  <a target="_blank" class="btn btn-primary" style= "background-color: #5ec49e; color:white; border-color:#5ec49e" href="https://www.hhrd.org/new/newDetailDonate">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://hhrd.org/images/africarelief-01.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Sunrise USA</h4>
+                  <p class="card-text"> </p>
+                  <a target="_blank" class="btn btn-primary" style= "background-color: #5ec49e; color:white; border-color:#5ec49e "  href="https://sunrise-usa.org/get-involved/donate-online/?campaign=Zakat&amount=1000">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <img class="card-img-top" src="https://s3.amazonaws.com/launchgood/project%2F39176%2Fbody%2FIMG_3304.JPG"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Indian Muslim Relief & Charities</h4>
+                  <p class="card-text"></p>
+                  <a target="_blank" class="btn btn-primary" style= "background-color: #5ec49e; color:white; border-color:#5ec49e"  href="https://imrc.kindful.com/?campaign=1018574">Donate Now</a>
+                </div>
+              </div>
+            </div>
+
+
+      </div>
+
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 Zakat.fyi</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="about.html">About</a></li>
+          <li class="list-inline-item"><a href="testimonials.html">Testimonials</a></li>
+          <li class="list-inline-item"><a href="support.html">Support Us</a></li>
+
+        </ul>
+      </footer>
+
+
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+      <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+      <script
+          src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+          integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+          crossorigin="anonymous"></script>
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+      <script src="js/fitr.js"></script>
+
+    </body>
+  </html>

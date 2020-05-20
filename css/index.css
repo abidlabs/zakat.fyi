@@ -22,6 +22,11 @@
 #financials-table{
 	margin-top:30px;
 }
+.error-message{
+	margin-top: 10px;
+	color: #b05454;
+	display: none;
+}
 .autocomplete-items {
   /*position: absolute;*/
   border: 1px solid #d4d4d4;
@@ -60,6 +65,34 @@ p { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-ser
 li { margin-top: 10px; margin-bottom: 15px; font-family: Helvetica Neue, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 1.428rem; }
 blockquote { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
 pre { margin-top: 10px; margin-bottom: 10px; font-family: Helvetica Neue, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+.fitr-faq{
+	margin-top: 80px;
+	margin-bottom: 30px;
+	font-weight: bold;
+
+}
+.fitr-q{
+	font-size: 1.3rem;
+	line-height: 1.7rem;
+	font-weight: bold;
+}
+.fitr-a{
+	font-size: 1rem;
+	color: gray;
+	line-height: 1.7rem
+
+}
+.fitr-a li{
+	font-size: 1rem;
+	color: gray;
+	line-height: 1rem
+}
+
+.regular{
+	font-weight: normal;
+}
+
 .explanation {
 	color: gray;
 	font-size: 1rem;
@@ -193,15 +226,67 @@ label {
   width: 0%;
 }
 
+.green-text{
+	color: #5ec49e;	
+}
+.bold-text{
+	font-weight: bold;
+}
+.grey-box{
+	margin-top: 20px;
+	background-color: #faf8f8;
+}
+.green-box{
+	margin:15px; 
+	background-color: #cce4d2;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+.cant-find-box{
+	margin: 10px;
+	font-size: 90%;
+}
+#masjid-box{
+	display: none;
+}
+.cant-find-box a{
+	color: teal !important;
+}
+/*.card-img-top{
+	height: 300px;
+}
+*/
+.masjid-name{
+	font-weight: bold;
+	font-size: 1rem;
+}
+.masjid-address{
+	font-size: 0.8rem;
+	font-weight: normal;
+}
+.masjid-distance{
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.masjid-link{
+	text-decoration: underline;
+	color: #0000EE;
+	font-weight: bold;
+	font-size: 1rem;
+}
 
 #hero {
 	text-align: center;
 }
-#desc {
+#desc, .desc {
 	padding: 35px 15px;
 	position: relative;
 }
 #desc p {
+	margin-bottom: 0.5em;
+}
+.desc p {
 	margin-bottom: 0.5em;
 }
 #desc img {
@@ -261,20 +346,20 @@ label {
 	color: #2e67b2;
 	font-family: Helvetica Neue, sans-serif;
 }
+
 #calculate-zakat-button{
 	color:white;
 	margin-bottom:15px;
 	font-family: Helvetica Neue, sans-serif;
 	margin-right: 15px;
 	margin-left: 15px;
-}
+  
 #calculate-fitr-button{
 	color:white;
 	margin-bottom:15px;
 	font-family: Helvetica Neue, sans-serif;
 	background-color: #346BB4; 
 	border-color: #346BB4;
-}
 
 #ending-messages{
 	display:none;
@@ -314,6 +399,8 @@ label {
 .form-group {
 	margin-bottom: 40px;
 }
+
+
 
 #coffee-image {
 	border-radius:12px;
