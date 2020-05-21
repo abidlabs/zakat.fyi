@@ -16,7 +16,8 @@ export var currencyConversions = {
   "GBP": 1.00,
   "TRY": 1.00,
   "INR": 1.00,
-  "BDT": 1.00
+  "BDT": 1.00, 
+  "PKR": 1.00, 
 }; // These are updated through JSON requests
 
 
