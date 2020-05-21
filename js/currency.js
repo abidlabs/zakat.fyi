@@ -6,7 +6,7 @@ export var currencySymbols = {
   "TRY": "₺",
   "INR": "₹",
   "BDT": "৳",
-  "PKR": "Rs"
+  "PKR": "&#8360"
 };
 
 export var currencyConversions = {
@@ -28,10 +28,17 @@ $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
       if (curr === "BDT") {
         currencyConversions[curr] = 85.43;
       }
+
+	};
+  for (var curr in currencyConversions){
+      currencyConversions[curr] = json["rates"][curr]
+      // Add a manaul conversion rate for PKR for now
       if (curr === "PKR") {
         currencyConversions[curr] = 160.48;
       }
-	};	
+
+  };  
+        
 	$('#currency-select').removeAttr('disabled')
   $('#currency-select').trigger('change')
 
