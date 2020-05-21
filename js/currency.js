@@ -6,6 +6,7 @@ export var currencySymbols = {
   "TRY": "₺",
   "INR": "₹",
   "BDT": "৳"
+  "PKR": "Rs"
 };
 
 export var currencyConversions = {
@@ -25,6 +26,9 @@ $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
       // Add a manaul conversion rate for BDT for now
       if (curr === "BDT") {
         currencyConversions[curr] = 85.43;
+      }
+      if (curr === "PKR") {
+        currencyConversions[curr] = 160.48;
       }
 	};	
 	$('#currency-select').removeAttr('disabled')
