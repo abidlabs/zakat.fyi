@@ -358,6 +358,12 @@ label {
 #calculate-fitr-button {
 	margin-bottom:15px;
 	font-family: Helvetica Neue, sans-serif;
+	background-color: #346BB4;
+	border-color: #346BB4;
+}
+#calculate-fitr-button:hover {
+	background-color: #214575;
+	border-color: #214575;
 }
 
 #ending-messages{
