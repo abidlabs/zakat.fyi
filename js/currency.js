@@ -5,7 +5,7 @@ export var currencySymbols = {
   "GBP": "£",
   "TRY": "₺",
   "INR": "₹",
-  "BDT": "৳"
+  "BDT": "৳",
   "PKR": "Rs"
 };
 
@@ -17,7 +17,7 @@ export var currencyConversions = {
   "TRY": 1.00,
   "INR": 1.00,
   "BDT": 1.00, 
-  "PKR": 1.00, 
+  "PKR": 1.00
 }; // These are updated through JSON requests
 
 
