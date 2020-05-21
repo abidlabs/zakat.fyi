@@ -55,7 +55,8 @@
       <img id="plant1" src="assets/plants1.svg">
       <img id="plant2" src="assets/plants2.svg">
       <p><span id="num-people"><span class="num-people-count"></span> people</span> have calculated & understood their Zakat using Zakat.fyi </p>
-      <p><strong>Let's get started on yours by calculating your Zakat step by step</strong></p>
+      <br>
+      <p><strong>Let's calculate yours step by step:</strong></p>
       <p>&nbsp;</p>
       <button class="btn btn-success btn-lg" id="calculate-zakat-button"><strong>Calculate your Zakat-ul-Maal</strong></button>
       <a class="btn btn-info btn-lg" id="calculate-fitr-button" href="/fitr.html"><strong>Calculate your Zakat-ul-Fitr</strong></a>
@@ -89,7 +90,7 @@
   <h3>☝️Before You Start</h3>
     <div class="form-group">
       <p class="p1"><span class="numbered-item"></span> Currency Selection </p>
-      <p class="explanation">What is the currency you would like to use to calculate your Zakat?</p>
+      <!-- <p class="explanation">What is the currency you would like to use to calculate your Zakat?</p> -->
       <select class="custom-select" id="currency-select" disabled>
         <option selected value="USD">$ - USD</option>
         <option value="EUR">&euro; - Euro</option>
@@ -103,10 +104,10 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Know the Niṣāb </p>
-    <p class="explanation"> The niṣāb is the minimum (liable) amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (S) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span> <span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount. <b>Note:</b> we will <em>not</em> be using the gold nisab calculation in this calculator to stay true to Sheikh Joe Bradford's method. </p>
+    <p class="explanation"> The niṣāb is the minimum liable amount that a Muslim must have to be obligated to pay Zakat. This amount was set by our Prophet Muhammad (S) at 21 ounces of Silver. Based on today's price of Silver per ounce, the niṣāb is <strong><span class="currency-prepend">$</span> <span class="nisab-price-value">318.23</span></strong>. We will automatically let you know if you're under the niṣāb amount. <b>Note:</b> we will <em>not</em> be using the gold nisab calculation in this calculator to stay true to Sheikh Joe Bradford's method. </p>
 
     <p class="p1"><span class="numbered-item"></span> Understand the <em>Hawl</em> </p>
-    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. The <em>hawl</em> starts when your assets first reached the minimum niṣāb, or when you last paid Zakat. Once 1 lunar year has passed, and your assets have been consistently above the niṣāb, you pay Zakat on your assets at that point, like shown in the chart below. </p>
+    <p class="explanation"> The <em>hawl</em> is the the Zakat Year, like a fiscal year, but used to calculate your Zakat. The <em>hawl</em> starts when your assets first reached the minimum niṣāb, or when you last paid Zakat. Once 1 lunar year has passed, and your assets have been consistently above the niṣāb, you pay Zakat on your assets at that point: </p>
 
     <center>
      <img src="assets/chart.png" style="width:90%; max-width: 500px; border: 2px solid black">
@@ -210,7 +211,7 @@
     </center>
 
     <p class="p1"><span class="numbered-item"></span> What's your email address? </p>
-    <p class="explanation"> We'll allow you to send a receipt of your calculation to yourself after this session, so you can save this year's Zakat calculation date and your Zakat amount.</p>
+    <p class="explanation"> You can send a receipt of your calculation to yourself after this session, so you can save this year's Zakat calculation date and your Zakat amount. All of your data is kept <a href="https://zakat.fyi/about.html" about="_blank">private and secure.</a></p>
 
       <div class="form-group">
       <div class="input-group mb-3">
@@ -221,9 +222,9 @@
       </div>
       </div>
 
-<p class="explanation" style="padding-top:30px">Let's get started with the <span style="font-weight:bold; color: #28a745">assets</span> that you will be paying Zakat on first. Later, we will cover <span style="font-weight:bold; color: #c5424e">debts and payments</span> that may reduce your Zakatable amount.</p>
+<p class="explanation" style="padding-top:60px">Let's get started with the <span style="font-weight:bold; color: #28a745">assets</span> that you will be paying Zakat on first. Later, we will cover <span style="font-weight:bold; color: #c5424e">debts and payments</span> that may reduce your Zakatable amount.</p>
 
-<h3 style= "margin-top: 30px;margin-bottom: 20px;">💰 Zakatable Assets </h3>
+<h3 style= "padding-top: 60px">💰 Zakatable Assets </h3>
     <p class="explanation"> </p>
     &nbsp;
 
@@ -251,8 +252,8 @@
 
     <p class="p1"><span class="numbered-item"></span> Cash 💸 </p>
        <div class="form-group money-text-field required">
-      <label for="formGroupExampleInput2">What is the total value of your physical cash on hand?</label>
-      <p class="explanation">This is cash in your wallet, for example.</p>
+      <!-- <label for="formGroupExampleInput2">What is the total value of your physical cash on hand?</label> -->
+      <p class="explanation">What is the total value of your physical cash on hand/wallet?</p>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -271,14 +272,15 @@
       <p class="p1">10-11. Precious Metals 💍</p>
 
 
-      <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. Zakat is not due on any of the jewels <i>in</i> your gold or silver jewelry. So you would <i>not</i> pay any zakat on a platinum and diamond ring, for example.</p>
-      <p class="explanation"> You want to get the weight of the pure weight of silver/gold, and not any other metal that may be mixed in. Since this isn't easy, you may want to have them measured by a jeweler. Don't forget about utensils and other gold items you may own. </p>
+      <p class="explanation"> The only precious metals that Zakat is due on are silver and gold. This includes jewelry, utensils, and other items you may own. </p>
+      <p class="explanation"> Zakat is <strong>NOT</strong> due on any of the jewels <strong>IN</strong> your gold or silver jewelry. So you would <i>not</i> pay any zakat on a platinum and diamond ring, for example. You need to find the weight of the pure silver/gold, and not any other metal mixed in. Since this isn't easy, you may need to have them measured by a jeweler. </p>
+      <p class="explanation"> Here are the differences between madhabs on jewelry:<br>Hanafi: Value of all used & unused gold & silver jewelry<br>Maliki: Value only of unused gold & silver jewelry<br>Shafi'i: Value only of unused gold & silver jewelry owned by men </p>
 
       <p class="p1"><span class="numbered-item"></span> Silver 🥄 </p>
 
       <div class="form-group required">
         <label for="formGroupExampleInput2">How many ounces of silver do you have?  </label>
-        <p class="explanation">We will use the price of silver at <span class="currency-prepend">$</span> <span class="silver-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a target="_blank" href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your silver in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
+        <p class="explanation">We will use the price of pure silver at <span class="currency-prepend">$</span><span class="silver-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a target="_blank" href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your silver in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
 
 
       <div class="container">
@@ -317,7 +319,7 @@
         <p class="p1"><span class="numbered-item"></span> Gold 🏆 </p>
           <div class="form-group required">
         <label for="formGroupExampleInput2">How many ounces of gold do you have? </label>
-        <p class="explanation">We will use the price of gold  at <span class="currency-prepend">$</span> <span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a target="_blank" href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
+        <p class="explanation">We will use the price of pure gold  at <span class="currency-prepend">$</span><span class="gold-price-value"></span> per oz, current as of <span class="price-last-updated">April 22, 2020</span> (<a target="_blank" href="https://data-asg.goldprice.org/dbXRates/USD">source</a>). Alternatively, you can provide the value of your gold in <span class="currency-prepend">$</span>. If you provide both, we will add them together for you.  </p>
 
           <div class="container">
             <div class="row">
@@ -364,7 +366,8 @@
 
       <p class="p1"><span class="numbered-item"></span> Active Investments & Cryptocurrencies 📈 </p>
         <div class="form-group money-text-field required">
-      <p class="explanation">An "active" investment is a stock, fund, or currency that you hold for a short period of time (e.g. less than 366 days). You will treat these shares the same way you would if you had them as cash in your pocket via their market value. Unvested RSUs and ESPP do not apply. This includes the market value of cryptocurrencies and tokens with <a href="https://afinanceorg.files.wordpress.com/2018/05/zakat-on-cryptocurrencies-mufti-faraz-adam.pdf" target="-blank">some exceptions</a>). Don't forget to include the cash in your brokerage account(s) here if you haven't already done so above.</p>
+      <p class="explanation">An "active" investment is a stock, fund, or currency that you hold for a short period of time (e.g. less than 365 days). You will treat these shares the same way you would if you had them as cash in your pocket via their market value. This includes the market value of cryptocurrencies and tokens with <a href="https://afinanceorg.files.wordpress.com/2018/05/zakat-on-cryptocurrencies-mufti-faraz-adam.pdf" target="-blank">some exceptions</a>.</p>
+      <p class="explanation">Unvested RSUs, ESPP, or shares you cannot sell without restrictions are not subject to Zakat. Don't forget to include the cash in your brokerage account(s) here if you haven't already done so above.</p>
       <label for="formGroupExampleInput2">What is the total value of your active investments? </label>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -375,14 +378,14 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Passive Investments 📊 </p>
-     <p class="explanation">This section applies to the stocks that you are planning on holding long-term (e.g. for more than 366 days). You may end up paying less Zakat by treating the stock as a passive investment. To properly calculate the Zakat on passive investments, you will need to access <em>each company's</em> balance sheet, and look at the <em>Current Assets</em> and <em>Shares Issued</em>. <b>Here's the good news:</b> We can do this automatically for more than 600 common stocks! </p>
-
-   <br>
+     <p class="explanation">This section applies to the stocks you plan on holding long-term (i.e. more than 365 days). You most likley will end up paying slightly less Zakat by treating them as passive investments, so you can choose to simplify by treating it as an Active Investment if you prefer.</p>
+     <p class="explanation">To properly calculate the Zakat on passive investments, you will need to access <em>each company's</em> balance sheet, and look at the <strong>Current Assets</strong> and <strong>Shares Issued</strong>.</p>
+     <p class="explanation"><b>Here's the good news:</b> We do this automatically for more than 600 common stocks! </p>
 
     <!-- Investment financials table -->
       <div class="autocomplete">
         <p class="explanation">You can use this search bar to lookup stocks, which will be added automatically to the table. If a stock doesn't autocomplete,
-           then it does not currently exist in our database. Feel free to <a target="_blank" href="mailto:zakatfyi@gmail.com">send us its name</a>, and we can add it!</p>
+           then it does not currently exist in our database. <a target="_blank" href="mailto:zakatfyi@gmail.com">Send us its name</a>, and we can add it!</p>
         <div>
           <input class="form-control" id="stockname-autocomplete" type="text" placeholder="Write Stock Name Here..">
         </div>
@@ -399,7 +402,8 @@
 
       <div class="no-stock-link">What if my stock doesn't show up?</div>
       <div class="no-stock-body">
-      <p class="explanation">You can find the relevant information online, e.g. on <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <em>Current Assets</em> and <em>Shares Issued</em>. For example, here's the info on MSFT from Yahoo! Finance. Using these, along with the <em>Number of Shares You Own</em>, we can calculate the effective value of your assets of the company, which becomes part of your net assets. Note: this is very difficult to calculate for mutual funds, ETFs, or index funds that consist of multiple stocks constantly shifting positions, so we recommend simply treating them as active investments (and adding their cash value to the previous question).</p>
+      <p class="explanation">You can find the relevant information at <a target="_blank" href="https://finance.yahoo.com/quote/MSFT/balance-sheet?p=MSFT">Yahoo! Finance</a> or <a target="_blank" href="https://www.morningstar.com/">Morningstar</a>. Here are the numbers to note: <em>Current Assets</em> and <em>Shares Issued</em>. For example, here's the info on MSFT from Yahoo! Finance. Along with the <em>Number of Shares You Own</em>, we can calculate the effective value of your assets of the company, which becomes part of your net assets.</p>
+      <p class="explanation">Note: this is very difficult to calculate for mutual funds, ETFs, or index funds that consist of multiple stocks constantly shifting positions, so we recommend simply treating them as active investments (and adding their cash value to the previous question).</p>
 
      <center>
         <img src="assets/balance-sheet-screenshot.png" style="width:90%; max-width: 400px; border: 2px solid black">
@@ -499,10 +503,10 @@
     </div>
 
   <p class="p1"><span class="numbered-item"></span> Dividends 🔖 󠀥󠀥󠀥</p>
-    <p class="explanation">  If you have received dividends from your financial investments, add the total amount received over the <em>hawl</em> here. If you have already added your dividends to your general checking or savings accounts, do not double count the earnings here.
+    <p class="explanation">  If you received dividends from your financial investments, add the total amount received over the <em>hawl</em> here. If you have already added your dividends to your general checking or savings accounts, do not double count the earnings here.
     <div class="form-group money-text-field required">
       <label>What is the total dividends you received over the last year?</label>
-      <p class="explanation"> </p>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -536,8 +540,8 @@
 
     <div class="accounts-related related-show" category="accounts"> <!-- Accounts Questions Toggle -->
 
-      <p class="p1"><span class="numbered-item"></span> Roth IRA  🎂 </p>
-         <p class="explanation"> You pay Zakat on what is in your full control. So, if you are below the age of 59 and a half, you will pay this ONLY on your Roth IRA contributions, since that money is accessible to you. If you are above that age, the earnings (greater than 5 years old) are also accessible for you. Therefore, if you are above the age of 59 and a half, you should pay on your total Roth amount (and subtract any earnings less than 5 years old). </p>
+      <p class="p1"><span class="numbered-item"></span> Roth IRA contributions 🎂 </p>
+         <p class="explanation"> You pay Zakat on what is in your full control. So, if you are below the age of 59 and a half, you will pay this only on your Roth IRA <strong>contributions</strong>, since that money is accessible to you. If you are above that age, the <strong>earnings</strong> (greater than 5 years old) are also accessible for you. Therefore, if you are above the age of 59 and a half, you should pay on your total Roth value (and subtract any earnings less than 5 years old). </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your Roth IRA contributions?</label>
       <p class="explanation"></p>
@@ -551,10 +555,12 @@
 
 
     <p class="p1"><span class="numbered-item"></span> 401(k) withdrawals 👴</p>
-         <p class="explanation"> Sheikh Bradford advises not paying Zakat on your 401k value if you are under 59.5 years of age, because Zakat is only due on what is in your full control without penalty and managed by you. If you withdraw early, then you will pay Zakat on the NET amount after taxes and penalties. Due to differing opinions, you can choose to treat your 401k/IRA like cash and pay Zakat on the value of the accounts minus taxes and penalties. If you have reached retirement age or cash out, you will pay Zakat on the entire amount after one year has passed, and then EVERY year after because you will have unfettered access to the full amount.</p>
+         <p class="explanation"> Sheikh Bradford advises not paying Zakat on your 401k if you are under 59.5 years of age, because Zakat is only due on what is in your full control without penalty and managed by you. Due to other legitimate scholarly opinions, you <strong>can choose</strong> to treat your 401k/IRA like cash and pay Zakat on the value of the accounts minus taxes and penalties.</p>
+         <p class="explanation">If you withdraw early, then you will pay Zakat on the NET amount after taxes (your estimated effective tax rate this year) and after penalties (10% in the US). If these distributions are already in your checking account or another account previously listed, be sure not to double count them.<p>
+         <p class="explanation">If you have reached retirement age or cash out, you will pay Zakat on the entire amount after one year has passed, and then EVERY year after because you will have unfettered access to the full amount.</p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your 401(k) withdrawals (post-tax & post-penalties)?</label>
-      <p class="explanation">If these distributions are already in your checking account or another account previously listed, be sure not to double count them.</p>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -563,10 +569,11 @@
       </div>
     </div>
 
-      <p class="p1"><span class="numbered-item"></span> Post-tax IRA withdrawals 👵</p>
+      <p class="p1"><span class="numbered-item"></span> IRA withdrawals 👵</p>
          <p class="explanation"> Treat IRA withdrawals the same way as the previous question. </p>
         <div class="form-group money-text-field required">
-      <label>What is the total value of your Post-tax IRA withdrawals?</label>
+      <label>What is the total value of your IRA withdrawals (post-tax & post-penalties)?</label>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -575,10 +582,11 @@
       </div>
     </div>
 
-    <p class="p1"><span class="numbered-item"></span> Post-tax ESA withdrawals 🎒</p>
+    <p class="p1"><span class="numbered-item"></span> ESA withdrawals 🎒</p>
          <p class="explanation"> For the same reasons as the previous questions, if you've contributed to a Coverdell ESA, you will pay only on what you've withdrawn this <em>hawl</em>. If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them. </p>
         <div class="form-group money-text-field required">
-      <label>What is the total value of your Post-tax ESA withdrawals?</label>
+      <label>What is the total value of your Post-tax ESA withdrawals (post-tax & post-penalties)?</label>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -587,10 +595,11 @@
       </div>
     </div>
 
-    <p class="p1"><span class="numbered-item"></span> Post-tax 529 withdrawals 📚 </p>
+    <p class="p1"><span class="numbered-item"></span> 529 withdrawals 📚 </p>
          <p class="explanation"> For the same reasons as the previous questions, if you've contributed to a 529 College Savings Account, you will pay only on what you've withdrawn this hawl. If these withdrawal amounts are already in your checking account or another account previously listed, be sure not to double count them.</p>
         <div class="form-group money-text-field required">
-      <label>What is the total value of your Post-tax 529 withdrawals?</label>
+      <label>What is the total value of your 529 withdrawals (post-tax & post-penalties)?</label>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -600,7 +609,7 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> FSA / HSA Accounts 💉 </p>
-         <p class="explanation"> You do <b>not</b> pay Zakat on your FSA, because you never have full access to that amount. But HSA funds are constantly accessible for your medical expenses, so it will fully be eligible for Zakat. </p>
+         <p class="explanation"> You do <b>not</b> pay Zakat on your FSA, because you never have full control over that money (use it or lose it). But HSA funds are constantly accessible for your medical expenses, so it will fully be eligible for Zakat. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of your HSA account?</label>
       <p class="explanation"> </p>
@@ -618,10 +627,9 @@
       21-23. Real estate for business purposes 🏘️ &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
     </div>
 
-
     <div class="real-estate-related related-show" category="real-estate"> <!-- Real Estate Questions Toggle -->
     <p class="p1"><span class="numbered-item"></span> Property for sale 🏡 </p>
-         <p class="explanation"> If you have a property listed for sale, pay Zakat on the amount you would earn if you sold it right now at its list price. </p>
+         <p class="explanation"> You do NOT pay Zakat on the equity or value of your <strong>primary residence</strong> as it's purpose is as a <span style="font-weight:bold; color: #28a745">living expense.</span> However, if you have a property listed for sale, pay Zakat on the amount you would earn if you sold it right now at its list price. </p>
         <div class="form-group money-text-field required">
       <label>What is the total value of real estate you have on the market?</label>
       <p class="explanation"> </p>
@@ -647,7 +655,7 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Rental Income 🏘️ </p>
-         <p class="explanation"> If you rent a property, you do not need to pay Zakat on the value of the property itself, because the property is considered a tool of your trade, rather than the result.</p>
+         <p class="explanation"> If you rent a property, you do not need to pay Zakat on the equity or value of the property itself, because the property is considered a <span style="font-weight:bold; color: #28a745">tool of your trade</span>, rather than the result. But you do have to pay on the net rental income.</p>
         <div class="form-group money-text-field required">
       <label>What is the net rental income you earned?</label>
       <p class="explanation">This is the total rental income you earned during the <em>hawl</em> <strong>minus</strong> costs associated with owning the property including mortgage, property taxes, insurance, HOA & management fees, maintenance. <u>Note:</u> If you added your rental income to your general checking or savings accounts, do not double count the earnings here. </p>
@@ -799,12 +807,12 @@
 
   <h3 style= "margin-top: 40px;margin-bottom: 20px;">🚑 Expenses and Liabilites</h3>
 
-  <p class="explanation">When calculating your Zakat liable amount, you should remove the amount of money that you owe to others. In addition to debts, you can also deduct bills that are "immediately due." For example, if you pay your rent monthly, you can deduct one month of your rent. If you pay your insurance every 6 months, and your insurance payment is up immediately, you can deduct the 6 month insurance bill.</p>
+  <p class="explanation">When calculating your Zakat liable amount, you can reduce your assets by your <span style="font-weight:bold; color: #c5424e">living expenses, bills that are "immediately due", and money you owe to others.</span> If you pay your rent monthly, you can deduct one month of your rent. If you pay your insurance every 6 months, you can deduct the 6 month insurance bill.</p>
 
     <p class="p1"><span class="numbered-item"></span> This Month's Living Expenses 🍔</p>
-         <p class="explanation"> This can include: rent/mortgage payments, medical expenses (other than your insurance premium, which is covered below), utilities, groceries, transport, upkeep, and any other miscellaneous living expenses. Because your bills and expenses are considered debts owed to others, you have to pay those first. You should only deduct those expenses which are immediately due (before you expect to pay Zakat). </p>
+         <p class="explanation"> This includes: rent/mortgage payments, medical expenses (other than your insurance, which is covered below), utilities, groceries, transport, upkeep, and any other miscellaneous living expenses. </p>
         <div class="form-group money-text-field required">
-      <label>What is your monthly living expense?</label>
+      <label>What is the total of your upcoming monthly living expenses?</label>
       <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -815,9 +823,9 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Periodic Insurance Expenses 🚗</p>
-         <p class="explanation"> This can include: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.)</p>
+         <p class="explanation"> This includes: home/renter's insurance, auto insurance, medical insurance, or any other kind of insurance that is due. If you pay monthly, deduct the monthly payment; if you pay quarterly, deduct the quarterly payment, etc.</p>
         <div class="form-group money-text-field required">
-      <label>What is the total of your insurance payments?</label>
+      <label>What is the total of your upcoming Insurance payments due?</label>
       <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -828,10 +836,9 @@
     </div>
 
     <p class="p1"><span class="numbered-item"></span> Debts You Owe 💳 </p>
-         <p class="explanation">This can include student debts, credit card debts, a secondary mortgage, and any other debts <strong>that have become due</strong>. If you have a debt that you are paying off in installments, you should only include the upcoming installment that is due, even if you choose to pay off more. Mortgage payments on your primary residence are not a part of this category - they should be accounted for in Monthly Expenses. </p>
+         <p class="explanation">This can include student debts, credit card debts, a secondary mortgage, and any other debt <strong>payments</strong> that have become due. If you have a debt that you are paying off in installments, you should only include the upcoming installment that is due, even if you choose to pay off more. Mortgage payments on your primary residence are not a part of this category - they should be accounted for in Monthly Expenses. </p>
         <div class="form-group money-text-field required">
-
-      <label>What is the total of your debts due?</label>
+      <label>What is the total of your upcoming Debt payments due?</label>
       <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -840,10 +847,6 @@
         <input type="text" class="form-control liability" id="debts-field" placeholder="0" data-multiplier="-0.025">
       </div>
     </div>
-
-
-
-
 
 <!--   <div class="form-group required">
     <label class="p1">33-34. Do you have late tax payments or fines to pay off?</label><br>
@@ -859,20 +862,17 @@
   </div>
  -->
 
-
-
        <div class="fines-hidden related-hidden" category="fines">
       33-35. Property tax, late tax payments, or fines 📋 &nbsp; <span class="skipped">(skipped)</span> &nbsp; <span class="show-link">show &#187;</span>
     </div>
 
-
-
   <div class="fines-related related-show" category="fines">
 
     <p class="p1"><span class="numbered-item"></span> Property Tax Payments 📋</p>
-         <p class="explanation"> You can deduct this if you are about to pay the property tax immediately. (If you pay monthly, deduct the monthly payment; If you pay quarterly, deduct the quarterly payment, etc.) </p>
+         <p class="explanation"> You can deduct this if you are about to pay the property tax on your <strong>Primary Residence</strong> (investment properties already include this in net rental income). If you pay monthly, deduct the monthly payment; if you pay quarterly, deduct the quarterly payment, etc. </p>
         <div class="form-group money-text-field required">
-      <label>What is the total of your property tax payments?</label>
+      <label>What is your upcoming Property Tax payment due?</label>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -885,6 +885,7 @@
       <p class="explanation">This is money that you owe the government.</p>
         <div class="form-group money-text-field required">
       <label>What is the total of your delinquent tax payments?</label>
+      <p class="explanation"></p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text currency-prepend" id="basic-addon1">$</span>
@@ -968,8 +969,8 @@
           <a href="index.html"> &larr; Go back</a>
           </div>
           <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 10px !important; margin-bottom: 15px !important;">Zakat Due:</h6>
-          <p class="card-text" style="margin-top: 25px !important;"><span class="currency-prepend">$</span> <span class="zakat-amount">0.00</span></p>
-          <p class="explanation" style="margin-top: 25px !important;">On net assets: <span class="currency-prepend">$</span><span class="zakat-liable-amount">0.00</span> <span class="below-nisab">(below nisab)</span>. </p>
+          <p class="card-text" style="margin-top: 25px !important;"><span class="currency-prepend">$</span><span class="zakat-amount">0.00</span></p>
+          <p class="explanation" style="margin-top: 25px !important;">On net assets: <span class="currency-prepend">$</span><span class="zakat-liable-amount">0.00</span><span class="below-nisab"> (below nisab)</span></p>
         </div>
       </div>
       <p></p>
