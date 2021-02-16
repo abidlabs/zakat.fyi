@@ -27,12 +27,10 @@ export function loadRelatedDivs() {
   for (var i = 0; i < elements.length; i++) {
     var checkbox = $("#checkbox-" + elements[i])
     if (checkbox.prop("checked") == true) {
-      console.log(elements[i], 'active')
       $("."+elements[i]+"-related").css('display', 'block') 
       $("."+elements[i]+"-hidden").css('display', 'none') 
     }
     else {
-      console.log(elements[i], 'inactive')
       $("."+elements[i]+"-related").css('display', 'none') 
       $("."+elements[i]+"-hidden").css('display', 'block') 
     }
@@ -76,20 +74,6 @@ export function updateProgressBar() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight - 587 - 300;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
- //   var num_required_elements = 0
- //   var num_filled_elements = 0
-	// $('form *').filter(':input').each(function(){
-	// 	var gparent = $(this).parent().parent();
-	// 	if (gparent.hasClass('required')){
-	// 		num_required_elements += 1;
-	// 	    if($.trim(this.value).length){
-	// 	    	num_filled_elements += 1
-	// 	    }			
-	// 	}
-	// });
-
- //  var scrolled = num_filled_elements * 100.0 / num_required_elements;
- //  document.getElementById("myBar").style.width = scrolled + "%";
 }
 
 export function updateZakatAmount() {

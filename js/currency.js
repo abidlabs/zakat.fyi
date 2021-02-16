@@ -5,7 +5,6 @@ export var currencySymbols = {
   "GBP": "£",
   "TRY": "₺",
   "INR": "₹",
-  "BDT": "৳",
   "PKR": "&#8360"
 };
 
@@ -16,25 +15,17 @@ export var currencyConversions = {
   "GBP": 1.00,
   "TRY": 1.00,
   "INR": 1.00,
-  "BDT": 1.00, 
   "PKR": 1.00
 }; // These are updated through JSON requests
 
 
 $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
-	for (var curr in currencyConversions){
-	    currencyConversions[curr] = json["rates"][curr]
-      // Add a manaul conversion rate for BDT for now
-      if (curr === "BDT") {
-        currencyConversions[curr] = 85.43;
-      }
-
-	};
   for (var curr in currencyConversions){
       currencyConversions[curr] = json["rates"][curr]
       // Add a manaul conversion rate for PKR for now
       if (curr === "PKR") {
-        currencyConversions[curr] = 160.48;
+        currencyConversions[curr] = 159.36;
+        console.log("Using cached value of Pakistani rupee set at 15 Feb 2021")
       }
 
   };  
@@ -42,4 +33,6 @@ $.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
 	$('#currency-select').removeAttr('disabled')
   $('#currency-select').trigger('change')
 
+}).fail(function(){
+  console.log("Error: couldn't load currency data.")
 });

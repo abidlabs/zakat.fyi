@@ -2,11 +2,11 @@ import * as currency from "./currency.js";
 import * as functions from "./functions.js";
 
 // Calculate the price of gold, silver, and nisab dynamically
-export var nisab_usd = 318.23
-export var gold_price_per_oz_usd = 1723.82
-export var gold_price_per_oz = 1723.82
-export var silver_price_per_oz_usd =  15.154
-export var silver_price_per_oz =  15.154
+export var nisab_usd = 580.18
+export var gold_price_per_oz_usd = 1820.84 
+export var gold_price_per_oz = 1820.84 
+export var silver_price_per_oz_usd =  27.63 
+export var silver_price_per_oz =  27.63 
 export var conversionRate = 1.00
 
 // Handle currency conversions (should happen after dynamic loading of prices)
@@ -25,7 +25,11 @@ $.getJSON("https://data-asg.goldprice.org/dbXRates/USD", function(json){
   $('.price-last-updated').html("today") // last updated = today
 
   $('#currency-select').trigger('change')  
-});	
+}).fail(function(){
+  console.log("Using cached prices of gold and silver")
+}
+
+);	
 
 $('#currency-select').change(function(){
   var symbol = currency.currencySymbols[$(this).val()]
