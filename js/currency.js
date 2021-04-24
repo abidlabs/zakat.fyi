@@ -19,7 +19,7 @@ export var currencyConversions = {
 }; // These are updated through JSON requests
 
 
-$.getJSON("https://api.exchangeratesapi.io/latest?base=USD", function(json){
+$.getJSON("https://api.exchangeratesapi.io/latest?base=USD&access_key=4b0fb6730ea893a5552705571f94504a", function(json){
   for (var curr in currencyConversions){
       currencyConversions[curr] = json["rates"][curr]
       // Add a manaul conversion rate for PKR for now
