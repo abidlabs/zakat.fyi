@@ -1,6 +1,6 @@
 import * as functions from "./functions.js";
 import * as prices from "./prices.js";
-import * as currency from "./currency.js";
+import * as currency from "./currency.js?v=1";
 import * as db from "./db.js";
 import * as cookies from "./cookies.js";
 import * as form from "./form.js";
